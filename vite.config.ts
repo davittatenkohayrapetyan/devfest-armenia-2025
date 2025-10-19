@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
-const basePath = process.env.VITE_BASE_PATH || '/'
+const basePath = process.env.VITE_BASE_PATH || '/devfest2025/'
 
 export default defineConfig({
   base: basePath,
@@ -20,17 +20,17 @@ export default defineConfig({
         start_url: basePath,
         icons: [
           {
-            src: 'pwa-192x192.png',
+            src: basePath + 'pwa-192x192.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: 'pwa-512x512.png',
+            src: basePath + 'pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png'
           },
           {
-            src: 'pwa-512x512.png',
+            src: basePath + 'pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any maskable'

@@ -32,4 +32,46 @@
   .card {
     @apply bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 transition-transform duration-200 hover:scale-105;
   }
+
+  /* Sessionize Embed Styling */
+  .sessionize-embed {
+    @apply w-full;
+  }
+  
+  /* Style Sessionize widgets to match theme */
+  :global(.sz-widget) {
+    @apply rounded-lg;
+  }
+  
+  :global(.sz-session-card),
+  :global(.sz-speaker-card) {
+    @apply rounded-lg shadow-md transition-shadow hover:shadow-lg;
+  }
+  
+  :global(.sz-session-card) {
+    @apply bg-white dark:bg-gray-800;
+  }
+  
+  :global(.sz-speaker-card) {
+    @apply bg-white dark:bg-gray-800;
+  }
+  
+  :global(.sz-session-title),
+  :global(.sz-speaker-name) {
+    @apply text-gray-900 dark:text-white;
+  }
+  
+  :global(.sz-session-description),
+  :global(.sz-speaker-tagline) {
+    @apply text-gray-600 dark:text-gray-400;
+  }
+  
+  :global(.sz-session-time),
+  :global(.sz-session-room) {
+    @apply text-google-blue;
+  }
+  
+  :global(.sz-tag) {
+    @apply bg-google-blue text-white rounded px-2 py-1 text-sm;
+  }
 }
