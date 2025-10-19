@@ -21,7 +21,9 @@ app.innerHTML = `
         <div class="hidden md:flex space-x-8">
           <a href="#about" class="hover:text-google-blue transition-colors">About</a>
           <a href="#agenda" class="hover:text-google-blue transition-colors">Agenda</a>
+          <a href="#sessions" class="hover:text-google-blue transition-colors">Sessions</a>
           <a href="#speakers" class="hover:text-google-blue transition-colors">Speakers</a>
+          <a href="#wall" class="hover:text-google-blue transition-colors">Wall</a>
           <a href="#partners" class="hover:text-google-blue transition-colors">Partners</a>
           <a href="#organizers" class="hover:text-google-blue transition-colors">Organizers</a>
         </div>
@@ -92,21 +94,20 @@ app.innerHTML = `
   <section id="agenda" class="bg-white dark:bg-gray-900">
     <div class="section-container">
       <h2 class="section-title">Agenda</h2>
-      <div class="max-w-4xl mx-auto">
-        <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-8 text-center">
-          <p class="text-lg mb-4">Detailed agenda coming soon!</p>
-          <p class="text-gray-600 dark:text-gray-400">
-            We're finalizing an exciting lineup of sessions covering the latest in Android, Web, Cloud, AI/ML, and more.
-          </p>
-          <!-- Sessionize Embed Placeholder -->
-          <div id="sessionize-embed" class="mt-8">
-            <!-- Sessionize agenda will be embedded here -->
-            <script type="text/javascript">
-              // Sessionize embed script will be added here
-              // Example: sessionize.com/api/v2/{event-id}/view/GridSmart
-            </script>
-          </div>
-        </div>
+      <div class="max-w-6xl mx-auto">
+        <!-- Sessionize GridSmart Embed -->
+        <div id="sessionize-grid-smart" class="sessionize-embed"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sessions Section -->
+  <section id="sessions" class="bg-gray-50 dark:bg-gray-800">
+    <div class="section-container">
+      <h2 class="section-title">Sessions</h2>
+      <div class="max-w-6xl mx-auto">
+        <!-- Sessionize Sessions Embed -->
+        <div id="sessionize-sessions" class="sessionize-embed"></div>
       </div>
     </div>
   </section>
@@ -115,32 +116,20 @@ app.innerHTML = `
   <section id="speakers" class="bg-gray-50 dark:bg-gray-800">
     <div class="section-container">
       <h2 class="section-title">Speakers</h2>
-      <div class="max-w-4xl mx-auto">
-        <div class="bg-white dark:bg-gray-900 rounded-lg p-8 text-center">
-          <p class="text-lg mb-4">Amazing speakers lineup coming soon!</p>
-          <p class="text-gray-600 dark:text-gray-400">
-            We're bringing together industry experts and thought leaders to share their knowledge and experience.
-          </p>
-          <!-- Sessionize Speakers Placeholder -->
-          <div id="sessionize-speakers" class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Placeholder speaker cards -->
-            <div class="card">
-              <div class="w-24 h-24 bg-gray-300 dark:bg-gray-700 rounded-full mx-auto mb-4"></div>
-              <h3 class="font-bold text-lg">Speaker Name</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Topic Area</p>
-            </div>
-            <div class="card">
-              <div class="w-24 h-24 bg-gray-300 dark:bg-gray-700 rounded-full mx-auto mb-4"></div>
-              <h3 class="font-bold text-lg">Speaker Name</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Topic Area</p>
-            </div>
-            <div class="card">
-              <div class="w-24 h-24 bg-gray-300 dark:bg-gray-700 rounded-full mx-auto mb-4"></div>
-              <h3 class="font-bold text-lg">Speaker Name</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Topic Area</p>
-            </div>
-          </div>
-        </div>
+      <div class="max-w-6xl mx-auto">
+        <!-- Sessionize Speakers Embed -->
+        <div id="sessionize-speakers" class="sessionize-embed"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Speaker Wall Section -->
+  <section id="wall" class="bg-white dark:bg-gray-900">
+    <div class="section-container">
+      <h2 class="section-title">Speaker Wall</h2>
+      <div class="max-w-6xl mx-auto">
+        <!-- Sessionize Speaker Wall Embed -->
+        <div id="sessionize-speaker-wall" class="sessionize-embed"></div>
       </div>
     </div>
   </section>
@@ -149,31 +138,59 @@ app.innerHTML = `
   <section id="partners" class="bg-white dark:bg-gray-900">
     <div class="section-container">
       <h2 class="section-title">Partners</h2>
-      <div class="max-w-4xl mx-auto">
+      <div class="max-w-5xl mx-auto">
         <p class="text-center text-lg mb-12">
           Thank you to our amazing partners who make DevFest Armenia possible!
         </p>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <!-- Partner placeholders -->
-          <div class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
-            <div class="w-full h-20 bg-gray-300 dark:bg-gray-700 rounded flex items-center justify-center">
-              <span class="text-gray-600 dark:text-gray-400">Partner Logo</span>
-            </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          <!-- Partner logo placeholders -->
+          <div class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
+            <svg class="w-full h-20" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="80" fill="#f3f4f6" class="dark:fill-gray-700"/>
+              <text x="100" y="40" text-anchor="middle" dominant-baseline="middle" class="fill-gray-500 text-sm font-medium">Partner Logo</text>
+            </svg>
           </div>
-          <div class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
-            <div class="w-full h-20 bg-gray-300 dark:bg-gray-700 rounded flex items-center justify-center">
-              <span class="text-gray-600 dark:text-gray-400">Partner Logo</span>
-            </div>
+          <div class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
+            <svg class="w-full h-20" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="80" fill="#f3f4f6" class="dark:fill-gray-700"/>
+              <text x="100" y="40" text-anchor="middle" dominant-baseline="middle" class="fill-gray-500 text-sm font-medium">Partner Logo</text>
+            </svg>
           </div>
-          <div class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
-            <div class="w-full h-20 bg-gray-300 dark:bg-gray-700 rounded flex items-center justify-center">
-              <span class="text-gray-600 dark:text-gray-400">Partner Logo</span>
-            </div>
+          <div class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
+            <svg class="w-full h-20" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="80" fill="#f3f4f6" class="dark:fill-gray-700"/>
+              <text x="100" y="40" text-anchor="middle" dominant-baseline="middle" class="fill-gray-500 text-sm font-medium">Partner Logo</text>
+            </svg>
           </div>
-          <div class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
-            <div class="w-full h-20 bg-gray-300 dark:bg-gray-700 rounded flex items-center justify-center">
-              <span class="text-gray-600 dark:text-gray-400">Partner Logo</span>
-            </div>
+          <div class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
+            <svg class="w-full h-20" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="80" fill="#f3f4f6" class="dark:fill-gray-700"/>
+              <text x="100" y="40" text-anchor="middle" dominant-baseline="middle" class="fill-gray-500 text-sm font-medium">Partner Logo</text>
+            </svg>
+          </div>
+          <div class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
+            <svg class="w-full h-20" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="80" fill="#f3f4f6" class="dark:fill-gray-700"/>
+              <text x="100" y="40" text-anchor="middle" dominant-baseline="middle" class="fill-gray-500 text-sm font-medium">Partner Logo</text>
+            </svg>
+          </div>
+          <div class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
+            <svg class="w-full h-20" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="80" fill="#f3f4f6" class="dark:fill-gray-700"/>
+              <text x="100" y="40" text-anchor="middle" dominant-baseline="middle" class="fill-gray-500 text-sm font-medium">Partner Logo</text>
+            </svg>
+          </div>
+          <div class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
+            <svg class="w-full h-20" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="80" fill="#f3f4f6" class="dark:fill-gray-700"/>
+              <text x="100" y="40" text-anchor="middle" dominant-baseline="middle" class="fill-gray-500 text-sm font-medium">Partner Logo</text>
+            </svg>
+          </div>
+          <div class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
+            <svg class="w-full h-20" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+              <rect width="200" height="80" fill="#f3f4f6" class="dark:fill-gray-700"/>
+              <text x="100" y="40" text-anchor="middle" dominant-baseline="middle" class="fill-gray-500 text-sm font-medium">Partner Logo</text>
+            </svg>
           </div>
         </div>
       </div>
@@ -184,31 +201,96 @@ app.innerHTML = `
   <section id="organizers" class="bg-gray-50 dark:bg-gray-800">
     <div class="section-container">
       <h2 class="section-title">Organizers</h2>
-      <div class="max-w-4xl mx-auto">
-        <p class="text-center text-lg mb-12">
-          Meet the team behind DevFest Armenia 2025
-        </p>
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <div class="inline-flex items-center justify-center p-6 bg-white dark:bg-gray-900 rounded-lg shadow-lg mb-6">
+            <svg class="w-32 h-32" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="95" fill="#4285F4"/>
+              <text x="100" y="110" text-anchor="middle" dominant-baseline="middle" class="fill-white font-bold text-4xl">GDG</text>
+              <text x="100" y="145" text-anchor="middle" dominant-baseline="middle" class="fill-white text-sm">Yerevan</text>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">GDG Yerevan</h3>
+          <p class="text-lg max-w-2xl mx-auto text-gray-600 dark:text-gray-400">
+            Google Developer Group Yerevan is a community of developers interested in Google technologies and open-source development. 
+            We organize events, workshops, and meetups to share knowledge and connect developers in Armenia.
+          </p>
+        </div>
+        
+        <h3 class="text-xl font-bold text-center mb-8">Core Team</h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           <!-- Organizer placeholders -->
           <div class="card text-center">
-            <div class="w-24 h-24 bg-gray-300 dark:bg-gray-700 rounded-full mx-auto mb-4"></div>
+            <div class="w-24 h-24 bg-gradient-to-br from-google-blue to-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
             <h3 class="font-bold">Organizer Name</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Role</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Lead Organizer</p>
           </div>
           <div class="card text-center">
-            <div class="w-24 h-24 bg-gray-300 dark:bg-gray-700 rounded-full mx-auto mb-4"></div>
+            <div class="w-24 h-24 bg-gradient-to-br from-google-red to-red-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
             <h3 class="font-bold">Organizer Name</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Role</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Tech Lead</p>
           </div>
           <div class="card text-center">
-            <div class="w-24 h-24 bg-gray-300 dark:bg-gray-700 rounded-full mx-auto mb-4"></div>
+            <div class="w-24 h-24 bg-gradient-to-br from-google-yellow to-yellow-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
             <h3 class="font-bold">Organizer Name</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Role</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Community Manager</p>
           </div>
           <div class="card text-center">
-            <div class="w-24 h-24 bg-gray-300 dark:bg-gray-700 rounded-full mx-auto mb-4"></div>
+            <div class="w-24 h-24 bg-gradient-to-br from-google-green to-green-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
             <h3 class="font-bold">Organizer Name</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Role</p>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Logistics</p>
+          </div>
+          <div class="card text-center">
+            <div class="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold">Organizer Name</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Marketing</p>
+          </div>
+          <div class="card text-center">
+            <div class="w-24 h-24 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold">Organizer Name</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Content</p>
+          </div>
+          <div class="card text-center">
+            <div class="w-24 h-24 bg-gradient-to-br from-green-500 to-teal-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold">Organizer Name</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Volunteer</p>
+          </div>
+          <div class="card text-center">
+            <div class="w-24 h-24 bg-gradient-to-br from-orange-500 to-red-600 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <h3 class="font-bold">Organizer Name</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Volunteer</p>
           </div>
         </div>
       </div>
