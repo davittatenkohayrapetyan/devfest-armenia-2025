@@ -6,6 +6,55 @@ registerSW()
 
 const app = document.querySelector<HTMLDivElement>('#app')!
 
+// Dialog/Modal functionality
+function createDialog(title: string, content: string): void {
+  // Remove existing dialog if any
+  const existingDialog = document.getElementById('modal-dialog')
+  if (existingDialog) {
+    existingDialog.remove()
+  }
+
+  // Create dialog element
+  const dialog = document.createElement('div')
+  dialog.id = 'modal-dialog'
+  dialog.className = 'fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-50 p-4'
+  dialog.innerHTML = `
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+      <div class="sticky top-0 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-6 py-4 flex justify-between items-center">
+        <h2 class="text-2xl font-bold text-google-blue">${title}</h2>
+        <button id="close-dialog" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 text-3xl leading-none">&times;</button>
+      </div>
+      <div class="px-6 py-6">
+        ${content}
+      </div>
+    </div>
+  `
+
+  document.body.appendChild(dialog)
+
+  // Close dialog on background click
+  dialog.addEventListener('click', (e) => {
+    if (e.target === dialog) {
+      dialog.remove()
+    }
+  })
+
+  // Close dialog on close button click
+  const closeBtn = dialog.querySelector('#close-dialog')
+  closeBtn?.addEventListener('click', () => {
+    dialog.remove()
+  })
+
+  // Close dialog on escape key
+  const escapeHandler = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      dialog.remove()
+      document.removeEventListener('keydown', escapeHandler)
+    }
+  }
+  document.addEventListener('keydown', escapeHandler)
+}
+
 app.innerHTML = `
   <!-- Navigation -->
   <nav class="fixed top-0 w-full bg-white dark:bg-gray-900 shadow-md z-50">
@@ -133,7 +182,7 @@ app.innerHTML = `
       <div class="max-w-6xl mx-auto">
         <div class="grid gap-8">
           <!-- Session: Ordering Coffee with Firebase AI -->
-          <div class="card">
+          <div class="card cursor-pointer" data-session="firebase-ai">
             <div class="flex flex-col md:flex-row gap-6">
               <div class="flex-shrink-0">
                 <img src="https://sessionize.com/image/2b33-400o400o1-NAvjTdoBPX4kkGbQGnntqb.jpg" alt="Max Kachinkin" class="w-32 h-32 rounded-full object-cover">
@@ -141,28 +190,9 @@ app.innerHTML = `
               <div class="flex-1">
                 <h3 class="text-2xl font-bold mb-2 text-google-blue">Ordering Coffee with Firebase AI</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  <span class="font-semibold">Speaker:</span> Max Kachinkin - Android Tech Lead, Dodo Brands
+                  <span class="font-semibold">Speaker:</span> Max Kachinkin
                 </p>
-                <div class="prose dark:prose-invert max-w-none">
-                  <p class="mb-4">
-                    Check out my video submission: <a href="https://youtu.be/aW17mTF45yc" target="_blank" rel="noopener noreferrer" class="text-google-blue hover:underline">https://youtu.be/aW17mTF45yc</a>
-                  </p>
-                  <p class="mb-4">
-                    The presentation is not THE final yet, but it shows all the core idea, structure, and mood.
-                    <a href="https://docs.google.com/presentation/d/1WRWVDhyplhf2odAEqYfv6whKdNIRipwwK-gf3Hn4sOo/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-google-blue hover:underline">View Presentation</a>
-                  </p>
-                  <p class="mb-4">
-                    I'm an Android Tech Lead at Dodo Brands, the fastest-growing QSR franchise company, operating internationally with Dodo Pizza and Drinkit coffee shops, including in the UAE.
-                  </p>
-                  <p class="mb-4">
-                    My talk is called "Ordering Coffee with Firebase AI", and it's about a real case of bootstrapping AI assistants with Firebase AI Logic.
-                    I'm working on a coffee shop chain app called Drinkit. Our menu is huge: you can customize drinks with or without milk, change ice, add syrups, literally millions of combinations. Too big for a static UI. So we thought: why not let AI guide the user? What if you could just say: "It's hot today, give me something refreshing". And boom, the app recommends the perfect drink for you. That's exactly what we're building in Drinkit.
-                  </p>
-                  <p>
-                    I believe this talk will be useful because it's a real production case of applying Firebase AI, not just sandbox examples. Attendees will see how we combined speech-to-text, Firebase AI models, and function calls to handle a huge menu (2M+ token context!) and deliver an interactive, personalized ordering experience. Developers will walk away with inspiration, code examples, and practical lessons on how to quickly bootstrap AI features in their own apps.
-                  </p>
-                </div>
-                <div class="mt-4 flex flex-wrap gap-2">
+                <div class="flex flex-wrap gap-2">
                   <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm font-medium">Accepted</span>
                   <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">Android</span>
                   <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm font-medium">Firebase AI</span>
@@ -183,25 +213,11 @@ app.innerHTML = `
       <div class="max-w-6xl mx-auto">
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <!-- Speaker: Max Kachinkin -->
-          <div class="card">
+          <div class="card cursor-pointer" data-speaker="max-kachinkin">
             <div class="flex flex-col items-center text-center">
               <img src="https://sessionize.com/image/2b33-400o400o1-NAvjTdoBPX4kkGbQGnntqb.jpg" alt="Max Kachinkin" class="w-48 h-48 rounded-full object-cover mb-4">
               <h3 class="text-xl font-bold mb-1">Max Kachinkin</h3>
               <p class="text-google-blue font-medium mb-3">Android Tech Lead, Dodo Brands</p>
-              <div class="text-left text-sm text-gray-600 dark:text-gray-400 space-y-2">
-                <p>
-                  Android Tech Lead at Dodo Brands with over 10 years of experience in Android development. I led the development of Dodo Pizza (with 9 million MAU across 20 countries) and am now working on another project, Drinkit, a new digital coffee shop network by Dodo Brands.
-                </p>
-                <ul class="list-disc list-inside space-y-1 mt-3">
-                  <li>Runs Telegram channel "Mobile Fiction"</li>
-                  <li>Speaker at Mobius and Codefest conferences</li>
-                  <li>Writer on Habr, Medium, HackerNoon</li>
-                  <li>Teaches Android at OTUS</li>
-                  <li>Created Android Architecture course for GeekBrains</li>
-                  <li>Program committee member for Android Podlodka Crew</li>
-                  <li>DevZen podcast participant</li>
-                </ul>
-              </div>
             </div>
           </div>
         </div>
@@ -334,3 +350,103 @@ app.innerHTML = `
     </div>
   </footer>
 `
+
+// Session data
+const sessionData: Record<string, { title: string; speaker: string; photo: string; content: string }> = {
+  'firebase-ai': {
+    title: 'Ordering Coffee with Firebase AI',
+    speaker: 'Max Kachinkin - Android Tech Lead, Dodo Brands',
+    photo: 'https://sessionize.com/image/2b33-400o400o1-NAvjTdoBPX4kkGbQGnntqb.jpg',
+    content: `
+      <div class="flex flex-col md:flex-row gap-6 mb-6">
+        <div class="flex-shrink-0">
+          <img src="https://sessionize.com/image/2b33-400o400o1-NAvjTdoBPX4kkGbQGnntqb.jpg" alt="Max Kachinkin" class="w-32 h-32 rounded-full object-cover">
+        </div>
+        <div>
+          <p class="text-lg font-semibold mb-2">Speaker: Max Kachinkin - Android Tech Lead, Dodo Brands</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm font-medium">Accepted</span>
+            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">Android</span>
+            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm font-medium">Firebase AI</span>
+            <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-sm font-medium">Production Case</span>
+          </div>
+        </div>
+      </div>
+      <div class="prose dark:prose-invert max-w-none">
+        <p class="mb-4">
+          Check out my video submission: <a href="https://youtu.be/aW17mTF45yc" target="_blank" rel="noopener noreferrer" class="text-google-blue hover:underline">https://youtu.be/aW17mTF45yc</a>
+        </p>
+        <p class="mb-4">
+          The presentation is not THE final yet, but it shows all the core idea, structure, and mood.
+          <a href="https://docs.google.com/presentation/d/1WRWVDhyplhf2odAEqYfv6whKdNIRipwwK-gf3Hn4sOo/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-google-blue hover:underline">View Presentation</a>
+        </p>
+        <p class="mb-4">
+          I'm an Android Tech Lead at Dodo Brands, the fastest-growing QSR franchise company, operating internationally with Dodo Pizza and Drinkit coffee shops, including in the UAE.
+        </p>
+        <p class="mb-4">
+          My talk is called "Ordering Coffee with Firebase AI", and it's about a real case of bootstrapping AI assistants with Firebase AI Logic.
+          I'm working on a coffee shop chain app called Drinkit. Our menu is huge: you can customize drinks with or without milk, change ice, add syrups, literally millions of combinations. Too big for a static UI. So we thought: why not let AI guide the user? What if you could just say: "It's hot today, give me something refreshing". And boom, the app recommends the perfect drink for you. That's exactly what we're building in Drinkit.
+        </p>
+        <p>
+          I believe this talk will be useful because it's a real production case of applying Firebase AI, not just sandbox examples. Attendees will see how we combined speech-to-text, Firebase AI models, and function calls to handle a huge menu (2M+ token context!) and deliver an interactive, personalized ordering experience. Developers will walk away with inspiration, code examples, and practical lessons on how to quickly bootstrap AI features in their own apps.
+        </p>
+      </div>
+    `
+  }
+}
+
+// Speaker data
+const speakerData: Record<string, { name: string; position: string; photo: string; content: string }> = {
+  'max-kachinkin': {
+    name: 'Max Kachinkin',
+    position: 'Android Tech Lead, Dodo Brands',
+    photo: 'https://sessionize.com/image/2b33-400o400o1-NAvjTdoBPX4kkGbQGnntqb.jpg',
+    content: `
+      <div class="flex flex-col md:flex-row gap-6 mb-6">
+        <div class="flex-shrink-0">
+          <img src="https://sessionize.com/image/2b33-400o400o1-NAvjTdoBPX4kkGbQGnntqb.jpg" alt="Max Kachinkin" class="w-48 h-48 rounded-full object-cover">
+        </div>
+        <div>
+          <h3 class="text-2xl font-bold mb-2">Max Kachinkin</h3>
+          <p class="text-google-blue font-semibold text-lg mb-4">Android Tech Lead, Dodo Brands</p>
+        </div>
+      </div>
+      <div class="text-gray-600 dark:text-gray-400 space-y-3">
+        <p>
+          Android Tech Lead at Dodo Brands with over 10 years of experience in Android development. I led the development of Dodo Pizza (with 9 million MAU across 20 countries) and am now working on another project, Drinkit, a new digital coffee shop network by Dodo Brands.
+        </p>
+        <ul class="list-disc list-inside space-y-2 mt-4">
+          <li>Runs Telegram channel "Mobile Fiction"</li>
+          <li>Speaker at Mobius and Codefest conferences</li>
+          <li>Writer on Habr, Medium, HackerNoon</li>
+          <li>Teaches Android at OTUS</li>
+          <li>Created Android Architecture course for GeekBrains</li>
+          <li>Program committee member for Android Podlodka Crew</li>
+          <li>DevZen podcast participant</li>
+        </ul>
+      </div>
+    `
+  }
+}
+
+// Add event listeners for sessions
+document.querySelectorAll('[data-session]').forEach(sessionCard => {
+  sessionCard.addEventListener('click', () => {
+    const sessionId = sessionCard.getAttribute('data-session')
+    if (sessionId && sessionData[sessionId]) {
+      const session = sessionData[sessionId]
+      createDialog(session.title, session.content)
+    }
+  })
+})
+
+// Add event listeners for speakers
+document.querySelectorAll('[data-speaker]').forEach(speakerCard => {
+  speakerCard.addEventListener('click', () => {
+    const speakerId = speakerCard.getAttribute('data-speaker')
+    if (speakerId && speakerData[speakerId]) {
+      const speaker = speakerData[speakerId]
+      createDialog(speaker.name, speaker.content)
+    }
+  })
+})
