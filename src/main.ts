@@ -230,55 +230,12 @@ app.innerHTML = `
           Thank you to our amazing partners who make DevFest Armenia possible!
         </p>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          <!-- Partner logo placeholders -->
-          <div class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
-            <svg class="w-full h-20" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
-              <rect width="200" height="80" fill="#f3f4f6" class="dark:fill-gray-700"/>
-              <text x="100" y="40" text-anchor="middle" dominant-baseline="middle" class="fill-gray-500 text-sm font-medium">Partner Logo</text>
-            </svg>
-          </div>
-          <div class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
-            <svg class="w-full h-20" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
-              <rect width="200" height="80" fill="#f3f4f6" class="dark:fill-gray-700"/>
-              <text x="100" y="40" text-anchor="middle" dominant-baseline="middle" class="fill-gray-500 text-sm font-medium">Partner Logo</text>
-            </svg>
-          </div>
-          <div class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
-            <svg class="w-full h-20" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
-              <rect width="200" height="80" fill="#f3f4f6" class="dark:fill-gray-700"/>
-              <text x="100" y="40" text-anchor="middle" dominant-baseline="middle" class="fill-gray-500 text-sm font-medium">Partner Logo</text>
-            </svg>
-          </div>
-          <div class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
-            <svg class="w-full h-20" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
-              <rect width="200" height="80" fill="#f3f4f6" class="dark:fill-gray-700"/>
-              <text x="100" y="40" text-anchor="middle" dominant-baseline="middle" class="fill-gray-500 text-sm font-medium">Partner Logo</text>
-            </svg>
-          </div>
-          <div class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
-            <svg class="w-full h-20" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
-              <rect width="200" height="80" fill="#f3f4f6" class="dark:fill-gray-700"/>
-              <text x="100" y="40" text-anchor="middle" dominant-baseline="middle" class="fill-gray-500 text-sm font-medium">Partner Logo</text>
-            </svg>
-          </div>
-          <div class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
-            <svg class="w-full h-20" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
-              <rect width="200" height="80" fill="#f3f4f6" class="dark:fill-gray-700"/>
-              <text x="100" y="40" text-anchor="middle" dominant-baseline="middle" class="fill-gray-500 text-sm font-medium">Partner Logo</text>
-            </svg>
-          </div>
-          <div class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
-            <svg class="w-full h-20" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
-              <rect width="200" height="80" fill="#f3f4f6" class="dark:fill-gray-700"/>
-              <text x="100" y="40" text-anchor="middle" dominant-baseline="middle" class="fill-gray-500 text-sm font-medium">Partner Logo</text>
-            </svg>
-          </div>
-          <div class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
-            <svg class="w-full h-20" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
-              <rect width="200" height="80" fill="#f3f4f6" class="dark:fill-gray-700"/>
-              <text x="100" y="40" text-anchor="middle" dominant-baseline="middle" class="fill-gray-500 text-sm font-medium">Partner Logo</text>
-            </svg>
-          </div>
+          <a href="https://woodscenter.am/en" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
+            <img src="partners/woods.svg" alt="Woods Center" class="h-12 md:h-16 w-auto object-contain" loading="lazy"/>
+          </a>
+          <a href="https://ardy.am/en" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
+            <img src="partners/ardy.svg" alt="Ardy" class="h-12 md:h-16 w-auto object-contain" loading="lazy"/>
+          </a>
         </div>
       </div>
     </div>
@@ -291,11 +248,7 @@ app.innerHTML = `
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-12">
           <div class="inline-flex items-center justify-center p-6 bg-white dark:bg-gray-900 rounded-lg shadow-lg mb-6">
-            <svg class="w-32 h-32" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="100" cy="100" r="95" fill="#4285F4"/>
-              <text x="100" y="110" text-anchor="middle" dominant-baseline="middle" class="fill-white font-bold text-4xl">GDG</text>
-              <text x="100" y="145" text-anchor="middle" dominant-baseline="middle" class="fill-white text-sm">Yerevan</text>
-            </svg>
+            <img src="gdg-yerevan.avif" alt="GDG Yerevan logo" class="h-32 w-auto object-contain" loading="lazy"/>
           </div>
           <h3 class="text-2xl font-bold mb-4">GDG Yerevan</h3>
           <p class="text-lg max-w-2xl mx-auto text-gray-600 dark:text-gray-400">
@@ -305,80 +258,45 @@ app.innerHTML = `
         </div>
         
         <h3 class="text-xl font-bold text-center mb-8">Core Team</h3>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          <!-- Organizer placeholders -->
-          <div class="card text-center">
-            <div class="w-24 h-24 bg-gradient-to-br from-google-blue to-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <!-- Davit Hayrapetyan -->
+          <a href="https://www.linkedin.com/in/davit-hayrapetyan-04377561/" target="_blank" rel="noopener noreferrer" class="card text-center hover:shadow-xl transition-shadow">
+            <img src="organizers/Davit.jpeg" alt="Portrait of Davit Hayrapetyan" loading="lazy" width="128" height="128" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 shadow-md ring-4 ring-white dark:ring-gray-900" />
+            <h3 class="font-bold text-lg">Davit Hayrapetyan</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Organizer</p>
+            <div class="flex items-center justify-center text-google-blue">
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
               </svg>
+              <span class="text-sm">LinkedIn Profile</span>
             </div>
-            <h3 class="font-bold">Organizer Name</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Lead Organizer</p>
-          </div>
-          <div class="card text-center">
-            <div class="w-24 h-24 bg-gradient-to-br from-google-red to-red-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </a>
+          
+          <!-- Vardan Papikyan -->
+          <a href="https://www.linkedin.com/in/vardanpapikyan/" target="_blank" rel="noopener noreferrer" class="card text-center hover:shadow-xl transition-shadow">
+            <img src="organizers/Vardan.jpeg" alt="Portrait of Vardan Papikyan" loading="lazy" width="128" height="128" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 shadow-md ring-4 ring-white dark:ring-gray-900" />
+            <h3 class="font-bold text-lg">Vardan Papikyan</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Founder</p>
+            <div class="flex items-center justify-center text-google-blue">
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
               </svg>
+              <span class="text-sm">LinkedIn Profile</span>
             </div>
-            <h3 class="font-bold">Organizer Name</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Tech Lead</p>
-          </div>
-          <div class="card text-center">
-            <div class="w-24 h-24 bg-gradient-to-br from-google-yellow to-yellow-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </a>
+          
+          <!-- Roland Egiazaryan -->
+          <a href="https://www.linkedin.com/in/roland-egiazaryan/" target="_blank" rel="noopener noreferrer" class="card text-center hover:shadow-xl transition-shadow">
+            <img src="organizers/Roland.jpeg" alt="Portrait of Roland Egiazaryan" loading="lazy" width="128" height="128" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 shadow-md ring-4 ring-white dark:ring-gray-900" />
+            <h3 class="font-bold text-lg">Roland Egiazaryan</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Co-Organizer</p>
+            <div class="flex items-center justify-center text-google-blue">
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
               </svg>
+              <span class="text-sm">LinkedIn Profile</span>
             </div>
-            <h3 class="font-bold">Organizer Name</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Community Manager</p>
-          </div>
-          <div class="card text-center">
-            <div class="w-24 h-24 bg-gradient-to-br from-google-green to-green-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-              </svg>
-            </div>
-            <h3 class="font-bold">Organizer Name</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Logistics</p>
-          </div>
-          <div class="card text-center">
-            <div class="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-              </svg>
-            </div>
-            <h3 class="font-bold">Organizer Name</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Marketing</p>
-          </div>
-          <div class="card text-center">
-            <div class="w-24 h-24 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-              </svg>
-            </div>
-            <h3 class="font-bold">Organizer Name</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Content</p>
-          </div>
-          <div class="card text-center">
-            <div class="w-24 h-24 bg-gradient-to-br from-green-500 to-teal-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-              </svg>
-            </div>
-            <h3 class="font-bold">Organizer Name</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Volunteer</p>
-          </div>
-          <div class="card text-center">
-            <div class="w-24 h-24 bg-gradient-to-br from-orange-500 to-red-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-              <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-              </svg>
-            </div>
-            <h3 class="font-bold">Organizer Name</h3>
-            <p class="text-sm text-gray-600 dark:text-gray-400">Volunteer</p>
-          </div>
+          </a>
         </div>
       </div>
     </div>
