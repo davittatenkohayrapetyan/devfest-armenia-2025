@@ -2,17 +2,17 @@
 
 ## WordPress Deployment
 
-This guide explains how to deploy the DevFest Armenia 2025 site to a WordPress installation.
+This guide explains how to deploy the DevFest Armenia 2025 site to a WordPress installation using the file manager plugin.
 
 ### Building for Production
 
-The project is pre-configured to build for the `/devfest2025/` subfolder deployment:
+The project is pre-configured to build with relative paths (`./`) which works for any deployment location:
 
 ```bash
 npm run build
 ```
 
-All files will be generated in the `/dist` directory.
+All files will be generated in the `/dist` directory with relative URLs.
 
 ### Deployment Steps
 
@@ -22,26 +22,26 @@ All files will be generated in the `/dist` directory.
    ```
 
 2. **Upload to WordPress:**
-   Upload all files from the `/dist` directory to your WordPress installation. The recommended location is:
+   Upload all files from the `/dist` directory to your WordPress installation using the WordPress file manager plugin. You can deploy to any location, for example:
    ```
+   /2025/                    (recommended for devfest.am/2025/)
+   /wp-content/uploads/2025/
    /wp-content/devfest2025/
    ```
    
-   Or any other location under your WordPress installation, such as:
-   ```
-   /wp-content/uploads/devfest2025/
-   /wp-content/themes/your-theme/devfest2025/
-   ```
+   Simply replace `index.php` with `index.html` and place all resources nearby in the folders.
 
 3. **Access the site:**
-   The site will be accessible at:
+   The site will be accessible at the URL where you uploaded it, for example:
    ```
-   https://yourdomain.com/devfest2025/
+   https://devfest.am/2025/
    ```
+   
+   Since all paths are relative, the site will work from any folder location.
 
 ### Custom Base Path
 
-If you need to deploy to a different subfolder, update the base path before building:
+If you need absolute paths for a specific deployment, you can override the base path before building:
 
 **Option 1: Environment variable**
 ```bash
@@ -60,7 +60,7 @@ const basePath = process.env.VITE_BASE_PATH || '/your-path/'
 
 ### Root Deployment
 
-To deploy at the root of your domain:
+To deploy at the root of your domain with absolute paths:
 
 ```bash
 VITE_BASE_PATH=/ npm run build
@@ -71,10 +71,10 @@ VITE_BASE_PATH=/ npm run build
 After deployment, verify:
 
 1. ✅ The site loads correctly at the configured URL
-2. ✅ All navigation links work
-3. ✅ Sessionize embeds load (check Agenda, Sessions, Speakers, Wall sections)
+2. ✅ All navigation links work (they use hash navigation, so they're relative)
+3. ✅ All images and assets load correctly
 4. ✅ Partner logos display correctly
-5. ✅ Organizers section shows GDG Yerevan information
+5. ✅ Organizers section shows GDG Yerevan information with photos
 6. ✅ PWA manifest is accessible (check browser DevTools)
 7. ✅ Service worker registers successfully (check Console)
 
@@ -99,19 +99,18 @@ To change the event ID, update the script URLs in `index.html` before building:
 ### Troubleshooting
 
 **Issue: Assets not loading (404 errors)**
-- Verify the base path matches the actual deployment location
-- Check that all files from `/dist` were uploaded correctly
-- Ensure the web server can serve static files from the upload location
+- Verify that all files from `/dist` were uploaded correctly, maintaining the folder structure
+- Check that the web server can serve static files from the upload location
+- Ensure folder permissions allow reading files (typically 755 for folders, 644 for files)
 
 **Issue: PWA not working**
 - Verify the manifest.webmanifest file is accessible
 - Check that the service worker (sw.js) is accessible
-- Ensure the base path is correctly configured in manifest and service worker
+- Relative paths ensure PWA works from any location
 
-**Issue: Sessionize embeds not showing**
-- Verify the Sessionize event ID is correct
-- Check browser console for any errors
-- Ensure Sessionize scripts are not blocked by ad blockers or privacy extensions
+**Issue: Images not showing**
+- Ensure the `partners/` and `organizers/` folders were uploaded with all contents
+- Check that image files have correct permissions (typically 644)
 
 ### File Structure
 
@@ -133,7 +132,14 @@ dist/
 - All assets are optimized and minified
 - Service worker provides offline support
 - Fonts and external resources are cached
-- Sessionize content is cached for 24 hours
+- All paths are relative, making deployment flexible and portable
+
+### Important Notes
+
+- The default build uses **relative paths** (`./`), which means the site will work from any folder location
+- You can upload the contents of `/dist` to any directory in your WordPress installation
+- The site works as static HTML/CSS/JS with no server-side dependencies
+- All navigation uses hash-based routing (`#about`, `#agenda`, etc.)
 
 ### Support
 

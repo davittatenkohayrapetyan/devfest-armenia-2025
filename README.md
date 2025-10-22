@@ -56,13 +56,9 @@ Static files will be exported to the `/dist` directory.
 
 ### Build with Custom Base Path
 
-For WordPress subfolder deployment (default is `/devfest2025/`):
+By default, the project uses relative paths (`./`) which works for any deployment location including WordPress subfolder deployment at `devfest.am/2025/`.
 
-```bash
-npm run build
-```
-
-The default base path is set to `/devfest2025/` in `vite.config.ts`. To change it, either:
+To change the base path:
 
 1. Set the environment variable:
 ```bash
@@ -81,12 +77,13 @@ VITE_BASE_PATH=/ npm run build
 
 ### WordPress Deployment
 
-The built files in `/dist` directory are ready for WordPress subfolder deployment:
+The built files in `/dist` directory are ready for WordPress deployment using the file manager plugin:
 
-1. Upload all files from `/dist` to your WordPress installation at `/wp-content/your-path/`
-2. The app is configured to work at `/devfest2025/` by default
-3. All asset paths, manifest, and service worker are correctly configured with the base path
-4. Sessionize embeds will load automatically when the page is accessed
+1. Build the project: `npm run build`
+2. Upload all files from `/dist` to your WordPress installation at any location (e.g., `/wp-content/uploads/2025/`)
+3. Access the site via the URL where you uploaded the files (e.g., `devfest.am/2025/`)
+4. All asset paths use relative URLs, so the site will work from any folder location
+5. Sessionize embeds will load automatically when the page is accessed
 
 ## Docker Deployment
 
