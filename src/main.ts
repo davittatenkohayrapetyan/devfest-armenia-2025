@@ -359,7 +359,7 @@ let speakerData: Record<string, SpeakerData> = {}
 // Initialize data and event listeners
 async function initializeData() {
   try {
-    const data = await parseExcelData('devfest-armenia-2025-flattened-sessions.xlsx')
+    const data = await parseExcelData('data.json')
     sessionData = data.sessions
     speakerData = data.speakers
     
