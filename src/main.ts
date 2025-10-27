@@ -56,6 +56,105 @@ function createDialog(title: string, content: string): void {
   document.addEventListener('keydown', escapeHandler)
 }
 
+// Helper: extract speaker name from a combined "Name - Position" string
+function extractSpeakerName(s: string): string {
+  if (!s) return ''
+  const [name] = s.split(' - ')
+  return name || s
+}
+
+// Helper: map status to chip styles
+function statusChip(status?: string): string {
+  if (!status) return ''
+  const normalized = status.toLowerCase()
+  let cls = 'bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200'
+  if (normalized.includes('accept')) cls = 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200'
+  else if (normalized.includes('reject') || normalized.includes('declin')) cls = 'bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200'
+  else if (normalized.includes('wait')) cls = 'bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200'
+  return `<span class="px-3 py-1 ${cls} rounded-full text-sm font-medium">${status}</span>`
+}
+
+// Render Sessions from data.json into #sessions-container
+function renderSessions(sessions: Record<string, SessionData>): void {
+  const container = document.getElementById('sessions-container')
+  if (!container) return
+
+  const list = Object.values(sessions)
+  if (list.length === 0) {
+    container.innerHTML = `
+      <div class="text-center p-12 bg-gray-50 dark:bg-gray-800 rounded-lg">
+        <p class="text-2xl font-semibold text-gray-600 dark:text-gray-400">TBA</p>
+        <p class="text-lg text-gray-500 dark:text-gray-500 mt-4">The sessions will be announced soon. Stay tuned!</p>
+      </div>
+    `
+    return
+  }
+
+  container.innerHTML = list
+    .map((s) => {
+      const cats = (s.categories || []).filter(Boolean)
+      const catsHtml = cats
+        .map(
+          (c) =>
+            `<span class="px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">${c}</span>`
+        )
+        .join('')
+      const statusHtml = statusChip((s as any).status)
+      const speakerName = extractSpeakerName(s.speaker)
+      const photo = s.photo || ''
+      const alt = speakerName ? `${speakerName}` : `${s.title} speaker`
+      return `
+        <div class="card cursor-pointer" data-session="${s.sessionId}">
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="flex-shrink-0">
+              <img src="${photo}" alt="${alt}" class="w-32 h-32 rounded-full object-cover" loading="lazy">
+            </div>
+            <div class="flex-1">
+              <h3 class="text-2xl font-bold mb-2 text-google-blue">${s.title}</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                <span class="font-semibold">Speaker:</span> ${speakerName}
+              </p>
+              <div class="flex flex-wrap gap-2">${statusHtml}${catsHtml}</div>
+            </div>
+          </div>
+        </div>
+      `
+    })
+    .join('')
+}
+
+// Render Speakers from data.json into #speakers-grid
+function renderSpeakers(speakers: Record<string, SpeakerData>): void {
+  const grid = document.getElementById('speakers-grid')
+  if (!grid) return
+
+  const list = Object.values(speakers)
+  if (list.length === 0) {
+    grid.innerHTML = `
+      <div class="text-center p-12 bg-gray-50 dark:bg-gray-800 rounded-lg col-span-full">
+        <p class="text-lg text-gray-600 dark:text-gray-400">Speakers will be announced soon.</p>
+      </div>
+    `
+    return
+  }
+
+  grid.innerHTML = list
+    .map((sp) => {
+      const alt = sp.name || 'Speaker photo'
+      const photo = sp.photo || ''
+      return `
+        <div class="card cursor-pointer" data-speaker="${sp.speakerId}">
+          <div class="flex flex-col items-center text-center">
+            <img src="${photo}" alt="${alt}" class="w-48 h-48 rounded-full object-cover mb-4" loading="lazy">
+            <h3 class="text-xl font-bold mb-1">${sp.name}</h3>
+            <p class="text-google-blue font-medium mb-3">${sp.position}</p>
+          </div>
+        </div>
+      `
+    })
+    .join('')
+}
+
 app.innerHTML = `
   <!-- Navigation -->
   <nav class="fixed top-0 w-full bg-white dark:bg-gray-900 shadow-md z-50">
@@ -181,28 +280,7 @@ app.innerHTML = `
     <div class="section-container">
       <h2 class="section-title">Sessions</h2>
       <div class="max-w-6xl mx-auto">
-        <div class="grid gap-8">
-          <!-- Session: Ordering Coffee with Firebase AI -->
-          <div class="card cursor-pointer" data-session="ordering-coffee-with-firebase-ai">
-            <div class="flex flex-col md:flex-row gap-6">
-              <div class="flex-shrink-0">
-                <img src="https://sessionize.com/image/2b33-400o400o1-NAvjTdoBPX4kkGbQGnntqb.jpg" alt="Max Kachinkin" class="w-32 h-32 rounded-full object-cover">
-              </div>
-              <div class="flex-1">
-                <h3 class="text-2xl font-bold mb-2 text-google-blue">Ordering Coffee with Firebase AI</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  <span class="font-semibold">Speaker:</span> Max Kachinkin
-                </p>
-                <div class="flex flex-wrap gap-2">
-                  <span class="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm font-medium">Accepted</span>
-                  <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">Android</span>
-                  <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm font-medium">Firebase AI</span>
-                  <span class="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-sm font-medium">Production Case</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div id="sessions-container" class="grid gap-8"></div>
       </div>
     </div>
   </section>
@@ -212,16 +290,7 @@ app.innerHTML = `
     <div class="section-container">
       <h2 class="section-title">Speakers</h2>
       <div class="max-w-6xl mx-auto">
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <!-- Speaker: Max Kachinkin -->
-          <div class="card cursor-pointer" data-speaker="max-kachinkin">
-            <div class="flex flex-col items-center text-center">
-              <img src="https://sessionize.com/image/2b33-400o400o1-NAvjTdoBPX4kkGbQGnntqb.jpg" alt="Max Kachinkin" class="w-48 h-48 rounded-full object-cover mb-4">
-              <h3 class="text-xl font-bold mb-1">Max Kachinkin</h3>
-              <p class="text-google-blue font-medium mb-3">Android Tech Lead, Dodo Brands</p>
-            </div>
-          </div>
-        </div>
+        <div id="speakers-grid" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3"></div>
       </div>
     </div>
   </section>
@@ -362,9 +431,12 @@ async function initializeData() {
     const data = await parseExcelData('data.json')
     sessionData = data.sessions
     speakerData = data.speakers
-    
-    // Add event listeners for sessions
-    document.querySelectorAll('[data-session]').forEach(sessionCard => {
+
+    // Render from data.json
+    renderSessions(sessionData)
+    renderSpeakers(speakerData)
+    // Add event listeners for sessions (after render)
+    document.querySelectorAll('[data-session]').forEach((sessionCard) => {
       sessionCard.addEventListener('click', () => {
         const sessionId = sessionCard.getAttribute('data-session')
         if (sessionId && sessionData[sessionId]) {
@@ -374,8 +446,8 @@ async function initializeData() {
       })
     })
     
-    // Add event listeners for speakers
-    document.querySelectorAll('[data-speaker]').forEach(speakerCard => {
+    // Add event listeners for speakers (after render)
+    document.querySelectorAll('[data-speaker]').forEach((speakerCard) => {
       speakerCard.addEventListener('click', () => {
         const speakerId = speakerCard.getAttribute('data-speaker')
         if (speakerId && speakerData[speakerId]) {
