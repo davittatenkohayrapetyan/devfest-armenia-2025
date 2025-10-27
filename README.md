@@ -7,10 +7,11 @@ Single-page PWA for DevFest Armenia 2025 (December 20, Woods Center). Built with
 - ✅ Progressive Web App (PWA) with offline support
 - ✅ Responsive design with dark mode support
 - ✅ Google DevFest/GDG branding and color scheme
-- ✅ SEO optimized with Open Graph tags
-- ✅ Environment-driven base path for WordPress subfolder deployment
+- ✅ Comprehensive SEO and AEO optimization with JSON-LD structured data
+- ✅ Environment-driven base path for flexible deployment
 - ✅ Service worker with proper scope configuration
-- ✅ Sitemap and robots.txt included
+- ✅ Auto-generated sitemap and robots.txt with correct base URLs
+- ✅ Relative paths for portability
 - ✅ Docker deployment ready
 - ✅ GitHub Actions CI/CD pipeline
 
@@ -53,17 +54,11 @@ The app will be available at http://localhost:5173/
 npm run build
 ```
 
-Static files will be exported to the `/dist` directory.
+Static files will be exported to the `/dist` directory, configured for deployment at `https://devfest.am/2025/`.
 
 ### Build with Custom Base Path
 
-For WordPress subfolder deployment (default is `/devfest2025/`):
-
-```bash
-npm run build
-```
-
-The default base path is set to `/devfest2025/` in `vite.config.ts`. To change it, either:
+The default base path is set to `/2025/` in `vite.config.ts` for deployment at `devfest.am/2025`. To change it:
 
 1. Set the environment variable:
 ```bash
@@ -80,14 +75,16 @@ For root deployment:
 VITE_BASE_PATH=/ npm run build
 ```
 
-### WordPress Deployment
+The build process automatically:
+- Sets all asset paths relative to the base path
+- Updates sitemap.xml with correct URLs
+- Updates robots.txt with correct sitemap location
+- Updates Open Graph and canonical URLs
+- Updates JSON-LD structured data
 
-The built files in `/dist` directory are ready for WordPress subfolder deployment:
+### Deployment
 
-1. Upload all files from `/dist` to your WordPress installation at `/wp-content/your-path/`
-2. The app is configured to work at `/devfest2025/` by default
-3. All asset paths, manifest, and service worker are correctly configured with the base path
-4. Sessionize embeds will load automatically when the page is accessed
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions to devfest.am/2025.
 
 ## Docker Deployment
 
@@ -105,20 +102,29 @@ docker run -p 80:80 devfest-armenia-2025
 
 ## Customization
 
-### Sessionize Integration
+### SEO and AEO
 
-The app includes Sessionize embed scripts that automatically load the following widgets:
+The site includes comprehensive SEO (Search Engine Optimization) and AEO (Answer Engine Optimization) features:
 
-1. **GridSmart** - Smart grid view of the agenda (loads in #sessionize-grid-smart)
-2. **Sessions** - Detailed session list (loads in #sessionize-sessions)
-3. **Speakers** - Speaker profiles (loads in #sessionize-speakers)
-4. **SpeakerWall** - Speaker wall display (loads in #sessionize-speaker-wall)
+**SEO Features:**
+- Semantic HTML5 structure
+- Meta descriptions and keywords
+- Open Graph tags for social media sharing
+- Twitter Card tags
+- Canonical URLs
+- XML sitemap (auto-generated)
+- Robots.txt (auto-generated)
+- Alt text for all images
+- Proper heading hierarchy
 
-The Sessionize scripts are loaded at the bottom of `index.html` and styled to match the app theme in `src/style.css`.
+**AEO Features:**
+- JSON-LD structured data using Schema.org Event schema
+- Organization schema for GDG Yerevan
+- Place schema for Woods Center location
+- Offer schema for event registration
+- Answer Engine friendly content structure
 
-Current Sessionize event ID: `fep0017x`
-
-To change the event ID, update the script URLs in `index.html`.
+All SEO/AEO URLs are automatically updated based on the configured base path during build.
 
 ### Adding Partners/Organizers
 

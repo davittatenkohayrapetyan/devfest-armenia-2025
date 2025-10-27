@@ -11,6 +11,41 @@ export function updateSeoFiles(basePath: string): Plugin {
       const baseUrl = 'https://devfest.am'
       const fullUrl = basePath === '/' ? baseUrl : `${baseUrl}${basePath.replace(/\/$/, '')}`
       
+      // Update index.html meta tags
+      const indexPath = resolve(outDir, 'index.html')
+      try {
+        let htmlContent = readFileSync(indexPath, 'utf-8')
+        
+        // Update og:url
+        htmlContent = htmlContent.replace(
+          /<meta property="og:url" content="[^"]*">/,
+          `<meta property="og:url" content="${fullUrl}/">`
+        )
+        
+        // Update twitter:url
+        htmlContent = htmlContent.replace(
+          /<meta property="twitter:url" content="[^"]*">/,
+          `<meta property="twitter:url" content="${fullUrl}/">`
+        )
+        
+        // Update canonical
+        htmlContent = htmlContent.replace(
+          /<link rel="canonical" href="[^"]*">/,
+          `<link rel="canonical" href="${fullUrl}/">`
+        )
+        
+        // Update JSON-LD structured data image URL
+        htmlContent = htmlContent.replace(
+          /"image":\s*"[^"]*og-image\.png"/,
+          `"image": "${fullUrl}/og-image.png"`
+        )
+        
+        writeFileSync(indexPath, htmlContent)
+        console.log(`✓ Updated index.html meta tags with base URL: ${fullUrl}`)
+      } catch (error) {
+        console.error('Failed to update index.html:', error)
+      }
+      
       // Update robots.txt
       const robotsPath = resolve(outDir, 'robots.txt')
       try {
