@@ -36,7 +36,7 @@ export function updateSeoFiles(basePath: string): Plugin {
         
         // Update JSON-LD structured data image URL
         htmlContent = htmlContent.replace(
-          /"image":\s*"[^"]*og-image\.png"/,
+          /"image":\s*"[^"]*\/og-image\.png"/,
           `"image": "${fullUrl}/og-image.png"`
         )
         
