@@ -499,7 +499,9 @@ async function initializeData() {
     renderSessions(sessionData)
     renderSpeakers(speakerData)
     // Add event listeners for sessions (after render)
-    document.querySelectorAll('[data-session]').forEach((sessionCard) => {
+
+    // Add event listeners for sessions
+    document.querySelectorAll('[data-session]').forEach(sessionCard => {
       sessionCard.addEventListener('click', () => {
         const sessionId = sessionCard.getAttribute('data-session')
         if (sessionId && sessionData[sessionId]) {
@@ -508,9 +510,9 @@ async function initializeData() {
         }
       })
     })
-    
-    // Add event listeners for speakers (after render)
-    document.querySelectorAll('[data-speaker]').forEach((speakerCard) => {
+
+    // Add event listeners for speakers
+    document.querySelectorAll('[data-speaker]').forEach(speakerCard => {
       speakerCard.addEventListener('click', () => {
         const speakerId = speakerCard.getAttribute('data-speaker')
         if (speakerId && speakerData[speakerId]) {

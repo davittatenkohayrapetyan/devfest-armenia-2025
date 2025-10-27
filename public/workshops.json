@@ -3,27 +3,27 @@
     "id": "android-jetpack-compose",
     "title": "Modern Android Development with Jetpack Compose",
     "description": "Learn how to build beautiful, reactive UIs with Jetpack Compose. This hands-on workshop will guide you through creating a real Android app from scratch.",
-    "speakerImage": "https://via.placeholder.com/400x400/4285F4/FFFFFF?text=Workshop+Speaker",
+    "speakerImage": "workshop-placeholder.svg",
     "speakerName": "Sample Speaker",
     "maxParticipants": 30,
-    "registrationUrl": "https://forms.gle/example1"
+    "registrationUrl": "https://forms.gle/REPLACE_WITH_ACTUAL_FORM_URL"
   },
   {
     "id": "firebase-cloud-functions",
     "title": "Building Serverless Apps with Firebase",
     "description": "Discover how to create powerful serverless applications using Firebase Cloud Functions, Authentication, and Firestore.",
-    "speakerImage": "https://via.placeholder.com/400x400/EA4335/FFFFFF?text=Workshop+Speaker",
+    "speakerImage": "workshop-placeholder.svg",
     "speakerName": "Sample Speaker",
     "maxParticipants": 25,
-    "registrationUrl": "https://forms.gle/example2"
+    "registrationUrl": "https://forms.gle/REPLACE_WITH_ACTUAL_FORM_URL"
   },
   {
     "id": "machine-learning-tensorflow",
     "title": "Introduction to Machine Learning with TensorFlow",
     "description": "Get started with machine learning! Build and train your first neural network using TensorFlow and deploy it to production.",
-    "speakerImage": "https://via.placeholder.com/400x400/FBBC04/FFFFFF?text=Workshop+Speaker",
+    "speakerImage": "workshop-placeholder.svg",
     "speakerName": "Sample Speaker",
     "maxParticipants": 20,
-    "registrationUrl": "https://forms.gle/example3"
+    "registrationUrl": "https://forms.gle/REPLACE_WITH_ACTUAL_FORM_URL"
   }
 ]
