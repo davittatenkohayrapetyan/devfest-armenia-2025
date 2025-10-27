@@ -1,6 +1,6 @@
 import './style.css'
 import { registerSW } from './registerSW'
-import { parseExcelData, SessionData, SpeakerData } from './data-parser'
+import { parseExcelData, SessionData, SpeakerData, WorkshopData, loadWorkshops } from './data-parser'
 
 // Register service worker
 registerSW()
@@ -171,6 +171,7 @@ app.innerHTML = `
           <a href="#about" class="hover:text-google-blue transition-colors">About</a>
           <a href="#agenda" class="hover:text-google-blue transition-colors">Agenda</a>
           <a href="#sessions" class="hover:text-google-blue transition-colors">Sessions</a>
+          <a href="#workshops" class="hover:text-google-blue transition-colors">Workshops</a>
           <a href="#speakers" class="hover:text-google-blue transition-colors">Speakers</a>
           <a href="#location" class="hover:text-google-blue transition-colors">Location</a>
           <a href="#partners" class="hover:text-google-blue transition-colors">Partners</a>
@@ -281,6 +282,30 @@ app.innerHTML = `
       <h2 class="section-title">Sessions</h2>
       <div class="max-w-6xl mx-auto">
         <div id="sessions-container" class="grid gap-8"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workshops Section -->
+  <section id="workshops" class="bg-white dark:bg-gray-900">
+    <div class="section-container">
+      <h2 class="section-title">Workshops</h2>
+      <div class="max-w-6xl mx-auto">
+        <!-- Workshop Info Banner -->
+        <div class="bg-gradient-to-r from-google-blue to-blue-600 text-white rounded-lg p-8 mb-12 shadow-xl">
+          <h3 class="text-2xl font-bold mb-4">🎓 What to Expect from Our Workshops</h3>
+          <div class="space-y-3 text-lg">
+            <p>✨ <strong>Duration:</strong> All workshops will be 1 to 1.5 hours long</p>
+            <p>🛠️ <strong>Hands-on Learning:</strong> Participants will receive practical, hands-on skills they can apply immediately</p>
+            <p>☁️ <strong>Google Cloud Credits:</strong> Google will provide free Google Cloud credits to all workshop participants</p>
+            <p>📋 <strong>What to Bring:</strong> Just your laptop and enthusiasm! Fill in the registration form so the speaker can prepare the perfect session for you</p>
+          </div>
+        </div>
+        
+        <!-- Workshops Grid - will be populated dynamically -->
+        <div id="workshops-grid" class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Workshop cards will be inserted here -->
+        </div>
       </div>
     </div>
   </section>
@@ -424,6 +449,42 @@ app.innerHTML = `
 // Load session and speaker data from Excel file
 let sessionData: Record<string, SessionData> = {}
 let speakerData: Record<string, SpeakerData> = {}
+let workshopsData: WorkshopData[] = []
+
+// Function to render workshops
+function renderWorkshops() {
+  const workshopsGrid = document.getElementById('workshops-grid')
+  if (!workshopsGrid) return
+
+  workshopsGrid.innerHTML = workshopsData.map(workshop => `
+    <div class="card">
+      <div class="flex flex-col h-full">
+        <div class="flex-shrink-0 mb-4">
+          <img src="${workshop.speakerImage}" alt="${workshop.speakerName}" class="w-full h-48 object-cover rounded-lg">
+        </div>
+        <div class="flex-1 flex flex-col">
+          <h3 class="text-xl font-bold mb-2 text-google-blue">${workshop.title}</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+            <span class="font-semibold">Speaker:</span> ${workshop.speakerName}
+          </p>
+          <p class="text-gray-700 dark:text-gray-300 mb-4 flex-1">${workshop.description}</p>
+          <div class="space-y-3">
+            <div class="flex items-center text-sm text-gray-600 dark:text-gray-400">
+              <svg class="w-5 h-5 mr-2 text-google-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+              Max ${workshop.maxParticipants} participants
+            </div>
+            <a href="${workshop.registrationUrl}" target="_blank" rel="noopener noreferrer" 
+               class="block w-full text-center bg-google-blue hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200">
+              Register Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  `).join('')
+}
 
 // Initialize data and event listeners
 async function initializeData() {
@@ -431,12 +492,16 @@ async function initializeData() {
     const data = await parseExcelData('data.json')
     sessionData = data.sessions
     speakerData = data.speakers
-
-    // Render from data.json
+    
+    // Load workshops
+    workshopsData = await loadWorkshops('workshops.json')
+    renderWorkshops()
     renderSessions(sessionData)
     renderSpeakers(speakerData)
     // Add event listeners for sessions (after render)
-    document.querySelectorAll('[data-session]').forEach((sessionCard) => {
+
+    // Add event listeners for sessions
+    document.querySelectorAll('[data-session]').forEach(sessionCard => {
       sessionCard.addEventListener('click', () => {
         const sessionId = sessionCard.getAttribute('data-session')
         if (sessionId && sessionData[sessionId]) {
@@ -445,9 +510,9 @@ async function initializeData() {
         }
       })
     })
-    
-    // Add event listeners for speakers (after render)
-    document.querySelectorAll('[data-speaker]').forEach((speakerCard) => {
+
+    // Add event listeners for speakers
+    document.querySelectorAll('[data-speaker]').forEach(speakerCard => {
       speakerCard.addEventListener('click', () => {
         const speakerId = speakerCard.getAttribute('data-speaker')
         if (speakerId && speakerData[speakerId]) {

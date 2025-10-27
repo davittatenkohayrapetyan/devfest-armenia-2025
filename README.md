@@ -20,10 +20,11 @@ Single-page PWA for DevFest Armenia 2025 (December 20, Woods Center). Built with
 2. **About** - Information about DevFest Armenia
 3. **Agenda** - Schedule with Sessionize GridSmart embed
 4. **Sessions** - Detailed sessions with Sessionize Sessions embed
-5. **Speakers** - Speaker profiles with Sessionize Speakers embed
-6. **Speaker Wall** - Speaker wall with Sessionize SpeakerWall embed
-7. **Partners** - Partner logos grid (8 SVG placeholders)
-8. **Organizers** - GDG Yerevan team members
+5. **Workshops** - Hands-on workshop sessions (JSON-configurable)
+6. **Speakers** - Speaker profiles with Sessionize Speakers embed
+7. **Speaker Wall** - Speaker wall with Sessionize SpeakerWall embed
+8. **Partners** - Partner logos grid (8 SVG placeholders)
+9. **Organizers** - GDG Yerevan team members
 
 ## Development
 
@@ -124,6 +125,16 @@ To change the event ID, update the script URLs in `index.html`.
 **Partners Section:** Replace the SVG placeholder logos in the Partners section of `src/main.ts` with actual partner logos (SVG or PNG).
 
 **Organizers Section:** The section is pre-configured with GDG Yerevan branding and 8 organizer placeholders. Update the names and roles in `src/main.ts`.
+
+### Workshops Configuration
+
+Workshops are configured through `public/workshops.json`. Each workshop includes:
+- Title and description
+- Speaker information and image
+- Maximum number of participants
+- Registration form URL (Google Forms)
+
+For detailed configuration instructions, see [WORKSHOPS.md](WORKSHOPS.md).
 
 ### Updating Event Details
 
