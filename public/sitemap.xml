@@ -1,38 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://devfest.am/</loc>
-    <lastmod>2025-10-19</lastmod>
+    <loc>https://devfest.am/2025/</loc>
+    <lastmod>2024-10-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://devfest.am/#about</loc>
-    <lastmod>2025-10-19</lastmod>
+    <loc>https://devfest.am/2025/#about</loc>
+    <lastmod>2024-10-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://devfest.am/#agenda</loc>
-    <lastmod>2025-10-19</lastmod>
+    <loc>https://devfest.am/2025/#agenda</loc>
+    <lastmod>2024-10-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://devfest.am/2025/#sessions</loc>
+    <lastmod>2024-10-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://devfest.am/2025/#workshops</loc>
+    <lastmod>2024-10-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://devfest.am/2025/#speakers</loc>
+    <lastmod>2024-10-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://devfest.am/#speakers</loc>
-    <lastmod>2025-10-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://devfest.am/#partners</loc>
-    <lastmod>2025-10-19</lastmod>
+    <loc>https://devfest.am/2025/#partners</loc>
+    <lastmod>2024-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://devfest.am/#organizers</loc>
-    <lastmod>2025-10-19</lastmod>
+    <loc>https://devfest.am/2025/#organizers</loc>
+    <lastmod>2024-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
