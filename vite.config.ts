@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
-const basePath = process.env.VITE_BASE_PATH || '/devfest2025/'
+const basePath = process.env.VITE_BASE_PATH || '/2025/'
 
 export default defineConfig({
   base: basePath,
