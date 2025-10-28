@@ -725,6 +725,70 @@ async function initializeData() {
         }
       })
     })
+
+    // Handle deep linking from hash anchors (for social share pages)
+    const handleHashNavigation = () => {
+      const hash = window.location.hash.substring(1) // Remove the #
+      if (!hash) return
+
+      // Handle session links like #session-ordering-coffee-with-firebase-ai
+      if (hash.startsWith('session-')) {
+        const sessionId = hash.substring(8) // Remove 'session-' prefix
+        if (sessionData[sessionId]) {
+          const session = sessionData[sessionId]
+          const basePath = window.location.pathname.replace(/\/$/, '')
+          const sessionUrl = `${window.location.origin}${basePath}/share/session-${sessionId}.html`
+          const speakerName = extractSpeakerName(session.speaker)
+          const shareDescription = `Check out this session at DevFest Armenia 2025: ${session.title} by ${speakerName}`
+          const shareButtons = createShareButtons(session.title, shareDescription, sessionUrl)
+
+          createDialog(session.title, `
+            ${session.content}
+            <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+              <h3 class="text-lg font-semibold mb-4">Share this session</h3>
+              ${shareButtons}
+            </div>
+          `)
+        }
+      }
+      // Handle speaker links like #speaker-ankur-roy
+      else if (hash.startsWith('speaker-')) {
+        const speakerId = hash.substring(8) // Remove 'speaker-' prefix
+        if (speakerData[speakerId]) {
+          const speaker = speakerData[speakerId]
+          const basePath = window.location.pathname.replace(/\/$/, '')
+          const speakerUrl = `${window.location.origin}${basePath}/share/speaker-${speakerId}.html`
+          const shareDescription = `Meet ${speaker.name}, ${speaker.position} at DevFest Armenia 2025`
+          const shareButtons = createShareButtons(speaker.name, shareDescription, speakerUrl)
+
+          createDialog(speaker.name, `
+            ${speaker.content}
+            <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+              <h3 class="text-lg font-semibold mb-4">Share this speaker</h3>
+              ${shareButtons}
+            </div>
+          `)
+        }
+      }
+      // Handle workshop links like #workshop-aggent-app-development
+      else if (hash.startsWith('workshop-')) {
+        const workshopId = hash.substring(9) // Remove 'workshop-' prefix
+        const workshop = workshopsData.find(w => w.id === workshopId)
+        if (workshop) {
+          // Scroll to workshops section
+          const workshopsSection = document.getElementById('workshops')
+          if (workshopsSection) {
+            workshopsSection.scrollIntoView({ behavior: 'smooth' })
+          }
+        }
+      }
+    }
+
+    // Handle hash on initial page load
+    handleHashNavigation()
+
+    // Handle hash changes (for browser back/forward)
+    window.addEventListener('hashchange', handleHashNavigation)
   } catch (error) {
     console.error('Failed to load session data:', error)
   }
