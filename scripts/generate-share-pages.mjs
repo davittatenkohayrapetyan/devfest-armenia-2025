@@ -27,28 +27,36 @@ function extractSpeakerName(speakerStr) {
   return parts[0] || speakerStr
 }
 
+// Normalize whitespace in text (remove extra spaces)
+function normalizeWhitespace(text) {
+  return text.replace(/\s+/g, ' ').trim()
+}
+
 // Generate HTML page with meta tags for social sharing
 function generateSharePage(title, description, image, canonicalUrl, redirectUrl) {
+  // Normalize whitespace in title and description
+  const normalizedTitle = normalizeWhitespace(title)
+  const normalizedDescription = normalizeWhitespace(description)
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${escapeHtml(title)} - DevFest Armenia 2025</title>
-  <meta name="description" content="${escapeHtml(description)}">
+  <title>${escapeHtml(normalizedTitle)} - DevFest Armenia 2025</title>
+  <meta name="description" content="${escapeHtml(normalizedDescription)}">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="${escapeHtml(canonicalUrl)}">
-  <meta property="og:title" content="${escapeHtml(title)} - DevFest Armenia 2025">
-  <meta property="og:description" content="${escapeHtml(description)}">
+  <meta property="og:title" content="${escapeHtml(normalizedTitle)} - DevFest Armenia 2025">
+  <meta property="og:description" content="${escapeHtml(normalizedDescription)}">
   <meta property="og:image" content="${escapeHtml(image)}">
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="${escapeHtml(canonicalUrl)}">
-  <meta name="twitter:title" content="${escapeHtml(title)} - DevFest Armenia 2025">
-  <meta name="twitter:description" content="${escapeHtml(description)}">
+  <meta name="twitter:title" content="${escapeHtml(normalizedTitle)} - DevFest Armenia 2025">
+  <meta name="twitter:description" content="${escapeHtml(normalizedDescription)}">
   <meta name="twitter:image" content="${escapeHtml(image)}">
   
   <!-- Redirect to main app -->
@@ -87,11 +95,11 @@ function generateSharePage(title, description, image, canonicalUrl, redirectUrl)
 </head>
 <body>
   <div class="container">
-    <h1>${escapeHtml(title)}</h1>
-    <p>${escapeHtml(description)}</p>
+    <h1>${escapeHtml(normalizedTitle)}</h1>
+    <p>${escapeHtml(normalizedDescription)}</p>
     <p>Redirecting to <a href="${escapeHtml(redirectUrl)}">DevFest Armenia 2025</a>...</p>
     <script>
-      window.location.href = "${redirectUrl.replace(/"/g, '\\"')}";
+      window.location.href = ${JSON.stringify(redirectUrl)};
     </script>
   </div>
 </body>
