@@ -74,16 +74,16 @@ function createShareButtons(title: string, description: string, url: string): st
         Share
       </button>
       <a 
-        href="https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}" 
+        href="https://x.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}" 
         target="_blank" 
         rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 px-4 py-2 bg-[#1DA1F2] hover:bg-[#1a8cd8] text-white rounded-lg transition-colors duration-200 text-sm font-medium"
-        aria-label="Share on Twitter"
+        class="inline-flex items-center gap-2 px-4 py-2 bg-black hover:bg-gray-800 text-white rounded-lg transition-colors duration-200 text-sm font-medium"
+        aria-label="Share on X"
       >
         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
         </svg>
-        Twitter
+        X
       </a>
       <a 
         href="https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}" 
@@ -209,7 +209,8 @@ function renderSessions(sessions: Record<string, SessionData>): void {
       const speakerName = extractSpeakerName(s.speaker)
       const photo = s.photo || ''
       const alt = speakerName ? `${speakerName}` : `${s.title} speaker`
-      const sessionUrl = `${window.location.origin}${window.location.pathname}#session-${s.sessionId}`
+      const basePath = window.location.pathname.replace(/\/$/, '')
+      const sessionUrl = `${window.location.origin}${basePath}/share/session-${s.sessionId}.html`
       const shareDescription = `Check out this session at DevFest Armenia 2025: ${s.title} by ${speakerName}`
 
       return `
@@ -267,7 +268,8 @@ function renderSpeakers(speakers: Record<string, SpeakerData>): void {
     .map((sp) => {
       const alt = sp.name || 'Speaker photo'
       const photo = sp.photo || ''
-      const speakerUrl = `${window.location.origin}${window.location.pathname}#speaker-${sp.speakerId}`
+      const basePath = window.location.pathname.replace(/\/$/, '')
+      const speakerUrl = `${window.location.origin}${basePath}/share/speaker-${sp.speakerId}.html`
       const shareDescription = `Meet ${sp.name}, ${sp.position} at DevFest Armenia 2025`
 
       return `
@@ -601,7 +603,8 @@ function renderWorkshops() {
   if (!workshopsGrid) return
 
   workshopsGrid.innerHTML = workshopsData.map(workshop => {
-    const workshopUrl = `${window.location.origin}${window.location.pathname}#workshop-${workshop.id}`
+    const basePath = window.location.pathname.replace(/\/$/, '')
+    const workshopUrl = `${window.location.origin}${basePath}/share/workshop-${workshop.id}.html`
     const shareDescription = `Join this workshop at DevFest Armenia 2025: ${workshop.title} by ${workshop.speakerName}`
 
     return `
@@ -684,7 +687,8 @@ async function initializeData() {
         const sessionId = sessionClickable.getAttribute('data-session-click')
         if (sessionId && sessionData[sessionId]) {
           const session = sessionData[sessionId]
-          const sessionUrl = `${window.location.origin}${window.location.pathname}#session-${sessionId}`
+          const basePath = window.location.pathname.replace(/\/$/, '')
+          const sessionUrl = `${window.location.origin}${basePath}/share/session-${sessionId}.html`
           const speakerName = extractSpeakerName(session.speaker)
           const shareDescription = `Check out this session at DevFest Armenia 2025: ${session.title} by ${speakerName}`
           const shareButtons = createShareButtons(session.title, shareDescription, sessionUrl)
@@ -706,7 +710,8 @@ async function initializeData() {
         const speakerId = speakerClickable.getAttribute('data-speaker-click')
         if (speakerId && speakerData[speakerId]) {
           const speaker = speakerData[speakerId]
-          const speakerUrl = `${window.location.origin}${window.location.pathname}#speaker-${speakerId}`
+          const basePath = window.location.pathname.replace(/\/$/, '')
+          const speakerUrl = `${window.location.origin}${basePath}/share/speaker-${speakerId}.html`
           const shareDescription = `Meet ${speaker.name}, ${speaker.position} at DevFest Armenia 2025`
           const shareButtons = createShareButtons(speaker.name, shareDescription, speakerUrl)
 
