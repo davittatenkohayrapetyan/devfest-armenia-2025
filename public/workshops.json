@@ -1,29 +1,11 @@
 [
   {
-    "id": "android-jetpack-compose",
-    "title": "Modern Android Development with Jetpack Compose",
-    "description": "Learn how to build beautiful, reactive UIs with Jetpack Compose. This hands-on workshop will guide you through creating a real Android app from scratch.",
-    "speakerImage": "workshop-placeholder.svg",
-    "speakerName": "Sample Speaker",
-    "maxParticipants": 30,
-    "registrationUrl": "https://forms.gle/REPLACE_WITH_ACTUAL_FORM_URL"
-  },
-  {
-    "id": "firebase-cloud-functions",
-    "title": "Building Serverless Apps with Firebase",
-    "description": "Discover how to create powerful serverless applications using Firebase Cloud Functions, Authentication, and Firestore.",
-    "speakerImage": "workshop-placeholder.svg",
-    "speakerName": "Sample Speaker",
-    "maxParticipants": 25,
-    "registrationUrl": "https://forms.gle/REPLACE_WITH_ACTUAL_FORM_URL"
-  },
-  {
-    "id": "machine-learning-tensorflow",
-    "title": "Introduction to Machine Learning with TensorFlow",
-    "description": "Get started with machine learning! Build and train your first neural network using TensorFlow and deploy it to production.",
-    "speakerImage": "workshop-placeholder.svg",
-    "speakerName": "Sample Speaker",
-    "maxParticipants": 20,
-    "registrationUrl": "https://forms.gle/REPLACE_WITH_ACTUAL_FORM_URL"
+    "id": "aggent-app-development",
+    "title": "Agent Development Kit Deep Dive",
+    "description": "From Initialization to Ideation to Prompting to Deployment. All of these and the intermediate steps will be covered in the creation of your own Agent application. We all know about AI, but this is much more than that, it is making sure the AI is deployed and available in the most consistent way possible with all the requirements for application development including version control, testing and scaling being covered. You will be given credits to follow along on the workshop.",
+    "speakerImage": "Gemini_Generated_Image_ksh50hksh50hksh5.png",
+    "speakerName": "Ankur Roy",
+    "maxParticipants": 40,
+    "registrationUrl": "https://forms.gle/4bHmjCyi2ksYXQAG9"
   }
 ]

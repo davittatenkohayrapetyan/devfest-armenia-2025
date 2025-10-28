@@ -193,7 +193,7 @@ app.innerHTML = `
               </svg>
             </a>
           </div>
-          <a href="https://www.meetup.com/gdgyerevan/events/311547893/?eventOrigin=group_upcoming_events" target="_blank" rel="noopener noreferrer" class="bg-google-blue hover:bg-blue-600 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-200">
+          <a href="https://www.meetup.com/gdgyerevan/events/311547893/?eventOrigin=group_upcoming_events" target="_blank" rel="noopener noreferrer" class="bg-google-blue hover:bg-blue-600 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-200 whitespace-nowrap">
             Register on Meetup
           </a>
         </div>
@@ -204,7 +204,7 @@ app.innerHTML = `
   <!-- Hero Section -->
   <section id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-google-blue to-blue-600 text-white pt-16">
     <div class="section-container text-center">
-      <h1 class="text-5xl md:text-7xl font-bold mb-6">
+      <h1 class="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 whitespace-nowrap">
         DevFest Armenia 2025
       </h1>
       <p class="text-2xl md:text-3xl mb-8">
@@ -214,7 +214,7 @@ app.innerHTML = `
         Join us for a day of learning, networking, and celebrating technology with the Google Developer Group community.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="https://www.meetup.com/gdgyerevan/events/311547893/?eventOrigin=group_upcoming_events" target="_blank" rel="noopener noreferrer" class="bg-white text-google-blue hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg text-lg">
+        <a href="https://www.meetup.com/gdgyerevan/events/311547893/?eventOrigin=group_upcoming_events" target="_blank" rel="noopener noreferrer" class="bg-white text-google-blue hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg text-lg whitespace-nowrap">
           Register on Meetup
         </a>
         <a href="#agenda" class="border-2 border-white hover:bg-white hover:text-google-blue font-medium py-3 px-8 rounded-lg transition-colors duration-200">
@@ -298,7 +298,7 @@ app.innerHTML = `
             <p>✨ <strong>Duration:</strong> All workshops will be 1 to 1.5 hours long</p>
             <p>🛠️ <strong>Hands-on Learning:</strong> Participants will receive practical, hands-on skills they can apply immediately</p>
             <p>☁️ <strong>Google Cloud Credits:</strong> Google will provide free Google Cloud credits to all workshop participants</p>
-            <p>📋 <strong>What to Bring:</strong> Just your laptop and enthusiasm! Fill in the registration form so the speaker can prepare the perfect session for you</p>
+            <p>📋 <strong>What to Bring:</strong> Just your laptop and enthusiasm! Fill in the registration form by pressing "Enroll" button so the speaker can prepare the perfect session for you</p>
           </div>
         </div>
         
@@ -477,7 +477,7 @@ function renderWorkshops() {
             </div>
             <a href="${workshop.registrationUrl}" target="_blank" rel="noopener noreferrer" 
                class="block w-full text-center bg-google-blue hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200">
-              Register Now
+              Enroll
             </a>
           </div>
         </div>
