@@ -688,7 +688,7 @@ async function initializeData() {
 
         shareContent({ title, text, url })
       }
-    })
+    }, true)
 
     // Add event listeners for sessions
     document.querySelectorAll('[data-session-click]').forEach(sessionClickable => {
