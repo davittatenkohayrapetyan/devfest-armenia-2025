@@ -7,6 +7,112 @@ registerSW()
 
 const app = document.querySelector<HTMLDivElement>('#app')!
 
+// Social sharing functionality
+interface ShareData {
+  title: string
+  text: string
+  url: string
+}
+
+function canUseWebShare(): boolean {
+  return typeof navigator !== 'undefined' && 'share' in navigator
+}
+
+async function shareContent(data: ShareData): Promise<void> {
+  if (canUseWebShare()) {
+    try {
+      await navigator.share(data)
+    } catch (err) {
+      // User cancelled or error occurred
+      console.log('Share cancelled or failed:', err)
+    }
+  } else {
+    // Fallback: copy link to clipboard
+    try {
+      await navigator.clipboard.writeText(data.url)
+      showToast('Link copied to clipboard!')
+    } catch (err) {
+      console.error('Failed to copy link:', err)
+      showToast('Failed to copy link')
+    }
+  }
+}
+
+function showToast(message: string): void {
+  const existingToast = document.getElementById('share-toast')
+  if (existingToast) {
+    existingToast.remove()
+  }
+
+  const toast = document.createElement('div')
+  toast.id = 'share-toast'
+  toast.className = 'fixed bottom-4 right-4 bg-google-blue text-white px-6 py-3 rounded-lg shadow-lg z-[200] animate-fade-in'
+  toast.textContent = message
+  document.body.appendChild(toast)
+
+  setTimeout(() => {
+    toast.classList.add('animate-fade-out')
+    setTimeout(() => toast.remove(), 300)
+  }, 3000)
+}
+
+function createShareButtons(title: string, description: string, url: string): string {
+  const encodedUrl = encodeURIComponent(url)
+  const encodedTitle = encodeURIComponent(title)
+
+  return `
+    <div class="flex flex-wrap gap-3 items-center">
+      <button 
+        class="share-button inline-flex items-center gap-2 px-4 py-2 bg-google-blue hover:bg-blue-600 text-white rounded-lg transition-colors duration-200 text-sm font-medium"
+        data-share-title="${title.replace(/"/g, '&quot;')}"
+        data-share-text="${description.replace(/"/g, '&quot;')}"
+        data-share-url="${url}"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+        </svg>
+        Share
+      </button>
+      <a 
+        href="https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-4 py-2 bg-[#1DA1F2] hover:bg-[#1a8cd8] text-white rounded-lg transition-colors duration-200 text-sm font-medium"
+        aria-label="Share on Twitter"
+      >
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+        </svg>
+        Twitter
+      </a>
+      <a 
+        href="https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-4 py-2 bg-[#1877F2] hover:bg-[#166fe5] text-white rounded-lg transition-colors duration-200 text-sm font-medium"
+        aria-label="Share on Facebook"
+      >
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+        Facebook
+      </a>
+      <a 
+        href="https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-4 py-2 bg-[#0A66C2] hover:bg-[#095196] text-white rounded-lg transition-colors duration-200 text-sm font-medium"
+        aria-label="Share on LinkedIn"
+      >
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+        LinkedIn
+      </a>
+    </div>
+  `
+}
+
 // Dialog/Modal functionality
 function createDialog(title: string, content: string): void {
   // Remove existing dialog if any
@@ -103,18 +209,37 @@ function renderSessions(sessions: Record<string, SessionData>): void {
       const speakerName = extractSpeakerName(s.speaker)
       const photo = s.photo || ''
       const alt = speakerName ? `${speakerName}` : `${s.title} speaker`
+      const sessionUrl = `${window.location.origin}${window.location.pathname}#session-${s.sessionId}`
+      const shareDescription = `Check out this session at DevFest Armenia 2025: ${s.title} by ${speakerName}`
+
       return `
-        <div class="card cursor-pointer" data-session="${s.sessionId}">
+        <div class="card" data-session="${s.sessionId}">
           <div class="flex flex-col md:flex-row gap-6">
             <div class="flex-shrink-0">
               <img src="${photo}" alt="${alt}" class="w-32 h-32 rounded-full object-cover" loading="lazy">
             </div>
             <div class="flex-1">
-              <h3 class="text-2xl font-bold mb-2 text-google-blue">${s.title}</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                <span class="font-semibold">Speaker:</span> ${speakerName}
-              </p>
-              <div class="flex flex-wrap gap-2">${statusHtml}${catsHtml}</div>
+              <div class="cursor-pointer" data-session-click="${s.sessionId}">
+                <h3 class="text-2xl font-bold mb-2 text-google-blue">${s.title}</h3>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  <span class="font-semibold">Speaker:</span> ${speakerName}
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">${statusHtml}${catsHtml}</div>
+              </div>
+              <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+                <button 
+                  class="share-button inline-flex items-center gap-2 px-4 py-2 bg-google-blue hover:bg-blue-600 text-white rounded-lg transition-colors duration-200 text-sm font-medium"
+                  data-share-title="${s.title.replace(/"/g, '&quot;')}"
+                  data-share-text="${shareDescription.replace(/"/g, '&quot;')}"
+                  data-share-url="${sessionUrl}"
+                  onclick="event.stopPropagation()"
+                >
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                  </svg>
+                  Share Session
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -142,12 +267,31 @@ function renderSpeakers(speakers: Record<string, SpeakerData>): void {
     .map((sp) => {
       const alt = sp.name || 'Speaker photo'
       const photo = sp.photo || ''
+      const speakerUrl = `${window.location.origin}${window.location.pathname}#speaker-${sp.speakerId}`
+      const shareDescription = `Meet ${sp.name}, ${sp.position} at DevFest Armenia 2025`
+
       return `
-        <div class="card cursor-pointer" data-speaker="${sp.speakerId}">
+        <div class="card" data-speaker="${sp.speakerId}">
           <div class="flex flex-col items-center text-center">
-            <img src="${photo}" alt="${alt}" class="w-48 h-48 rounded-full object-cover mb-4" loading="lazy">
-            <h3 class="text-xl font-bold mb-1">${sp.name}</h3>
-            <p class="text-google-blue font-medium mb-3">${sp.position}</p>
+            <div class="cursor-pointer w-full" data-speaker-click="${sp.speakerId}">
+              <img src="${photo}" alt="${alt}" class="w-48 h-48 rounded-full object-cover mb-4 mx-auto" loading="lazy">
+              <h3 class="text-xl font-bold mb-1">${sp.name}</h3>
+              <p class="text-google-blue font-medium mb-3">${sp.position}</p>
+            </div>
+            <div class="mt-2 w-full">
+              <button 
+                class="share-button inline-flex items-center gap-2 px-4 py-2 bg-google-blue hover:bg-blue-600 text-white rounded-lg transition-colors duration-200 text-sm font-medium"
+                data-share-title="${sp.name.replace(/"/g, '&quot;')}"
+                data-share-text="${shareDescription.replace(/"/g, '&quot;')}"
+                data-share-url="${speakerUrl}"
+                onclick="event.stopPropagation()"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                </svg>
+                Share
+              </button>
+            </div>
           </div>
         </div>
       `
@@ -456,7 +600,11 @@ function renderWorkshops() {
   const workshopsGrid = document.getElementById('workshops-grid')
   if (!workshopsGrid) return
 
-  workshopsGrid.innerHTML = workshopsData.map(workshop => `
+  workshopsGrid.innerHTML = workshopsData.map(workshop => {
+    const workshopUrl = `${window.location.origin}${window.location.pathname}#workshop-${workshop.id}`
+    const shareDescription = `Join this workshop at DevFest Armenia 2025: ${workshop.title} by ${workshop.speakerName}`
+
+    return `
     <div class="card">
       <div class="flex flex-col h-full">
         <div class="flex-shrink-0 mb-4">
@@ -475,15 +623,29 @@ function renderWorkshops() {
               </svg>
               Max ${workshop.maxParticipants} participants
             </div>
-            <a href="${workshop.registrationUrl}" target="_blank" rel="noopener noreferrer" 
-               class="block w-full text-center bg-google-blue hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200">
-              Enroll
-            </a>
+            <div class="flex gap-2">
+              <a href="${workshop.registrationUrl}" target="_blank" rel="noopener noreferrer" 
+                 class="flex-1 text-center bg-google-blue hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200">
+                Enroll
+              </a>
+              <button 
+                class="share-button inline-flex items-center gap-2 px-4 py-3 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 rounded-lg transition-colors duration-200 font-medium"
+                data-share-title="${workshop.title.replace(/"/g, '&quot;')}"
+                data-share-text="${shareDescription.replace(/"/g, '&quot;')}"
+                data-share-url="${workshopUrl}"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                </svg>
+                Share
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  `).join('')
+  `
+  }).join('')
 }
 
 // Initialize data and event listeners
@@ -498,26 +660,63 @@ async function initializeData() {
     renderWorkshops()
     renderSessions(sessionData)
     renderSpeakers(speakerData)
-    // Add event listeners for sessions (after render)
+
+    // Add event listeners for share buttons
+    document.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement
+      const shareButton = target.closest('.share-button') as HTMLButtonElement
+
+      if (shareButton) {
+        e.preventDefault()
+        e.stopPropagation()
+
+        const title = shareButton.dataset.shareTitle || ''
+        const text = shareButton.dataset.shareText || ''
+        const url = shareButton.dataset.shareUrl || window.location.href
+
+        shareContent({ title, text, url })
+      }
+    })
 
     // Add event listeners for sessions
-    document.querySelectorAll('[data-session]').forEach(sessionCard => {
-      sessionCard.addEventListener('click', () => {
-        const sessionId = sessionCard.getAttribute('data-session')
+    document.querySelectorAll('[data-session-click]').forEach(sessionClickable => {
+      sessionClickable.addEventListener('click', () => {
+        const sessionId = sessionClickable.getAttribute('data-session-click')
         if (sessionId && sessionData[sessionId]) {
           const session = sessionData[sessionId]
-          createDialog(session.title, session.content)
+          const sessionUrl = `${window.location.origin}${window.location.pathname}#session-${sessionId}`
+          const speakerName = extractSpeakerName(session.speaker)
+          const shareDescription = `Check out this session at DevFest Armenia 2025: ${session.title} by ${speakerName}`
+          const shareButtons = createShareButtons(session.title, shareDescription, sessionUrl)
+
+          createDialog(session.title, `
+            ${session.content}
+            <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+              <h3 class="text-lg font-semibold mb-4">Share this session</h3>
+              ${shareButtons}
+            </div>
+          `)
         }
       })
     })
 
     // Add event listeners for speakers
-    document.querySelectorAll('[data-speaker]').forEach(speakerCard => {
-      speakerCard.addEventListener('click', () => {
-        const speakerId = speakerCard.getAttribute('data-speaker')
+    document.querySelectorAll('[data-speaker-click]').forEach(speakerClickable => {
+      speakerClickable.addEventListener('click', () => {
+        const speakerId = speakerClickable.getAttribute('data-speaker-click')
         if (speakerId && speakerData[speakerId]) {
           const speaker = speakerData[speakerId]
-          createDialog(speaker.name, speaker.content)
+          const speakerUrl = `${window.location.origin}${window.location.pathname}#speaker-${speakerId}`
+          const shareDescription = `Meet ${speaker.name}, ${speaker.position} at DevFest Armenia 2025`
+          const shareButtons = createShareButtons(speaker.name, shareDescription, speakerUrl)
+
+          createDialog(speaker.name, `
+            ${speaker.content}
+            <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+              <h3 class="text-lg font-semibold mb-4">Share this speaker</h3>
+              ${shareButtons}
+            </div>
+          `)
         }
       })
     })
