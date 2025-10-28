@@ -286,7 +286,7 @@ function renderSpeakers(speakers: Record<string, SpeakerData>): void {
               <h3 class="text-xl font-bold mb-1">${sp.name}</h3>
               <p class="text-google-blue font-medium mb-3">${sp.position}</p>
             </div>
-            <div class="mt-2 w-full">
+            <div class="mt-2 w-full flex justify-center">
               <button 
                 class="share-button inline-flex items-center gap-2 px-4 py-2 bg-google-blue hover:bg-blue-600 text-white rounded-lg transition-colors duration-200 text-sm font-medium"
                 data-share-title="${sp.name.replace(/"/g, '&quot;')}"
