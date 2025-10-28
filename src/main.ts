@@ -610,15 +610,17 @@ function renderWorkshops() {
     return `
     <div class="card">
       <div class="flex flex-col h-full">
-        <div class="flex-shrink-0 mb-4">
-          <img src="${workshop.speakerImage}" alt="${workshop.speakerName}" class="w-full h-48 object-cover rounded-lg">
-        </div>
-        <div class="flex-1 flex flex-col">
+        <div class="cursor-pointer" data-workshop-click="${workshop.id}">
+          <div class="flex-shrink-0 mb-4">
+            <img src="${workshop.speakerImage}" alt="${workshop.speakerName}" class="w-full h-48 object-cover rounded-lg">
+          </div>
           <h3 class="text-xl font-bold mb-2 text-google-blue">${workshop.title}</h3>
           <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
             <span class="font-semibold">Speaker:</span> ${workshop.speakerName}
           </p>
           <p class="text-gray-700 dark:text-gray-300 mb-4 flex-1">${workshop.description}</p>
+        </div>
+        <div class="flex-1 flex flex-col">
           <div class="space-y-3">
             <div class="flex items-center text-sm text-gray-600 dark:text-gray-400">
               <svg class="w-5 h-5 mr-2 text-google-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -726,6 +728,48 @@ async function initializeData() {
       })
     })
 
+    // Add event listeners for workshops
+    document.querySelectorAll('[data-workshop-click]').forEach(workshopClickable => {
+      workshopClickable.addEventListener('click', () => {
+        const workshopId = workshopClickable.getAttribute('data-workshop-click')
+        const workshop = workshopsData.find(w => w.id === workshopId)
+        if (workshop) {
+          const basePath = window.location.pathname.replace(/\/$/, '')
+          const workshopUrl = `${window.location.origin}${basePath}/share/workshop-${workshop.id}.html`
+          const shareDescription = `Join this workshop at DevFest Armenia 2025: ${workshop.title} by ${workshop.speakerName}`
+          const shareButtons = createShareButtons(workshop.title, shareDescription, workshopUrl)
+
+          createDialog(workshop.title, `
+            <div class="flex flex-col md:flex-row gap-6 mb-6">
+              <div class="flex-shrink-0">
+                <img src="${workshop.speakerImage}" alt="${workshop.speakerName}" class="w-full md:w-48 h-48 rounded-lg object-cover">
+              </div>
+              <div>
+                <p class="text-lg font-semibold mb-2">Speaker: ${workshop.speakerName}</p>
+                <div class="flex items-center text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  <svg class="w-5 h-5 mr-2 text-google-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                  </svg>
+                  Max ${workshop.maxParticipants} participants
+                </div>
+                <a href="${workshop.registrationUrl}" target="_blank" rel="noopener noreferrer" 
+                   class="inline-block bg-google-blue hover:bg-blue-600 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-200">
+                  Enroll Now
+                </a>
+              </div>
+            </div>
+            <div class="prose dark:prose-invert max-w-none">
+              <p class="text-gray-700 dark:text-gray-300">${workshop.description}</p>
+            </div>
+            <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+              <h3 class="text-lg font-semibold mb-4">Share this workshop</h3>
+              ${shareButtons}
+            </div>
+          `)
+        }
+      })
+    })
+
     // Handle deep linking from hash anchors (for social share pages)
     const handleHashNavigation = () => {
       const hash = window.location.hash.substring(1) // Remove the #
@@ -770,16 +814,43 @@ async function initializeData() {
           `)
         }
       }
-      // Handle workshop links like #workshop-aggent-app-development
+      // Handle workshop links like #workshop-android-jetpack-compose
       else if (hash.startsWith('workshop-')) {
         const workshopId = hash.substring(9) // Remove 'workshop-' prefix
         const workshop = workshopsData.find(w => w.id === workshopId)
         if (workshop) {
-          // Scroll to workshops section
-          const workshopsSection = document.getElementById('workshops')
-          if (workshopsSection) {
-            workshopsSection.scrollIntoView({ behavior: 'smooth' })
-          }
+          const basePath = window.location.pathname.replace(/\/$/, '')
+          const workshopUrl = `${window.location.origin}${basePath}/share/workshop-${workshop.id}.html`
+          const shareDescription = `Join this workshop at DevFest Armenia 2025: ${workshop.title} by ${workshop.speakerName}`
+          const shareButtons = createShareButtons(workshop.title, shareDescription, workshopUrl)
+
+          createDialog(workshop.title, `
+            <div class="flex flex-col md:flex-row gap-6 mb-6">
+              <div class="flex-shrink-0">
+                <img src="${workshop.speakerImage}" alt="${workshop.speakerName}" class="w-full md:w-48 h-48 rounded-lg object-cover">
+              </div>
+              <div>
+                <p class="text-lg font-semibold mb-2">Speaker: ${workshop.speakerName}</p>
+                <div class="flex items-center text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  <svg class="w-5 h-5 mr-2 text-google-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                  </svg>
+                  Max ${workshop.maxParticipants} participants
+                </div>
+                <a href="${workshop.registrationUrl}" target="_blank" rel="noopener noreferrer" 
+                   class="inline-block bg-google-blue hover:bg-blue-600 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-200">
+                  Enroll Now
+                </a>
+              </div>
+            </div>
+            <div class="prose dark:prose-invert max-w-none">
+              <p class="text-gray-700 dark:text-gray-300">${workshop.description}</p>
+            </div>
+            <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+              <h3 class="text-lg font-semibold mb-4">Share this workshop</h3>
+              ${shareButtons}
+            </div>
+          `)
         }
       }
     }
