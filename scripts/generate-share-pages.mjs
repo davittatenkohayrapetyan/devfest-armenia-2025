@@ -127,7 +127,7 @@ async function generateSharePages() {
 
   // Determine base URL (default for local/GitHub Pages)
   const basePath = process.env.VITE_BASE_PATH || '/2025/'
-  const baseUrl = process.env.VITE_BASE_URL || 'https://gdg.am'
+  const baseUrl = process.env.VITE_BASE_URL || 'https://devfest.am'
   const fullBaseUrl = `${baseUrl}${basePath}`.replace(/\/+$/, '')
 
   // Load data
