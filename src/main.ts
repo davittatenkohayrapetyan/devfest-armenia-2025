@@ -180,6 +180,12 @@ function statusChip(status?: string): string {
   return `<span class="px-3 py-1 ${cls} rounded-full text-sm font-medium">${status}</span>`
 }
 
+// Helper: truncate text with ellipsis
+function truncateText(text: string, maxLength: number): string {
+  if (!text || text.length <= maxLength) return text
+  return text.substring(0, maxLength).trim() + '...'
+}
+
 // Render Sessions from data.json into #sessions-container
 function renderSessions(sessions: Record<string, SessionData>): void {
   const container = document.getElementById('sessions-container')
@@ -606,6 +612,7 @@ function renderWorkshops() {
     const basePath = window.location.pathname.replace(/\/$/, '')
     const workshopUrl = `${window.location.origin}${basePath}/share/workshop-${workshop.id}.html`
     const shareDescription = `Join this workshop at DevFest Armenia 2025: ${workshop.title} by ${workshop.speakerName}`
+    const truncatedDescription = truncateText(workshop.description, 150)
 
     return `
     <div class="card">
@@ -618,7 +625,7 @@ function renderWorkshops() {
           <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
             <span class="font-semibold">Speaker:</span> ${workshop.speakerName}
           </p>
-          <p class="text-gray-700 dark:text-gray-300 mb-4 flex-1">${workshop.description}</p>
+          <p class="text-gray-700 dark:text-gray-300 mb-4 flex-1">${truncatedDescription}</p>
         </div>
         <div class="flex-1 flex flex-col">
           <div class="space-y-3">
