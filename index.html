@@ -104,6 +104,33 @@
   }
   </script>
   
+  <!-- JSON-LD Structured Data for WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "DevFest Armenia",
+    "url": "https://devfest.am/",
+    "description": "Official website for DevFest Armenia - Annual tech conference by GDG Yerevan",
+    "publisher": {
+      "@type": "Organization",
+      "name": "GDG Yerevan",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://devfest.am/gdg-yerevan.avif"
+      }
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://devfest.am/2025/#{search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  
   <!-- JSON-LD Structured Data for BreadcrumbList -->
   <script type="application/ld+json">
   {
@@ -121,6 +148,80 @@
         "position": 2,
         "name": "DevFest Armenia 2025",
         "item": "https://devfest.am/2025/"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- JSON-LD Structured Data for FAQ (AEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "When is DevFest Armenia 2025?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DevFest Armenia 2025 will take place on December 20, 2025, from 9:00 AM to 6:00 PM at Woods Center in Yerevan, Armenia."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is DevFest Armenia 2025 held?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DevFest Armenia 2025 is held at Woods Center, located in Yerevan, Armenia. It's an in-person event with no virtual attendance option."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is DevFest Armenia 2025 free to attend?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, DevFest Armenia 2025 is completely free to attend. You can register for free on Meetup at https://www.meetup.com/gdgyerevan/events/311547893/"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is DevFest?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DevFest is an annual distributed tech conference hosted by Google Developer Groups (GDG) around the world. It features talks, workshops, and hands-on learning experiences covering the latest Google technologies including AI, Firebase, Android, Web Development, and Cloud."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who organizes DevFest Armenia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DevFest Armenia 2025 is organized by GDG Yerevan (Google Developer Group Yerevan), a community of developers passionate about Google technologies and software development."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What topics are covered at DevFest Armenia 2025?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DevFest Armenia 2025 covers cutting-edge topics including Firebase AI, Android development, Agent Development Kit, AI automation in product creation, and hands-on workshops on Google Cloud technologies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I register for DevFest Armenia 2025?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can register for free on Meetup at https://www.meetup.com/gdgyerevan/events/311547893/. Registration is required to attend the event and workshops."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are there workshops at DevFest Armenia 2025?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, DevFest Armenia 2025 features hands-on workshops including the Agent Development Kit Deep Dive workshop. Workshops have limited capacity and require separate registration."
+        }
       }
     ]
   }
