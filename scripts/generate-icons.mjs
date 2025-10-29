@@ -33,6 +33,8 @@ async function generateIcons() {
   }
   
   // Generate favicon.ico (using 32x32 as base)
+  // Note: This generates a PNG file with .ico extension, which is supported by all modern browsers
+  // True ICO format would require additional dependencies, and PNG-as-ICO is the standard for modern web apps
   const icoPath = join(publicDir, 'favicon.ico');
   await sharp(sourceImage)
     .resize(32, 32, {
@@ -42,7 +44,7 @@ async function generateIcons() {
     .png()
     .toFile(icoPath);
   
-  console.log('✅ Generated favicon.ico (32x32)');
+  console.log('✅ Generated favicon.ico (32x32 PNG format)');
   console.log('\n📦 All icons generated successfully!');
 }
 
