@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "generate:data": "node scripts/generate-data.mjs",
     "generate:share-pages": "node scripts/generate-share-pages.mjs",
-    "prebuild": "npm run generate:data && npm run generate:share-pages",
+    "generate:icons": "node scripts/generate-icons.mjs",
+    "prebuild": "npm run generate:icons && npm run generate:data && npm run generate:share-pages",
     "predev": "npm run generate:data"
   },
   "keywords": [
