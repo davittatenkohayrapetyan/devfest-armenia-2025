@@ -33,10 +33,19 @@ function normalizeWhitespace(text) {
 }
 
 // Generate HTML page with meta tags for social sharing
-function generateSharePage(title, description, image, canonicalUrl, redirectUrl) {
+function generateSharePage(title, description, image, canonicalUrl, redirectUrl, structuredData = null) {
   // Normalize whitespace in title and description
   const normalizedTitle = normalizeWhitespace(title)
   const normalizedDescription = normalizeWhitespace(description)
+  
+  // Generate structured data script if provided
+  const structuredDataScript = structuredData 
+    ? `\n  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  ${JSON.stringify(structuredData, null, 2)}
+  </script>`
+    : ''
+  
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,6 +53,7 @@ function generateSharePage(title, description, image, canonicalUrl, redirectUrl)
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${escapeHtml(normalizedTitle)} - DevFest Armenia 2025</title>
   <meta name="description" content="${escapeHtml(normalizedDescription)}">
+  <meta name="robots" content="index, follow">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -51,6 +61,7 @@ function generateSharePage(title, description, image, canonicalUrl, redirectUrl)
   <meta property="og:title" content="${escapeHtml(normalizedTitle)} - DevFest Armenia 2025">
   <meta property="og:description" content="${escapeHtml(normalizedDescription)}">
   <meta property="og:image" content="${escapeHtml(image)}">
+  <meta property="og:image:alt" content="${escapeHtml(normalizedTitle)}">
   
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
@@ -58,6 +69,8 @@ function generateSharePage(title, description, image, canonicalUrl, redirectUrl)
   <meta name="twitter:title" content="${escapeHtml(normalizedTitle)} - DevFest Armenia 2025">
   <meta name="twitter:description" content="${escapeHtml(normalizedDescription)}">
   <meta name="twitter:image" content="${escapeHtml(image)}">
+  <meta name="twitter:image:alt" content="${escapeHtml(normalizedTitle)}">
+  ${structuredDataScript}
   
   <!-- Redirect to main app -->
   <meta http-equiv="refresh" content="0; url=${escapeHtml(redirectUrl)}">
@@ -147,12 +160,42 @@ async function generateSharePages() {
     const canonicalUrl = `${fullBaseUrl}/share/session-${sessionId}.html`
     const redirectUrl = `${fullBaseUrl}/#session-${sessionId}`
 
+    // Create structured data for session (as a CourseInstance under Event)
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "EducationalEvent",
+      "name": session.title,
+      "description": description,
+      "image": image,
+      "url": redirectUrl,
+      "organizer": {
+        "@type": "Organization",
+        "name": "GDG Yerevan",
+        "url": "https://gdg.community.dev/gdg-yerevan/"
+      },
+      "location": {
+        "@type": "Place",
+        "name": "Woods Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Yerevan",
+          "addressCountry": "AM"
+        }
+      },
+      "startDate": "2025-12-20",
+      "performer": {
+        "@type": "Person",
+        "name": speakerName
+      }
+    }
+
     const html = generateSharePage(
       session.title,
       description,
       image,
       canonicalUrl,
-      redirectUrl
+      redirectUrl,
+      structuredData
     )
 
     const filePath = path.join(shareDir, `session-${sessionId}.html`)
@@ -168,12 +211,42 @@ async function generateSharePages() {
     const canonicalUrl = `${fullBaseUrl}/share/speaker-${speakerId}.html`
     const redirectUrl = `${fullBaseUrl}/#speaker-${speakerId}`
 
+    // Create structured data for speaker
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": speaker.name,
+      "description": description,
+      "image": image,
+      "url": redirectUrl,
+      "jobTitle": speaker.position,
+      "worksFor": {
+        "@type": "Organization",
+        "name": speaker.position.split(' at ')[1] || speaker.position
+      },
+      "performerIn": {
+        "@type": "Event",
+        "name": "DevFest Armenia 2025",
+        "startDate": "2025-12-20",
+        "location": {
+          "@type": "Place",
+          "name": "Woods Center",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Yerevan",
+            "addressCountry": "AM"
+          }
+        }
+      }
+    }
+
     const html = generateSharePage(
       speaker.name,
       description,
       image,
       canonicalUrl,
-      redirectUrl
+      redirectUrl,
+      structuredData
     )
 
     const filePath = path.join(shareDir, `speaker-${speakerId}.html`)
@@ -191,12 +264,50 @@ async function generateSharePages() {
     const canonicalUrl = `${fullBaseUrl}/share/workshop-${workshop.id}.html`
     const redirectUrl = `${fullBaseUrl}/#workshop-${workshop.id}`
 
+    // Create structured data for workshop
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "EducationEvent",
+      "name": workshop.title,
+      "description": workshop.description,
+      "image": image,
+      "url": redirectUrl,
+      "organizer": {
+        "@type": "Organization",
+        "name": "GDG Yerevan",
+        "url": "https://gdg.community.dev/gdg-yerevan/"
+      },
+      "location": {
+        "@type": "Place",
+        "name": "Woods Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Yerevan",
+          "addressCountry": "AM"
+        }
+      },
+      "startDate": "2025-12-20",
+      "performer": {
+        "@type": "Person",
+        "name": workshop.speakerName
+      },
+      "maximumAttendeeCapacity": workshop.maxParticipants,
+      "offers": {
+        "@type": "Offer",
+        "url": workshop.registrationUrl,
+        "price": "0",
+        "priceCurrency": "AMD",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+
     const html = generateSharePage(
       workshop.title,
       description,
       image,
       canonicalUrl,
-      redirectUrl
+      redirectUrl,
+      structuredData
     )
 
     const filePath = path.join(shareDir, `workshop-${workshop.id}.html`)
