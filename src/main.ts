@@ -325,6 +325,7 @@ app.innerHTML = `
           <a href="#sessions" class="hover:text-google-blue transition-colors">Sessions</a>
           <a href="#workshops" class="hover:text-google-blue transition-colors">Workshops</a>
           <a href="#speakers" class="hover:text-google-blue transition-colors">Speakers</a>
+          <a href="#call-for-speakers" class="hover:text-google-blue transition-colors">Call for Speakers</a>
           <a href="#location" class="hover:text-google-blue transition-colors">Location</a>
           <a href="#partners" class="hover:text-google-blue transition-colors">Partners</a>
           <a href="#organizers" class="hover:text-google-blue transition-colors">Organizers</a>
@@ -472,6 +473,120 @@ app.innerHTML = `
     </div>
   </section>
 
+  <!-- Call for Speakers Section -->
+  <section id="call-for-speakers" class="bg-gradient-to-br from-google-blue to-blue-600 text-white">
+    <div class="section-container">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="section-title text-white">Call for Speakers</h2>
+        <div class="mb-8">
+          <p class="text-xl md:text-2xl mb-6 leading-relaxed">
+            Are you passionate about Google technologies? Do you have knowledge and experience to share with the developer community?
+          </p>
+          <p class="text-lg md:text-xl mb-8 leading-relaxed">
+            We're looking for speakers to present talks and workshops at DevFest Armenia 2025. Whether you're an expert in Android, Web Development, Cloud, AI/ML, or any other Google technology, we'd love to hear from you!
+          </p>
+        </div>
+        
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8">
+          <h3 class="text-2xl font-bold mb-4">What We're Looking For</h3>
+          <div class="grid md:grid-cols-2 gap-6 text-left">
+            <div class="flex items-start gap-3">
+              <div class="text-3xl">🎯</div>
+              <div>
+                <h4 class="font-bold mb-2">Technical Topics</h4>
+                <p class="text-sm">Sessions on Firebase, Android, Web, Cloud, AI/ML, and other Google technologies</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="text-3xl">🛠️</div>
+              <div>
+                <h4 class="font-bold mb-2">Hands-on Workshops</h4>
+                <p class="text-sm">Interactive workshops where attendees can learn by doing</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="text-3xl">💡</div>
+              <div>
+                <h4 class="font-bold mb-2">Real-world Experience</h4>
+                <p class="text-sm">Case studies and practical applications from your projects</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="text-3xl">🌟</div>
+              <div>
+                <h4 class="font-bold mb-2">Community Insights</h4>
+                <p class="text-sm">Best practices and lessons learned from the field</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://sessionize.com/devfest-armenia-2025" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-white text-google-blue hover:bg-gray-100 font-bold py-4 px-10 rounded-lg transition-colors duration-200 shadow-2xl text-xl">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+          </svg>
+          Submit Your Proposal on Sessionize
+        </a>
+        
+        <p class="mt-6 text-sm opacity-90">
+          Deadline for submissions will be announced soon. Don't miss this opportunity to share your knowledge!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Become a Partner Section -->
+  <section id="become-partner" class="bg-gray-50 dark:bg-gray-800">
+    <div class="section-container">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="section-title text-center">Become a Partner</h2>
+        <div class="text-center mb-8">
+          <p class="text-lg md:text-xl mb-6 leading-relaxed">
+            DevFest Armenia brings together hundreds of developers, tech enthusiasts, and industry professionals. 
+            Partner with us to connect with the vibrant Armenian tech community!
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+          <div class="card text-center">
+            <div class="text-4xl mb-4">🎯</div>
+            <h3 class="text-xl font-bold mb-3">Brand Visibility</h3>
+            <p class="text-gray-700 dark:text-gray-300">
+              Showcase your brand to a targeted audience of developers and tech professionals
+            </p>
+          </div>
+          <div class="card text-center">
+            <div class="text-4xl mb-4">🤝</div>
+            <h3 class="text-xl font-bold mb-3">Community Engagement</h3>
+            <p class="text-gray-700 dark:text-gray-300">
+              Connect directly with talented developers and potential hires in Armenia
+            </p>
+          </div>
+          <div class="card text-center">
+            <div class="text-4xl mb-4">📢</div>
+            <h3 class="text-xl font-bold mb-3">Thought Leadership</h3>
+            <p class="text-gray-700 dark:text-gray-300">
+              Position your company as a leader in technology and innovation
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-xl text-center">
+          <h3 class="text-2xl font-bold mb-4">Interested in Partnering?</h3>
+          <p class="text-lg mb-6">
+            Contact us to learn more about partnership opportunities and sponsorship packages.
+          </p>
+          <a href="mailto:gdgyerevan@gmail.com" class="inline-flex items-center gap-3 bg-google-blue hover:bg-blue-600 text-white font-bold py-4 px-10 rounded-lg transition-colors duration-200 shadow-lg text-xl">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            Contact Us at gdgyerevan@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Location Section -->
   <section id="location" class="bg-gray-50 dark:bg-gray-800">
     <div class="section-container">
@@ -489,15 +604,26 @@ app.innerHTML = `
     <div class="section-container">
       <h2 class="section-title">Partners</h2>
       <div class="max-w-5xl mx-auto">
-        <p class="text-center text-lg mb-12">
+        <p class="text-center text-lg mb-8">
           Thank you to our amazing partners who make DevFest Armenia possible!
         </p>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-8">
           <a href="https://woodscenter.am/en" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
             <img src="partners/woods.svg" alt="Woods Center" class="h-12 md:h-16 w-auto object-contain" loading="lazy"/>
           </a>
           <a href="https://ardy.am/en" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
             <img src="partners/ardy.svg" alt="Ardy" class="h-12 md:h-16 w-auto object-contain" loading="lazy"/>
+          </a>
+        </div>
+        <div class="text-center mt-12">
+          <p class="text-lg mb-4 text-gray-600 dark:text-gray-400">
+            Want to become a partner?
+          </p>
+          <a href="#become-partner" class="inline-flex items-center gap-2 text-google-blue hover:text-blue-600 font-semibold text-lg transition-colors">
+            Learn more about partnership opportunities
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
           </a>
         </div>
       </div>
