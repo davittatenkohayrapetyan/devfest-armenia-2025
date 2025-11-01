@@ -39,6 +39,16 @@
       "categories": [
         ""
       ]
+    },
+    "oauth-supply-chain-risks-how-to-mitigate-them-and-how-not-to-become-them": {
+      "sessionId": "oauth-supply-chain-risks-how-to-mitigate-them-and-how-not-to-become-them",
+      "title": "OAuth supply-chain risks: How to mitigate them, and how not to become them",
+      "speaker": "Narek Babajanyan - Cybersecurity @ ServiceTitan | Armed Forces ex-officer",
+      "photo": "https://sessionize.com/image/71f5-400o400o1-BVLaZdEqXxPwDdXZowmvfo.png",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/71f5-400o400o1-BVLaZdEqXxPwDdXZowmvfo.png\" alt=\"Narek Babajanyan\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Narek Babajanyan - Cybersecurity @ ServiceTitan | Armed Forces ex-officer</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">A lightning session about Google APIs' OAuth permission scopes and their categories - from a security engineer's perspective.</p>\n        <p class=\"mb-4\">Topics include an introduction to supply chain risks, OAuth illicit consent attacks,</p>\n        <p class=\"mb-4\">The talk intends to be an awareness session for developers to request the least possible amount of permissions (and data) and for security engineers to audit their Google Workspace OAuth integrations.</p>\n      </div>\n    ",
+      "categories": [
+        ""
+      ]
     }
   },
   "speakers": {
@@ -69,6 +79,13 @@
       "position": "Google Developer Expert for Angular, Front-End Team Lead",
       "photo": "https://sessionize.com/image/ccc2-400o400o1-futBYou8hfX59EBdSrY52r.jpg",
       "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/ccc2-400o400o1-futBYou8hfX59EBdSrY52r.jpg\" alt=\"Armen Vardanyan\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Armen Vardanyan</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Google Developer Expert for Angular, Front-End Team Lead</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>Front End Team Lead working with Angular for 6+ years, GDE for Angular, technical writer, mentor, speaker.</p>\n\n      </div>\n    "
+    },
+    "narek-babajanyan": {
+      "speakerId": "narek-babajanyan",
+      "name": "Narek Babajanyan",
+      "position": "Cybersecurity @ ServiceTitan | Armed Forces ex-officer",
+      "photo": "https://sessionize.com/image/71f5-400o400o1-BVLaZdEqXxPwDdXZowmvfo.png",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/71f5-400o400o1-BVLaZdEqXxPwDdXZowmvfo.png\" alt=\"Narek Babajanyan\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Narek Babajanyan</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Cybersecurity @ ServiceTitan | Armed Forces ex-officer</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>I am currently an Incident Response and Threat Prevention Engineer at ServiceTitan. Previously, I helped safeguard Armenia's critical infrastructure at the Information Systems Agency of Armenia.</p>\n\n      </div>\n    "
     }
   }
 }
