@@ -2,7 +2,7 @@
   "sessions": {
     "agent-development-kit-deep-dive-workshop": {
       "sessionId": "agent-development-kit-deep-dive-workshop",
-      "title": "Agent  Development Kit Deep Dive [WORKSHOP]",
+      "title": "Agent Development Kit Deep Dive [WORKSHOP]",
       "speaker": "Ankur Roy - Solutions Architect at Online Partner AB | Google Developer Expert in Cloud",
       "photo": "https://sessionize.com/image/7b5c-400o400o1-LM8dCULuUeHrEhCsuRY34o.jpg",
       "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/7b5c-400o400o1-LM8dCULuUeHrEhCsuRY34o.jpg\" alt=\"Ankur Roy\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Ankur Roy - Solutions Architect at Online Partner AB | Google Developer Expert in Cloud</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">From Initialization to Ideation to Prompting to Deployment. All of these and the intermediate steps will be covered in the creation of your own Agent application. We all know about AI, but this is much more than that, it is making sure the AI is deployed and available in the most consistent way possible with all the requirements for application development including version control, testing and scaling being covered. You will be given credits to follow along on the workshop.</p>\n      </div>\n    ",
@@ -29,6 +29,16 @@
       "categories": [
         ""
       ]
+    },
+    "actually-optimizing-your-rag-with-gemini": {
+      "sessionId": "actually-optimizing-your-rag-with-gemini",
+      "title": "Actually optimizing your RAG with Gemini",
+      "speaker": "Armen Vardanyan - Google Developer Expert for Angular, Front-End Team Lead",
+      "photo": "https://sessionize.com/image/ccc2-400o400o1-futBYou8hfX59EBdSrY52r.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/ccc2-400o400o1-futBYou8hfX59EBdSrY52r.jpg\" alt=\"Armen Vardanyan\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Armen Vardanyan - Google Developer Expert for Angular, Front-End Team Lead</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">Let's talk about making retrieval-augmented generation systems work better, faster, and cheaper by utilizing Gemini embedding models to do machine learning, semantic retrieval, and prompt optimizations</p>\n      </div>\n    ",
+      "categories": [
+        ""
+      ]
     }
   },
   "speakers": {
@@ -52,6 +62,13 @@
       "position": "Android Tech Lead, Dodo Brands",
       "photo": "https://sessionize.com/image/2b33-400o400o1-NAvjTdoBPX4kkGbQGnntqb.jpg",
       "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/2b33-400o400o1-NAvjTdoBPX4kkGbQGnntqb.jpg\" alt=\"Max Kachinkin\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Max Kachinkin</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Android Tech Lead, Dodo Brands</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>Android Tech Lead, Dodo Brands</p>\n        <p>I have over 10 years of experience in Android development and currently work as an Android Tech Lead at Dodo Brands. I led the development of Dodo Pizza (with 9 million MAU across 20 countries) and am now working on another project, Drinkit, a new digital coffee shop network by Dodo Brands.</p>\n<ul class=\"list-disc list-inside space-y-2 mt-4\">\n          <li>I run a Telegram channel on mobile development, \"Mobile Fiction\"</li>\n          <li>I speak at conferences such as Mobius and Codefest.</li>\n          <li>I write articles on platforms like Habr, Medium (ProAndroidDev, BetterProgramming), HackerNoon.</li>\n          <li>I teach Android development in the Android Professional course at OTUS.</li>\n          <li>I created an Android Architecture course for GeekBrains Online School.</li>\n          <li>I participate in the program committee for the Android Podlodka Crew conference.</li>\n          <li>I also engage in various community activities, such as conducting an open interview, DevZen podcast.</li>\n        </ul>\n\n      </div>\n    "
+    },
+    "armen-vardanyan": {
+      "speakerId": "armen-vardanyan",
+      "name": "Armen Vardanyan",
+      "position": "Google Developer Expert for Angular, Front-End Team Lead",
+      "photo": "https://sessionize.com/image/ccc2-400o400o1-futBYou8hfX59EBdSrY52r.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/ccc2-400o400o1-futBYou8hfX59EBdSrY52r.jpg\" alt=\"Armen Vardanyan\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Armen Vardanyan</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Google Developer Expert for Angular, Front-End Team Lead</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>Front End Team Lead working with Angular for 6+ years, GDE for Angular, technical writer, mentor, speaker.</p>\n\n      </div>\n    "
     }
   }
 }

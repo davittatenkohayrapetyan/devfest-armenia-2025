@@ -795,17 +795,21 @@ async function initializeData() {
     renderSessions(sessionData)
     renderSpeakers(speakerData)
 
-    // Add event listeners for share buttons (event delegation)
+    // Add event listeners for share buttons
     document.addEventListener('click', (e) => {
       const target = e.target as HTMLElement
-      const shareButton = target.closest('.share-button') as HTMLButtonElement | null
-      if (!shareButton) return
-      e.preventDefault()
-      e.stopPropagation()
-      const title = shareButton.dataset.shareTitle || ''
-      const text = shareButton.dataset.shareText || ''
-      const url = shareButton.dataset.shareUrl || window.location.href
-      shareContent({ title, text, url })
+      const shareButton = target.closest('.share-button') as HTMLButtonElement
+
+      if (shareButton) {
+        e.preventDefault()
+        e.stopPropagation()
+
+        const title = shareButton.dataset.shareTitle || ''
+        const text = shareButton.dataset.shareText || ''
+        const url = shareButton.dataset.shareUrl || window.location.href
+
+        shareContent({ title, text, url })
+      }
     }, true)
 
     // Add event listeners for sessions
@@ -900,8 +904,9 @@ async function initializeData() {
       const hash = window.location.hash.substring(1) // Remove the #
       if (!hash) return
 
+      // Handle session links like #session-ordering-coffee-with-firebase-ai
       if (hash.startsWith('session-')) {
-        const sessionId = hash.substring(8)
+        const sessionId = hash.substring(8) // Remove 'session-' prefix
         if (sessionData[sessionId]) {
           const session = sessionData[sessionId]
           const basePath = window.location.pathname.replace(/\/$/, '')
@@ -918,8 +923,10 @@ async function initializeData() {
             </div>
           `)
         }
-      } else if (hash.startsWith('speaker-')) {
-        const speakerId = hash.substring(8)
+      }
+      // Handle speaker links like #speaker-ankur-roy
+      else if (hash.startsWith('speaker-')) {
+        const speakerId = hash.substring(8) // Remove 'speaker-' prefix
         if (speakerData[speakerId]) {
           const speaker = speakerData[speakerId]
           const basePath = window.location.pathname.replace(/\/$/, '')
@@ -935,8 +942,10 @@ async function initializeData() {
             </div>
           `)
         }
-      } else if (hash.startsWith('workshop-')) {
-        const workshopId = hash.substring(9)
+      }
+      // Handle workshop links like #workshop-android-jetpack-compose
+      else if (hash.startsWith('workshop-')) {
+        const workshopId = hash.substring(9) // Remove 'workshop-' prefix
         const workshop = workshopsData.find(w => w.id === workshopId)
         if (workshop) {
           const basePath = window.location.pathname.replace(/\/$/, '')
