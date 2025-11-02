@@ -1,5 +1,25 @@
 {
   "sessions": {
+    "go-beyond-models-why-ai-needs-a-fast-backend": {
+      "sessionId": "go-beyond-models-why-ai-needs-a-fast-backend",
+      "title": "Go Beyond Models: Why AI Needs a Fast Backend",
+      "speaker": "Kirill Cherniavski - Just a software engineer",
+      "photo": "https://sessionize.com/image/0f4f-400o400o1-325zV56GBzG8KTAwZDjWyK.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/0f4f-400o400o1-325zV56GBzG8KTAwZDjWyK.jpg\" alt=\"Kirill Cherniavski\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Kirill Cherniavski - Just a software engineer</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">Al models get all the attention, but real-world systems live and die by their backend. Go has quietly become a favorite for building the infrastructure behind Al - from API gateways and streaming responses to agent runtimes and data pipelines.</p>\n        <p class=\"mb-4\">In this talk, I'll show why Go's simplicity, concurrency model, and reliability make it great for Al backends. We'll look at examples of how Go powers fast, scalable services around large language models, and what lessons Go engineers can borrow from the Al world (and vice versa).</p>\n      </div>\n    ",
+      "categories": [
+        ""
+      ]
+    },
+    "agent-to-agent-a2a-protocol-a-deep-dive-into-googles-client-server-model": {
+      "sessionId": "agent-to-agent-a2a-protocol-a-deep-dive-into-googles-client-server-model",
+      "title": "Agent-to-Agent (A2A) Protocol: A Deep Dive into Google’s Client-Server Model",
+      "speaker": "Dr Roushanak Rahmat - Lead Data Scientist",
+      "photo": "https://sessionize.com/image/ba90-400o400o1-fzqoL9qQ9sABBDWiSraopL.png",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/ba90-400o400o1-fzqoL9qQ9sABBDWiSraopL.png\" alt=\"Dr Roushanak Rahmat\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Dr Roushanak Rahmat - Lead Data Scientist</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">This session takes a deep dive into Google’s Agent-to-Agent (A2A) protocol, focusing on its client–server model and the Purchasing Concierge example. We’ll explore how A2A enables autonomous agents to communicate, delegate tasks, and coordinate across distributed systems, moving beyond simple tool invocation toward true agent ecosystems. Through real-world workflows, you’ll see how agents discover each other, exchange structured messages, and orchestrate multi-step interactions. By the end, you’ll understand the architectural principles behind A2A and how to apply them to build scalable, collaborative AI solutions.</p>\n      </div>\n    ",
+      "categories": [
+        ""
+      ]
+    },
     "agent-development-kit-deep-dive-workshop": {
       "sessionId": "agent-development-kit-deep-dive-workshop",
       "title": "Agent Development Kit Deep Dive [WORKSHOP]",
@@ -52,6 +72,20 @@
     }
   },
   "speakers": {
+    "kirill-cherniavski": {
+      "speakerId": "kirill-cherniavski",
+      "name": "Kirill Cherniavski",
+      "position": "Just a software engineer",
+      "photo": "https://sessionize.com/image/0f4f-400o400o1-325zV56GBzG8KTAwZDjWyK.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/0f4f-400o400o1-325zV56GBzG8KTAwZDjWyK.jpg\" alt=\"Kirill Cherniavski\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Kirill Cherniavski</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Just a software engineer</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>12 years of experience, moved from java to go 6 years ago. Ex principal engineer in Huawei (cloud department). Building high-load apps and distributed systems.</p>\n\n      </div>\n    "
+    },
+    "drroushanak-rahmat": {
+      "speakerId": "drroushanak-rahmat",
+      "name": "Dr Roushanak Rahmat",
+      "position": "Lead Data Scientist",
+      "photo": "https://sessionize.com/image/ba90-400o400o1-fzqoL9qQ9sABBDWiSraopL.png",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/ba90-400o400o1-fzqoL9qQ9sABBDWiSraopL.png\" alt=\"Dr Roushanak Rahmat\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Dr Roushanak Rahmat</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Lead Data Scientist</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>I’m Dr Roushanak Rahmat, a Lead AI Architect and Strategist, Google Developer Expert (AI & Cloud), and recognised as one of the Top 100 Women in Tech (2025). With a PhD in Artificial Intelligence and over a decade of experience, I specialise in architecting and delivering enterprise-scale Generative AI, Agentic AI, and Deep Learning solutions that drive innovation across healthcare, finance, and energy.</p>\n        <p>At IBM Consulting, I design and implement AI and GenAI strategies, building LLM-powered systems, RAG pipelines, and multi-agent frameworks that enhance enterprise workflows, decision-making, and long-term scalability. So far, I have contributed to projects for clients including KPMG, NHS, Scottish Power, Coca-Cola, and Lloyds Banking, helping them explore responsible and scalable adoption of AI technologies.</p>\n        <p>Previously at Elekta, I led AI innovation projects that advanced radiotherapy through multimodal imaging and deep learning, resulting in multiple US patents in medical AI. My research and applied work have directly contributed to improving patient outcomes in oncology and clinical imaging.</p>\n        <p>I am also a Google Women Techmakers Ambassador, public speaker, and active contributor to the AI community through talks, technical Medium blogs, YouTube, and open-source projects. Beyond technical expertise, I am passionate about bridging the gap between cutting-edge AI research and real-world business impact, while mentoring and inspiring the next generation of AI leaders.</p>\n        <p>🔑 Highlights:</p>\n        <p>✅ Top 100 Women in Tech (2025) – WeAreTechWomen & UN UK Women Delegate</p>\n        <p>✅ US Patent Inventor in medical AI (advanced imaging & radiotherapy)</p>\n        <p>✅ Google Developer Expert (AI & Cloud)</p>\n        <p>✅ Experienced in cloud-native AI (GCP, AWS, Azure, IBM watsonx) and modern ML stacks (LangChain, PyTorch, TensorFlow, JAX)</p>\n        <p>✅ Associate Professor shaping the next generation of AI talent</p>\n        <p>Explore my portfolio: roushanakrahmat.github.io</p>\n\n      </div>\n    "
+    },
     "ankur-roy": {
       "speakerId": "ankur-roy",
       "name": "Ankur Roy",
