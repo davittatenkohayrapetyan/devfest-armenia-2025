@@ -7,5 +7,23 @@
     "speakerName": "Ankur Roy",
     "maxParticipants": 40,
     "registrationUrl": "https://forms.gle/4bHmjCyi2ksYXQAG9"
+  },
+  {
+    "id": "accelerate-ai-with-cloud-run",
+    "title": "Accelerate AI with Cloud Run: deploy a MCP server on Cloud Run",
+    "description": "The workshop delves into the architectural pattern for deploying a secure and scalable MCP server (a standard protocol that enables AI models to connect with and utilize external tools and data sources) on GCP's renowned Cloud Run and covers Cloud Run GPU capabilities.",
+    "speakerImage": "Gemini_Generated_Image_3tlcgk3tlcgk3tlc.png",
+    "speakerName": "Rohan Singh",
+    "maxParticipants": 40,
+    "registrationUrl": "https://forms.gle/EnL28H4XeT76iUxE7"
+  },
+  {
+    "id": "simple-emotional-intelligence-skills",
+    "title": "Simple Emotional Intelligence Skills",
+    "description": "As AI gets smarter — coding, making presentations, even writing texts (maybe this one too!) — let’s invest in what can’t be delegated to machines: emotional intelligence.\n \n\n This hands-on workshop is built around simple, practical exercises that strengthen key soft skills — listening, collaboration, and learning — with a special focus on how to give advice the right way.\n Expect minimal theory, maximum practice, and a few unexpected stories along the way.\n \n\n Come with an open mind and be ready to take part.\n At the very least, it’ll be fun — and at best, surprisingly useful. \uD83C\uDF3F",
+    "speakerImage": "Gemini_Generated_Image_fk8p9nfk8p9nfk8p.png",
+    "speakerName": "Natasha Arefyeva",
+    "maxParticipants": 40,
+    "registrationUrl": "https://forms.gle/uF6gftRn14bBgez99"
   }
 ]

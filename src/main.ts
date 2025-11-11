@@ -604,6 +604,9 @@ app.innerHTML = `
           Thank you to our amazing partners who make DevFest Armenia possible!
         </p>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-8">
+          <a href="https://developers.google.com/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
+            <img src="partners/google-for-developers.svg" alt="Woods Center" class="h-12 md:h-16 w-auto object-contain" loading="lazy"/>
+          </a>
           <a href="https://woodscenter.am/en" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
             <img src="partners/woods.svg" alt="Woods Center" class="h-12 md:h-16 w-auto object-contain" loading="lazy"/>
           </a>
@@ -675,6 +678,32 @@ app.innerHTML = `
             <img src="organizers/Roland.jpeg" alt="Portrait of Roland Egiazaryan" loading="lazy" width="128" height="128" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 shadow-md ring-4 ring-white dark:ring-gray-900" />
             <h3 class="font-bold text-lg">Roland Egiazaryan</h3>
             <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Co-Organizer</p>
+            <div class="flex items-center justify-center text-google-blue">
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              <span class="text-sm">LinkedIn Profile</span>
+            </div>
+          </a>
+          
+          <!-- Rohan Singh -->
+          <a href="https://www.linkedin.com/in/rohankalhans/" target="_blank" rel="noopener noreferrer" class="card text-center hover:shadow-xl transition-shadow">
+            <img src="organizers/Rohan.jpg" alt="Portrait of Rohan Singh" loading="lazy" width="128" height="128" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 shadow-md ring-4 ring-white dark:ring-gray-900" />
+            <h3 class="font-bold text-lg">Roland Egiazaryan</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Co-Organizer, GDE Cloud</p>
+            <div class="flex items-center justify-center text-google-blue">
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              <span class="text-sm">LinkedIn Profile</span>
+            </div>
+          </a>
+          
+          <!-- Armen Vardanyan -->
+          <a href="https://www.linkedin.com/in/armen-vardanyan-am/" target="_blank" rel="noopener noreferrer" class="card text-center hover:shadow-xl transition-shadow">
+            <img src="organizers/Armen.jpg" alt="Portrait of Armen Vardanyan" loading="lazy" width="128" height="128" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 shadow-md ring-4 ring-white dark:ring-gray-900" />
+            <h3 class="font-bold text-lg">Armen Vardanyan</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Co-Organizer, GDE Angular</p>
             <div class="flex items-center justify-center text-google-blue">
               <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>

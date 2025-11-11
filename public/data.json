@@ -1,11 +1,41 @@
 {
   "sessions": {
-    "go-beyond-models-why-ai-needs-a-fast-backend": {
-      "sessionId": "go-beyond-models-why-ai-needs-a-fast-backend",
-      "title": "Go Beyond Models: Why AI Needs a Fast Backend",
-      "speaker": "Kirill Cherniavski - Just a software engineer",
-      "photo": "https://sessionize.com/image/0f4f-400o400o1-325zV56GBzG8KTAwZDjWyK.jpg",
-      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/0f4f-400o400o1-325zV56GBzG8KTAwZDjWyK.jpg\" alt=\"Kirill Cherniavski\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Kirill Cherniavski - Just a software engineer</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">Al models get all the attention, but real-world systems live and die by their backend. Go has quietly become a favorite for building the infrastructure behind Al - from API gateways and streaming responses to agent runtimes and data pipelines.</p>\n        <p class=\"mb-4\">In this talk, I'll show why Go's simplicity, concurrency model, and reliability make it great for Al backends. We'll look at examples of how Go powers fast, scalable services around large language models, and what lessons Go engineers can borrow from the Al world (and vice versa).</p>\n      </div>\n    ",
+    "simple-emotional-intelligence-skills-workshop": {
+      "sessionId": "simple-emotional-intelligence-skills-workshop",
+      "title": "Simple Emotional Intelligence Skills [WORKSHOP]",
+      "speaker": "Natasha Arefyeva - ACC ICF Certified Coach, 15+ years in IT",
+      "photo": "https://sessionize.com/image/7f26-400o400o1-MDc9fdZAHv4bp3BpAM19fh.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/7f26-400o400o1-MDc9fdZAHv4bp3BpAM19fh.jpg\" alt=\"Natasha Arefyeva\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Natasha Arefyeva - ACC ICF Certified Coach, 15+ years in IT</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">As AI gets smarter — coding, making presentations, even writing texts (maybe this one too!) — let’s invest in what can’t be delegated to machines: emotional intelligence.</p>\n        <p class=\"mb-4\">This hands-on workshop is built around simple, practical exercises that strengthen key soft skills — listening, collaboration, and learning — with a special focus on how to give advice the right way.</p>\n        <p class=\"mb-4\">Expect minimal theory, maximum practice, and a few unexpected stories along the way.</p>\n        <p class=\"mb-4\">Come with an open mind and be ready to take part.</p>\n        <p class=\"mb-4\">At the very least, it’ll be fun — and at best, surprisingly useful. 🌿</p>\n      </div>\n    ",
+      "categories": [
+        ""
+      ]
+    },
+    "beyond-the-prompt-an-anatomy-of-an-ai-powered-game-using-agent-development-kit": {
+      "sessionId": "beyond-the-prompt-an-anatomy-of-an-ai-powered-game-using-agent-development-kit",
+      "title": "Beyond the Prompt: An Anatomy of an AI-powered Game using Agent Development Kit",
+      "speaker": "Yoyu Li - Igniting Creativity with Technology",
+      "photo": "https://sessionize.com/image/845b-400o400o1-TbTE3pLpPy7QH8G2YiZzoj.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/845b-400o400o1-TbTE3pLpPy7QH8G2YiZzoj.jpg\" alt=\"Yoyu Li\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Yoyu Li - Igniting Creativity with Technology</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">LLMs have opened up a world of possibilities, but turning them into a truly useful, AI-driven application presents a unique set of challenges. Brought to you by a professional game maker, in this talk, we’ll use an AI-powered game as a practical example to explore these real-world hurdles and see how Agent Development Kit can help solve them.</p>\n        <p class=\"mb-4\">You’ll learn how to:</p>\n        <p class=\"mb-4\">Design an application using an agent-based architecture, with the responsible use of AI in mind.</p>\n        <p class=\"mb-4\">Use input and output schemas to exchange structured data between agents and the front-end.</p>\n        <p class=\"mb-4\">Manage game state using session state.</p>\n        <p class=\"mb-4\">Control the game flow with a custom orchestrator agent.</p>\n      </div>\n    ",
+      "categories": [
+        ""
+      ]
+    },
+    "accelerate-ai-with-cloud-run-deploy-a-mcp-server-on-cloud-run-workshop": {
+      "sessionId": "accelerate-ai-with-cloud-run-deploy-a-mcp-server-on-cloud-run-workshop",
+      "title": "Accelerate AI with Cloud Run: deploy a MCP server on Cloud Run [WORKSHOP]",
+      "speaker": "Rohan Singh - Senior Cloud Platform Engineer at SADA, an Insight Company | Google Developer Expert - Google Cloud | GDG Yerevan - Co Organizer",
+      "photo": "https://sessionize.com/image/8127-400o400o1-G6DGgUfqS9qdu6SEvW7XwU.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/8127-400o400o1-G6DGgUfqS9qdu6SEvW7XwU.jpg\" alt=\"Rohan Singh\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Rohan Singh - Senior Cloud Platform Engineer at SADA, an Insight Company | Google Developer Expert - Google Cloud | GDG Yerevan - Co Organizer</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">The workshop delves into the architectural pattern for deploying a secure and scalable MCP server (a standard protocol that enables AI models to connect with and utilize external tools and data sources) on GCP's renowned Cloud Run and covers Cloud Run GPU capabilities.</p>\n      </div>\n    ",
+      "categories": [
+        ""
+      ]
+    },
+    "beyond-nextjs-tanstack-start-and-the-future-of-full-stack-react-development": {
+      "sessionId": "beyond-nextjs-tanstack-start-and-the-future-of-full-stack-react-development",
+      "title": "Beyond Next.js: TanStack Start and the Future of Full-Stack React Development",
+      "speaker": "Viktoriia Akhmatova - Jack of all trades",
+      "photo": "https://sessionize.com/image/37eb-400o400o1-VMZhK1e9g59mZBcH2MZnCK.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/37eb-400o400o1-VMZhK1e9g59mZBcH2MZnCK.jpg\" alt=\"Viktoriia Akhmatova\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Viktoriia Akhmatova - Jack of all trades</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">Next.js has dominated the React ecosystem for quite a while, but TanStack Start is making developers reconsider. Is it a genuine replacement or a specialized alternative?</p>\n        <p class=\"mb-4\">We'll compare the architectural philosophies – server-first vs. client-first, all-in-one vs. composable – and break down the real trade-offs in routing, data fetching, and ecosystem maturity. Through technical analysis and candid perspective, we'll examine when to reach for TanStack Start, when Next.js remains the better choice, and what this evolution means for full-stack React development.</p>\n        <p class=\"mb-4\">Expect a balanced view grounded in actual experience: what works, what doesn't, and what the community is building with these frameworks.</p>\n      </div>\n    ",
       "categories": [
         ""
       ]
@@ -20,32 +50,22 @@
         ""
       ]
     },
-    "agent-development-kit-deep-dive-workshop": {
-      "sessionId": "agent-development-kit-deep-dive-workshop",
-      "title": "Agent Development Kit Deep Dive [WORKSHOP]",
-      "speaker": "Ankur Roy - Solutions Architect at Online Partner AB | Google Developer Expert in Cloud",
-      "photo": "https://sessionize.com/image/7b5c-400o400o1-LM8dCULuUeHrEhCsuRY34o.jpg",
-      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/7b5c-400o400o1-LM8dCULuUeHrEhCsuRY34o.jpg\" alt=\"Ankur Roy\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Ankur Roy - Solutions Architect at Online Partner AB | Google Developer Expert in Cloud</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">From Initialization to Ideation to Prompting to Deployment. All of these and the intermediate steps will be covered in the creation of your own Agent application. We all know about AI, but this is much more than that, it is making sure the AI is deployed and available in the most consistent way possible with all the requirements for application development including version control, testing and scaling being covered. You will be given credits to follow along on the workshop.</p>\n      </div>\n    ",
+    "go-beyond-models-why-ai-needs-a-fast-backend": {
+      "sessionId": "go-beyond-models-why-ai-needs-a-fast-backend",
+      "title": "Go Beyond Models: Why AI Needs a Fast Backend",
+      "speaker": "Kirill Cherniavski - Just a software engineer",
+      "photo": "https://sessionize.com/image/0f4f-400o400o1-325zV56GBzG8KTAwZDjWyK.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/0f4f-400o400o1-325zV56GBzG8KTAwZDjWyK.jpg\" alt=\"Kirill Cherniavski\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Kirill Cherniavski - Just a software engineer</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">Al models get all the attention, but real-world systems live and die by their backend. Go has quietly become a favorite for building the infrastructure behind Al - from API gateways and streaming responses to agent runtimes and data pipelines.</p>\n        <p class=\"mb-4\">In this talk, I'll show why Go's simplicity, concurrency model, and reliability make it great for Al backends. We'll look at examples of how Go powers fast, scalable services around large language models, and what lessons Go engineers can borrow from the Al world (and vice versa).</p>\n      </div>\n    ",
       "categories": [
         ""
       ]
     },
-    "how-far-should-you-go-with-ai-automating-product-creation-while-keeping-the-balance": {
-      "sessionId": "how-far-should-you-go-with-ai-automating-product-creation-while-keeping-the-balance",
-      "title": "How Far Should You Go with AI? Automating Product Creation While Keeping the Balance",
-      "speaker": "Seda Sahakyan - Product Designer, iGameMedia",
-      "photo": "https://sessionize.com/image/4bf1-400o400o1-ne6zrHPgJwZa3qp6qBPLGU.jpg",
-      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/4bf1-400o400o1-ne6zrHPgJwZa3qp6qBPLGU.jpg\" alt=\"Seda Sahakyan\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Seda Sahakyan - Product Designer, iGameMedia</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">We all know AI can auto-generate components, codes, and a bunch of other stuff to help us work faster, but the real question is: should 80% of our work be done by AI (is this even possible for high-quality work), and how much automation is truly too much?</p>\n        <p class=\"mb-4\">I'm sharing a practical look at how I'm using AI in the product creation workflow, from actionable tricks that get better product workflow and documentation to the real, often-unspoken problem of maintaining design authority and preventing our essential human skills from slowing down.</p>\n        <p class=\"mb-4\">This session is for everyone ready to stop listening to the hype and find the necessary balance between AI speed and lasting quality.</p>\n      </div>\n    ",
-      "categories": [
-        ""
-      ]
-    },
-    "ordering-coffee-with-firebase-ai": {
-      "sessionId": "ordering-coffee-with-firebase-ai",
-      "title": "Ordering Coffee with Firebase AI",
-      "speaker": "Max Kachinkin - Android Tech Lead, Dodo Brands",
-      "photo": "https://sessionize.com/image/2b33-400o400o1-NAvjTdoBPX4kkGbQGnntqb.jpg",
-      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/2b33-400o400o1-NAvjTdoBPX4kkGbQGnntqb.jpg\" alt=\"Max Kachinkin\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Max Kachinkin - Android Tech Lead, Dodo Brands</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">Check out my video submission: https://youtu.be/aW17mTF45yc</p>\n        <p class=\"mb-4\">The presentation is not THE final yet, but it shows all the core idea, structure, and mood.</p>\n        <p class=\"mb-4\">\n          <a href=\"https://docs.google.com/presentation/d/1WRWVDhyplhf2odAEqYfv6whKdNIRipwwK-gf3Hn4sOo/edit?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-google-blue hover:underline\">https://docs.google.com/presentation/d/1WRWVDhyplhf2odAEqYfv6whKdNIRipwwK-gf3Hn4sOo/edit?usp=sharing</a>\n        </p>\n        <p class=\"mb-4\">I’m an Android Tech Lead at Dodo Brands, the fastest-growing QSR franchise company, operating internationally with Dodo Pizza and Drinkit coffee shops, including in the UAE.</p>\n        <p class=\"mb-4\">My talk is called “Ordering Coffee with Firebase AI”, and it’s about a real case of bootstrapping AI assistants with Firebase AI Logic.</p>\n        <p class=\"mb-4\">I’m working on a coffee shop chain app called Drinkit. Our menu is huge: you can customize drinks with or without milk, change ice, add syrups, literally millions of combinations. Too big for a static UI. So we thought: why not let AI guide the user? What if you could just say: “It’s hot today, give me something refreshing”. And boom, the app recommends the perfect drink for you. That’s exactly what we’re building in Drinkit.</p>\n        <p class=\"mb-4\">I believe this talk will be useful because it’s a real production case of applying Firebase AI, not just sandbox examples. Attendees will see how we combined speech-to-text, Firebase AI models, and function calls to handle a huge menu (2M+ token context!) and deliver an interactive, personalized ordering experience. Developers will walk away with inspiration, code examples, and practical lessons on how to quickly bootstrap AI features in their own apps.</p>\n      </div>\n    ",
+    "engineering-leadership-for-distributed-teams-balancing-code-people-and-culture": {
+      "sessionId": "engineering-leadership-for-distributed-teams-balancing-code-people-and-culture",
+      "title": "Engineering Leadership for Distributed Teams: Balancing Code, People, and Culture",
+      "speaker": "Davit Siradeghyan - Engineering Manager at Softr",
+      "photo": "https://sessionize.com/image/cb44-400o400o1-ndd8tsfsG4cPgo6uJZeZL9.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/cb44-400o400o1-ndd8tsfsG4cPgo6uJZeZL9.jpg\" alt=\"Davit Siradeghyan\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Davit Siradeghyan - Engineering Manager at Softr</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">Leading a distributed engineering team is more than managing tasks across time zones — it’s about building trust, maintaining technical excellence, and keeping a shared culture alive. In this talk I will share lessons from managing multinational teams while staying hands-on with code. You’ll learn practical approaches to balancing leadership and technical work, fostering innovation, and scaling remote collaboration without losing team spirit.</p>\n      </div>\n    ",
       "categories": [
         ""
       ]
@@ -60,6 +80,26 @@
         ""
       ]
     },
+    "how-far-should-you-go-with-ai-automating-product-creation-while-keeping-the-balance": {
+      "sessionId": "how-far-should-you-go-with-ai-automating-product-creation-while-keeping-the-balance",
+      "title": "How Far Should You Go with AI? Automating Product Creation While Keeping the Balance",
+      "speaker": "Seda Sahakyan - Product Designer, iGameMedia",
+      "photo": "https://sessionize.com/image/4bf1-400o400o1-ne6zrHPgJwZa3qp6qBPLGU.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/4bf1-400o400o1-ne6zrHPgJwZa3qp6qBPLGU.jpg\" alt=\"Seda Sahakyan\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Seda Sahakyan - Product Designer, iGameMedia</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">We all know AI can auto-generate components, codes, and a bunch of other stuff to help us work faster, but the real question is: should 80% of our work be done by AI (is this even possible for high-quality work), and how much automation is truly too much?</p>\n        <p class=\"mb-4\">I'm sharing a practical look at how I'm using AI in the product creation workflow, from actionable tricks that get better product workflow and documentation to the real, often-unspoken problem of maintaining design authority and preventing our essential human skills from slowing down.</p>\n        <p class=\"mb-4\">This session is for everyone ready to stop listening to the hype and find the necessary balance between AI speed and lasting quality.</p>\n      </div>\n    ",
+      "categories": [
+        ""
+      ]
+    },
+    "agent-development-kit-deep-dive-workshop": {
+      "sessionId": "agent-development-kit-deep-dive-workshop",
+      "title": "Agent Development Kit Deep Dive [WORKSHOP]",
+      "speaker": "Ankur Roy - Solutions Architect at Online Partner AB | Google Developer Expert in Cloud",
+      "photo": "https://sessionize.com/image/7b5c-400o400o1-LM8dCULuUeHrEhCsuRY34o.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/7b5c-400o400o1-LM8dCULuUeHrEhCsuRY34o.jpg\" alt=\"Ankur Roy\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Ankur Roy - Solutions Architect at Online Partner AB | Google Developer Expert in Cloud</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">From Initialization to Ideation to Prompting to Deployment. All of these and the intermediate steps will be covered in the creation of your own Agent application. We all know about AI, but this is much more than that, it is making sure the AI is deployed and available in the most consistent way possible with all the requirements for application development including version control, testing and scaling being covered. You will be given credits to follow along on the workshop.</p>\n      </div>\n    ",
+      "categories": [
+        ""
+      ]
+    },
     "oauth-supply-chain-risks-how-to-mitigate-them-and-how-not-to-become-them": {
       "sessionId": "oauth-supply-chain-risks-how-to-mitigate-them-and-how-not-to-become-them",
       "title": "OAuth supply-chain risks: How to mitigate them, and how not to become them",
@@ -69,15 +109,46 @@
       "categories": [
         ""
       ]
+    },
+    "ordering-coffee-with-firebase-ai": {
+      "sessionId": "ordering-coffee-with-firebase-ai",
+      "title": "Ordering Coffee with Firebase AI",
+      "speaker": "Max Kachinkin - Android Tech Lead, Dodo Brands",
+      "photo": "https://sessionize.com/image/2b33-400o400o1-NAvjTdoBPX4kkGbQGnntqb.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/2b33-400o400o1-NAvjTdoBPX4kkGbQGnntqb.jpg\" alt=\"Max Kachinkin\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Max Kachinkin - Android Tech Lead, Dodo Brands</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">Check out my video submission: https://youtu.be/aW17mTF45yc</p>\n        <p class=\"mb-4\">The presentation is not THE final yet, but it shows all the core idea, structure, and mood.</p>\n        <p class=\"mb-4\">\n          <a href=\"https://docs.google.com/presentation/d/1WRWVDhyplhf2odAEqYfv6whKdNIRipwwK-gf3Hn4sOo/edit?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-google-blue hover:underline\">https://docs.google.com/presentation/d/1WRWVDhyplhf2odAEqYfv6whKdNIRipwwK-gf3Hn4sOo/edit?usp=sharing</a>\n        </p>\n        <p class=\"mb-4\">I’m an Android Tech Lead at Dodo Brands, the fastest-growing QSR franchise company, operating internationally with Dodo Pizza and Drinkit coffee shops, including in the UAE.</p>\n        <p class=\"mb-4\">My talk is called “Ordering Coffee with Firebase AI”, and it’s about a real case of bootstrapping AI assistants with Firebase AI Logic.</p>\n        <p class=\"mb-4\">I’m working on a coffee shop chain app called Drinkit. Our menu is huge: you can customize drinks with or without milk, change ice, add syrups, literally millions of combinations. Too big for a static UI. So we thought: why not let AI guide the user? What if you could just say: “It’s hot today, give me something refreshing”. And boom, the app recommends the perfect drink for you. That’s exactly what we’re building in Drinkit.</p>\n        <p class=\"mb-4\">I believe this talk will be useful because it’s a real production case of applying Firebase AI, not just sandbox examples. Attendees will see how we combined speech-to-text, Firebase AI models, and function calls to handle a huge menu (2M+ token context!) and deliver an interactive, personalized ordering experience. Developers will walk away with inspiration, code examples, and practical lessons on how to quickly bootstrap AI features in their own apps.</p>\n      </div>\n    ",
+      "categories": [
+        ""
+      ]
     }
   },
   "speakers": {
-    "kirill-cherniavski": {
-      "speakerId": "kirill-cherniavski",
-      "name": "Kirill Cherniavski",
-      "position": "Just a software engineer",
-      "photo": "https://sessionize.com/image/0f4f-400o400o1-325zV56GBzG8KTAwZDjWyK.jpg",
-      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/0f4f-400o400o1-325zV56GBzG8KTAwZDjWyK.jpg\" alt=\"Kirill Cherniavski\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Kirill Cherniavski</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Just a software engineer</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>12 years of experience, moved from java to go 6 years ago. Ex principal engineer in Huawei (cloud department). Building high-load apps and distributed systems.</p>\n\n      </div>\n    "
+    "natasha-arefyeva": {
+      "speakerId": "natasha-arefyeva",
+      "name": "Natasha Arefyeva",
+      "position": "ACC ICF Certified Coach, 15+ years in IT",
+      "photo": "https://sessionize.com/image/7f26-400o400o1-MDc9fdZAHv4bp3BpAM19fh.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/7f26-400o400o1-MDc9fdZAHv4bp3BpAM19fh.jpg\" alt=\"Natasha Arefyeva\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Natasha Arefyeva</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">ACC ICF Certified Coach, 15+ years in IT</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>Natasha Arefyeva has spent over 15 years in tech — from developer to Chief Product Officer.</p>\n        <p>Now an ACC ICF coach (Erickson Coaching International, Canada) and team coach, she helps people and teams reconnect with clarity, trust, and purpose.</p>\n        <p>Her work focuses on building honest, open communication and processes that make teams stronger from the inside out.</p>\n\n      </div>\n    "
+    },
+    "yoyu-li": {
+      "speakerId": "yoyu-li",
+      "name": "Yoyu Li",
+      "position": "Igniting Creativity with Technology",
+      "photo": "https://sessionize.com/image/845b-400o400o1-TbTE3pLpPy7QH8G2YiZzoj.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/845b-400o400o1-TbTE3pLpPy7QH8G2YiZzoj.jpg\" alt=\"Yoyu Li\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Yoyu Li</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Igniting Creativity with Technology</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>Yoyu is a creative technology advisor at Infinite Whys. She has worked in a wide range of capacities throughout her career - product designer, game producer, product manager, startup CTO and technology consultant.</p>\n\n      </div>\n    "
+    },
+    "rohan-singh": {
+      "speakerId": "rohan-singh",
+      "name": "Rohan Singh",
+      "position": "Senior Cloud Platform Engineer at SADA, an Insight Company | Google Developer Expert - Google Cloud | GDG Yerevan - Co Organizer",
+      "photo": "https://sessionize.com/image/8127-400o400o1-G6DGgUfqS9qdu6SEvW7XwU.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/8127-400o400o1-G6DGgUfqS9qdu6SEvW7XwU.jpg\" alt=\"Rohan Singh\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Rohan Singh</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Senior Cloud Platform Engineer at SADA, an Insight Company | Google Developer Expert - Google Cloud | GDG Yerevan - Co Organizer</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>A dynamic Indian cloud guy and avid community lover with a devotion to motorcycling working and living in Armenia.</p>\n\n      </div>\n    "
+    },
+    "viktoriia-akhmatova": {
+      "speakerId": "viktoriia-akhmatova",
+      "name": "Viktoriia Akhmatova",
+      "position": "Jack of all trades",
+      "photo": "https://sessionize.com/image/37eb-400o400o1-VMZhK1e9g59mZBcH2MZnCK.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/37eb-400o400o1-VMZhK1e9g59mZBcH2MZnCK.jpg\" alt=\"Viktoriia Akhmatova\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Viktoriia Akhmatova</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Jack of all trades</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>Full-stack developer developer with 5+ years of experience building modern web applications. My main tools are TypeScript, React, and Next.js, which I use across the stack – from frontend logic to backend APIs and production setups.</p>\n        <p>I love exploring new tech and experiment with it :3</p>\n\n      </div>\n    "
     },
     "drroushanak-rahmat": {
       "speakerId": "drroushanak-rahmat",
@@ -86,26 +157,19 @@
       "photo": "https://sessionize.com/image/ba90-400o400o1-fzqoL9qQ9sABBDWiSraopL.png",
       "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/ba90-400o400o1-fzqoL9qQ9sABBDWiSraopL.png\" alt=\"Dr Roushanak Rahmat\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Dr Roushanak Rahmat</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Lead Data Scientist, IBM, Google Developer Expert (AI & Cloud)</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>Dr Roushanak Rahmat is a Google Developer Expert and seasoned AI Strategy Leader with a PhD in Artificial Intelligence, specializing in computer vision and image processing. With over a decade of hands-on experience in designing, delivering, and scaling AI and Generative AI (GenAI) solutions, she has partnered with leading organizations including IBM, the NHS, Elekta, Coca-Cola, Lloyds, and Scottish Power to transform complex challenges into measurable business outcomes.</p>\n        <p>Currently serving as a Lead Data Scientist at IBM Consulting, Roushanak leads the development and deployment of AI and GenAI strategies across sectors such as healthcare, finance, and energy. Her work focuses on translating cutting-edge research into real-world applications, ensuring that innovation remains both technically sound and strategically aligned with business goals.</p>\n        <p>Prior to IBM, she played a pivotal role at Elekta, a global leader in cancer treatment solutions. There, she led innovation projects harnessing deep learning and multimodal medical imaging to enhance radiotherapy outcomes. Her technical toolkit includes Python, PyTorch, TensorFlow, Keras, and JAX, with domain expertise in working with MRI, CT, and CBCT imaging data, as well as large-scale data pipelines and analytics platforms.</p>\n        <p>Beyond her technical contributions, Roushanak is a dedicated advocate for ethical AI, inclusive innovation, and knowledge sharing. She serves as a Women Techmakers ambassador, where she champions diversity in tech and mentors emerging talent in AI and data science. Her passion for democratizing AI knowledge is evident in her active online presence—sharing insights through Medium articles, open-source contributions, and educational content on YouTube.</p>\n        <p>Known for her ability to bridge the gap between deeply technical teams and executive stakeholders, Roushanak excels at aligning AI initiatives with strategic business objectives. Whether speaking at conferences, mentoring early-career professionals, or advising C-suite leaders, she brings clarity, purpose, and impact to every conversation around AI.</p>\n\n      </div>\n    "
     },
-    "ankur-roy": {
-      "speakerId": "ankur-roy",
-      "name": "Ankur Roy",
-      "position": "Solutions Architect at Online Partner AB | Google Developer Expert in Cloud",
-      "photo": "https://sessionize.com/image/7b5c-400o400o1-LM8dCULuUeHrEhCsuRY34o.jpg",
-      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/7b5c-400o400o1-LM8dCULuUeHrEhCsuRY34o.jpg\" alt=\"Ankur Roy\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Ankur Roy</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Solutions Architect at Online Partner AB | Google Developer Expert in Cloud</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>I am a Solutions Architect at Online Partner AB and a Cloud GDE. I have worked on several projects involving Google Cloud services and Google Workspace along with multiple other technology stacks and platforms.</p>\n\n      </div>\n    "
+    "kirill-cherniavski": {
+      "speakerId": "kirill-cherniavski",
+      "name": "Kirill Cherniavski",
+      "position": "Just a software engineer",
+      "photo": "https://sessionize.com/image/0f4f-400o400o1-325zV56GBzG8KTAwZDjWyK.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/0f4f-400o400o1-325zV56GBzG8KTAwZDjWyK.jpg\" alt=\"Kirill Cherniavski\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Kirill Cherniavski</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Just a software engineer</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>12 years of experience, moved from java to go 6 years ago. Ex principal engineer in Huawei (cloud department). Building high-load apps and distributed systems.</p>\n\n      </div>\n    "
     },
-    "seda-sahakyan": {
-      "speakerId": "seda-sahakyan",
-      "name": "Seda Sahakyan",
-      "position": "Product Designer, iGameMedia",
-      "photo": "https://sessionize.com/image/4bf1-400o400o1-ne6zrHPgJwZa3qp6qBPLGU.jpg",
-      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/4bf1-400o400o1-ne6zrHPgJwZa3qp6qBPLGU.jpg\" alt=\"Seda Sahakyan\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Seda Sahakyan</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Product Designer, iGameMedia</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>Seda, a product designer crafting digital experiences since 2021. She sees design as an art form, shaping exceptional products that seamlessly blend creativity and functionality.</p>\n\n      </div>\n    "
-    },
-    "max-kachinkin": {
-      "speakerId": "max-kachinkin",
-      "name": "Max Kachinkin",
-      "position": "Android Tech Lead, Dodo Brands",
-      "photo": "https://sessionize.com/image/2b33-400o400o1-NAvjTdoBPX4kkGbQGnntqb.jpg",
-      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/2b33-400o400o1-NAvjTdoBPX4kkGbQGnntqb.jpg\" alt=\"Max Kachinkin\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Max Kachinkin</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Android Tech Lead, Dodo Brands</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>Android Tech Lead, Dodo Brands</p>\n        <p>I have over 10 years of experience in Android development and currently work as an Android Tech Lead at Dodo Brands. I led the development of Dodo Pizza (with 9 million MAU across 20 countries) and am now working on another project, Drinkit, a new digital coffee shop network by Dodo Brands.</p>\n<ul class=\"list-disc list-inside space-y-2 mt-4\">\n          <li>I run a Telegram channel on mobile development, \"Mobile Fiction\"</li>\n          <li>I speak at conferences such as Mobius and Codefest.</li>\n          <li>I write articles on platforms like Habr, Medium (ProAndroidDev, BetterProgramming), HackerNoon.</li>\n          <li>I teach Android development in the Android Professional course at OTUS.</li>\n          <li>I created an Android Architecture course for GeekBrains Online School.</li>\n          <li>I participate in the program committee for the Android Podlodka Crew conference.</li>\n          <li>I also engage in various community activities, such as conducting an open interview, DevZen podcast.</li>\n        </ul>\n\n      </div>\n    "
+    "davit-siradeghyan": {
+      "speakerId": "davit-siradeghyan",
+      "name": "Davit Siradeghyan",
+      "position": "Engineering Manager at Softr",
+      "photo": "https://sessionize.com/image/cb44-400o400o1-ndd8tsfsG4cPgo6uJZeZL9.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/cb44-400o400o1-ndd8tsfsG4cPgo6uJZeZL9.jpg\" alt=\"Davit Siradeghyan\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Davit Siradeghyan</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Engineering Manager at Softr</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>My name is Davit, and I’m currently an Engineering Manager at Softr. I bring over 15 years of experience across US, Canadian, and European companies, both startups and enterprises. My career started as a C++ developer working in electronic design automation and high-performance trading systems (6+ years, mostly at Questrade). Later, I transitioned into iOS development, contributing to companies such as Workfront (acquired by Adobe), Zero (now Hercules.ai), and Disqo for another 6+ years. For the past few years, I’ve been leading engineering at Softr, while still remaining hands-on in coding (around 70% of my time, primarily in Java).</p>\n\n      </div>\n    "
     },
     "armen-vardanyan": {
       "speakerId": "armen-vardanyan",
@@ -114,12 +178,33 @@
       "photo": "https://sessionize.com/image/ccc2-400o400o1-futBYou8hfX59EBdSrY52r.jpg",
       "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/ccc2-400o400o1-futBYou8hfX59EBdSrY52r.jpg\" alt=\"Armen Vardanyan\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Armen Vardanyan</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Google Developer Expert for Angular, Front-End Team Lead</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>Front End Team Lead working with Angular for 6+ years, GDE for Angular, technical writer, mentor, speaker.</p>\n\n      </div>\n    "
     },
+    "seda-sahakyan": {
+      "speakerId": "seda-sahakyan",
+      "name": "Seda Sahakyan",
+      "position": "Product Designer, iGameMedia",
+      "photo": "https://sessionize.com/image/4bf1-400o400o1-ne6zrHPgJwZa3qp6qBPLGU.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/4bf1-400o400o1-ne6zrHPgJwZa3qp6qBPLGU.jpg\" alt=\"Seda Sahakyan\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Seda Sahakyan</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Product Designer, iGameMedia</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>Seda, a product designer crafting digital experiences since 2021. She sees design as an art form, shaping exceptional products that seamlessly blend creativity and functionality.</p>\n\n      </div>\n    "
+    },
+    "ankur-roy": {
+      "speakerId": "ankur-roy",
+      "name": "Ankur Roy",
+      "position": "Solutions Architect at Online Partner AB | Google Developer Expert in Cloud",
+      "photo": "https://sessionize.com/image/7b5c-400o400o1-LM8dCULuUeHrEhCsuRY34o.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/7b5c-400o400o1-LM8dCULuUeHrEhCsuRY34o.jpg\" alt=\"Ankur Roy\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Ankur Roy</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Solutions Architect at Online Partner AB | Google Developer Expert in Cloud</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>I am a Solutions Architect at Online Partner AB and a Cloud GDE. I have worked on several projects involving Google Cloud services and Google Workspace along with multiple other technology stacks and platforms.</p>\n\n      </div>\n    "
+    },
     "narek-babajanyan": {
       "speakerId": "narek-babajanyan",
       "name": "Narek Babajanyan",
       "position": "Cybersecurity @ ServiceTitan | Armed Forces ex-officer",
       "photo": "https://sessionize.com/image/71f5-400o400o1-BVLaZdEqXxPwDdXZowmvfo.png",
       "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/71f5-400o400o1-BVLaZdEqXxPwDdXZowmvfo.png\" alt=\"Narek Babajanyan\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Narek Babajanyan</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Cybersecurity @ ServiceTitan | Armed Forces ex-officer</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>I am currently an Incident Response and Threat Prevention Engineer at ServiceTitan. Previously, I helped safeguard Armenia's critical infrastructure at the Information Systems Agency of Armenia.</p>\n\n      </div>\n    "
+    },
+    "max-kachinkin": {
+      "speakerId": "max-kachinkin",
+      "name": "Max Kachinkin",
+      "position": "Android Tech Lead, Dodo Brands",
+      "photo": "https://sessionize.com/image/2b33-400o400o1-NAvjTdoBPX4kkGbQGnntqb.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/2b33-400o400o1-NAvjTdoBPX4kkGbQGnntqb.jpg\" alt=\"Max Kachinkin\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Max Kachinkin</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Android Tech Lead, Dodo Brands</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>Android Tech Lead, Dodo Brands</p>\n        <p>I have over 10 years of experience in Android development and currently work as an Android Tech Lead at Dodo Brands. I led the development of Dodo Pizza (with 9 million MAU across 20 countries) and am now working on another project, Drinkit, a new digital coffee shop network by Dodo Brands.</p>\n<ul class=\"list-disc list-inside space-y-2 mt-4\">\n          <li>I run a Telegram channel on mobile development, \"Mobile Fiction\"</li>\n          <li>I speak at conferences such as Mobius and Codefest.</li>\n          <li>I write articles on platforms like Habr, Medium (ProAndroidDev, BetterProgramming), HackerNoon.</li>\n          <li>I teach Android development in the Android Professional course at OTUS.</li>\n          <li>I created an Android Architecture course for GeekBrains Online School.</li>\n          <li>I participate in the program committee for the Android Podlodka Crew conference.</li>\n          <li>I also engage in various community activities, such as conducting an open interview, DevZen podcast.</li>\n        </ul>\n\n      </div>\n    "
     }
   }
 }
