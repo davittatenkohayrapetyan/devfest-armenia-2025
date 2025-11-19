@@ -1,5 +1,35 @@
 {
   "sessions": {
+    "build-products-and-services-powered-by-vertex-ai-adk-and-gemini": {
+      "sessionId": "build-products-and-services-powered-by-vertex-ai-adk-and-gemini",
+      "title": "Build products and services powered by Vertex AI, ADK, and Gemini",
+      "speaker": "Gabriel Preda - Principal Data Scientist at Endava, Kaggle & AI GDE, 2x Kaggle Grandmaster",
+      "photo": "https://sessionize.com/image/62cf-400o400o1-X27bXbraTJw4fzuaAenybF.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/62cf-400o400o1-X27bXbraTJw4fzuaAenybF.jpg\" alt=\"Gabriel Preda\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Gabriel Preda - Principal Data Scientist at Endava, Kaggle & AI GDE, 2x Kaggle Grandmaster</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">Discover how to build production-ready AI experiences with Vertex AI, the Agentic Development Kit (ADK), and Gemini—from first prompt to reliable API. We will show how you can combine the various agent patterns predefined in ADK with custom agents and tools to create powerful autonomous applications. As examples we will include a travel multi-agent application as well as an multi-source information retrieval application.</p>\n      </div>\n    ",
+      "categories": [
+        ""
+      ]
+    },
+    "ebpf-explained-architecture-real-world-problems-and-practical-solutions": {
+      "sessionId": "ebpf-explained-architecture-real-world-problems-and-practical-solutions",
+      "title": "eBPF Explained: Architecture, Real-World Problems, and Practical Solutions",
+      "speaker": "Massoud Asadi - Senior Software Engineer at PharmaBits",
+      "photo": "https://sessionize.com/image/f5c1-400o400o1-PwTj2qHiGx8Zb89eXmvD6r.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/f5c1-400o400o1-PwTj2qHiGx8Zb89eXmvD6r.jpg\" alt=\"Massoud Asadi\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Massoud Asadi - Senior Software Engineer at PharmaBits</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">eBPF has quickly become one of the most exciting technologies in the Linux world, giving developers new ways to understand and control what’s happening inside their systems. In this talk, I’ll explain eBPF in simple, practical terms—what it is, why it matters, and how you can actually use it in real applications. I’ll walk through a small demo, show how to load and run eBPF programs from user space, and share the lessons I’ve learned while experimenting with networking and observability use cases. I’ll also highlight how Google uses eBPF in products like GKE and gVisor, and even parts of Android’s networking and security stack to solve real-world performance and security challenges. By the end, attendees will have a clear, realistic idea of how eBPF actually works and can help them debug, optimize, and better understand their own systems.</p>\n        <p class=\"mb-4\">• Understand what eBPF is, how it works, and why it’s transforming modern Linux systems.</p>\n        <p class=\"mb-4\">• Learn how to write, load, and run eBPF programs from user space with practical networking and observability examples.</p>\n        <p class=\"mb-4\">• See how Google uses eBPF in GKE, gVisor, and Android—and how to apply these patterns in your own engineering work.</p>\n        <p class=\"mb-4\">0:00–2:00 — The problem: traditional networking & observability limitations</p>\n        <p class=\"mb-4\">2:00–5:00 — What is eBPF? Why it exists, and what problems it solves</p>\n        <p class=\"mb-4\">5:00–9:00 — How eBPF works: maps, hooks, verifier, and program lifecycle</p>\n        <p class=\"mb-4\">9:00–15:00 — Demo: writing & running a minimal eBPF program</p>\n        <p class=\"mb-4\">15:00–20:00 — Google’s usage: GKE, gVisor, Android networking</p>\n        <p class=\"mb-4\">20:00–24:00 — Practical guidance: integrating eBPF into your projects</p>\n        <p class=\"mb-4\">24:00–25:00 — Key lessons</p>\n        <p class=\"mb-4\">25:00–30:00 — Q&A</p>\n        <p class=\"mb-4\">Audience level: beginner to advance.</p>\n        <p class=\"mb-4\">presentation language is English.</p>\n        <p class=\"mb-4\">Tags: Android, DevOps, Security, Backend, Developer Experience</p>\n        <p class=\"mb-4\">No prerequisites. Basic familiarity with Linux or networking is helpful but not required.</p>\n      </div>\n    ",
+      "categories": [
+        ""
+      ]
+    },
+    "webai-in-action-ai-powered-accessibility-testing-in-chrome": {
+      "sessionId": "webai-in-action-ai-powered-accessibility-testing-in-chrome",
+      "title": "WebAI in Action: AI-Powered Accessibility Testing in Chrome",
+      "speaker": "Andrey Roshchupkin - SDET in VL | Building AI-Powered Solutions",
+      "photo": "https://sessionize.com/image/e10b-400o400o1-W9qosLXaGyqKT5vDHPZXiM.png",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/e10b-400o400o1-W9qosLXaGyqKT5vDHPZXiM.png\" alt=\"Andrey Roshchupkin\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Andrey Roshchupkin - SDET in VL | Building AI-Powered Solutions</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">Chrome’s built-in WebAI provides access to Gemini, a multimodal AI model that can analyze text, images, and web page structures directly in the browser. In this session, I’ll show how a QA engineer can use it to build a working Chrome extension for accessibility testing.</p>\n        <p class=\"mb-4\">The tool combines visual and DOM analysis to detect accessibility issues and generate actionable recommendations — from color contrast improvements to labeling corrections — all running locally in Chrome using Gemini.</p>\n        <p class=\"mb-4\">For the workshop, you can find the extension here: https://github.com/Andrey-Roshchupkin/chrome-web-ai-a11y-testing-extension</p>\n        <p class=\"mb-4\">Note that the Gemini Nano model in Chrome and the Gemma model in Ollama will take some time to download, so it might be better to do this at home.</p>\n      </div>\n    ",
+      "categories": [
+        ""
+      ]
+    },
     "simple-emotional-intelligence-skills-workshop": {
       "sessionId": "simple-emotional-intelligence-skills-workshop",
       "title": "Simple Emotional Intelligence Skills [WORKSHOP]",
@@ -122,6 +152,27 @@
     }
   },
   "speakers": {
+    "gabriel-preda": {
+      "speakerId": "gabriel-preda",
+      "name": "Gabriel Preda",
+      "position": "Principal Data Scientist at Endava, Kaggle & AI GDE, 2x Kaggle Grandmaster",
+      "photo": "https://sessionize.com/image/62cf-400o400o1-X27bXbraTJw4fzuaAenybF.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/62cf-400o400o1-X27bXbraTJw4fzuaAenybF.jpg\" alt=\"Gabriel Preda\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Gabriel Preda</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Principal Data Scientist at Endava, Kaggle & AI GDE, 2x Kaggle Grandmaster</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>Survived PhD in Computational Electromagnetics, while working as a researcher, applied 25 years ago what will be called now Machine Learning to solve ill-posed inverse problems in NDT, worked for long time in Software Development, with positions from developer to senior manager or programme manager, started few years ago to dive into Data Science, currently working as a Principal Data Scientist at Endava. Author with Packt of a book on Kaggle Notebooks (data analytics, machine learning, generative AI), 2x Kaggle Grandmaster, GDE for AI and Kaggle.</p>\n\n      </div>\n    "
+    },
+    "massoud-asadi": {
+      "speakerId": "massoud-asadi",
+      "name": "Massoud Asadi",
+      "position": "Senior Software Engineer at PharmaBits",
+      "photo": "https://sessionize.com/image/f5c1-400o400o1-PwTj2qHiGx8Zb89eXmvD6r.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/f5c1-400o400o1-PwTj2qHiGx8Zb89eXmvD6r.jpg\" alt=\"Massoud Asadi\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Massoud Asadi</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Senior Software Engineer at PharmaBits</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>I’m a Senior Software Engineer with over eight years of experience across backend, frontend, and system-level development. I’ve worked with distributed systems, high-performance .NET services, and modern web technologies, and more recently I’ve been exploring eBPF, system-level networking, and advanced observability tools. I also have hands-on experience with LLM integration and building AI-powered workflows. At PharmaBits, I work on backend architecture, developer tooling, and full-stack product features. I enjoy turning complex technical concepts into practical insights and look forward to sharing what I’ve learned with the DevFest Armenia community.</p>\n\n      </div>\n    "
+    },
+    "andrey-roshchupkin": {
+      "speakerId": "andrey-roshchupkin",
+      "name": "Andrey Roshchupkin",
+      "position": "SDET in VL | Building AI-Powered Solutions",
+      "photo": "https://sessionize.com/image/e10b-400o400o1-W9qosLXaGyqKT5vDHPZXiM.png",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/e10b-400o400o1-W9qosLXaGyqKT5vDHPZXiM.png\" alt=\"Andrey Roshchupkin\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Andrey Roshchupkin</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">SDET in VL | Building AI-Powered Solutions</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>Andrey Roshchupkin is an SDET passionate about blending AI with software testing. He builds open, practical tools that help QA engineers adopt cutting-edge technologies like Chrome WebAI and Gemini to make testing smarter and more accessible. Beyond testing, he explores AI in creative applications, demonstrating how these technologies can solve real-world problems.</p>\n\n      </div>\n    "
+    },
     "natasha-arefyeva": {
       "speakerId": "natasha-arefyeva",
       "name": "Natasha Arefyeva",
