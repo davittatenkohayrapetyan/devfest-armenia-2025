@@ -613,6 +613,15 @@ app.innerHTML = `
           <a href="https://ardy.am/en" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
             <img src="partners/ardy.svg" alt="Ardy" class="h-12 md:h-16 w-auto object-contain" loading="lazy"/>
           </a>
+          <a href="https://ameriabank.am/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
+            <img src="partners/ameriabank.png" alt="Ameriabank" class="h-12 md:h-16 w-auto object-contain" loading="lazy"/>
+          </a>
+          <a href="https://www.epam.com/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
+            <img src="partners/EPAM.png" alt="EPAM" class="h-12 md:h-16 w-auto object-contain" loading="lazy"/>
+          </a>
+          <a href="https://griddynamics.com/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
+            <img src="partners/grid-dynamics.png" alt="Grid Dynamics" class="h-12 md:h-16 w-auto object-contain" loading="lazy"/>
+          </a>
         </div>
         <div class="text-center mt-12">
           <p class="text-lg mb-4 text-gray-600 dark:text-gray-400">

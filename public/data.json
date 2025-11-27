@@ -1,5 +1,45 @@
 {
   "sessions": {
+    "self-healing-rollouts-automating-production-fixes-with-google-gemini-and-google-jules": {
+      "sessionId": "self-healing-rollouts-automating-production-fixes-with-google-gemini-and-google-jules",
+      "title": "Self-Healing Rollouts: Automating Production Fixes with Google Gemini and Google Jules",
+      "speaker": "Carlos Sanchez - Principal Scientist at Adobe",
+      "photo": "https://sessionize.com/image/f0b0-400o400o1-9tUWwiZVmgtRM6Wi1AF7mw.png",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/f0b0-400o400o1-9tUWwiZVmgtRM6Wi1AF7mw.png\" alt=\"Carlos Sanchez\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Carlos Sanchez - Principal Scientist at Adobe</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">Even with robust CI/CD, production rollouts can hit unexpected snags. While in Kubernetes Argo Rollouts excels at Progressive Delivery and automated rollbacks to mitigate deployment issues, what if we could go a step further?</p>\n        <p class=\"mb-4\">This session explores how to elevate your release process by integrating Agentic AI using Google Gemini and Google Jules, an Asynchronous Coding Agent, with Argo Rollouts canary deployments on GKE. We'll demonstrate how an intelligent agent can automatically analyze logs when a rollout fails, pinpointing the root cause. Beyond diagnosis, these agents can take proactive steps on your behalf, suggesting and even implementing code fixes as new pull requests, which can be redeployed automatically after PR review. This approach moves us closer to truly self-healing deployments.</p>\n        <p class=\"mb-4\">Join us to learn how to combine the power of Kubernetes and Argo Rollouts with the autonomous capabilities of Agentic AI using Gemini and Google Jules, achieving a release experience that is not only seamless but also resilient.</p>\n      </div>\n    ",
+      "categories": [
+        ""
+      ]
+    },
+    "operationalizing-evaluations-framework-for-automated-cicd-in-the-era-of-generative-models-for-llms": {
+      "sessionId": "operationalizing-evaluations-framework-for-automated-cicd-in-the-era-of-generative-models-for-llms",
+      "title": "Operationalizing Evaluations: Framework for Automated CI/CD in the era of Generative Models for LLMs",
+      "speaker": "Kevork Sulahian - Staff ML Engineer & AAAI author",
+      "photo": "https://sessionize.com/image/72df-400o400o1-BYDRKTYd36RySuy1Wi14rj.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/72df-400o400o1-BYDRKTYd36RySuy1Wi14rj.jpg\" alt=\"Kevork Sulahian\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Kevork Sulahian - Staff ML Engineer & AAAI author</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">LLM applications break traditional testing: outputs are stochastic, non-deterministic, and impossible to validate with string-matching unit tests. This talk introduces a practical framework for “Semantic CI/CD,” where LLMs automatically evaluate other LLMs using robust, binary scoring—no humans and no heuristics. Building on findings from Gaming the Answer Matcher, we show that judge models are far more robust than commonly assumed and can act as reliable gatekeepers in production pipelines.</p>\n      </div>\n    ",
+      "categories": [
+        ""
+      ]
+    },
+    "what-candies-are-agentic-ai-frameworks-stealing-from-developers": {
+      "sessionId": "what-candies-are-agentic-ai-frameworks-stealing-from-developers",
+      "title": "What candies are Agentic AI frameworks stealing from developers?",
+      "speaker": "Luiz Carneiro - Phd, Solution Engineer @ smapiot",
+      "photo": "https://sessionize.com/image/d67a-400o400o1-aprDDPetxHDkvAPGcy8gGz.png",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/d67a-400o400o1-aprDDPetxHDkvAPGcy8gGz.png\" alt=\"Luiz Carneiro\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Luiz Carneiro - Phd, Solution Engineer @ smapiot</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">The rise of Agentic AI frameworks marks a profound change in software engineering, fundamentally shifting the boundary between what developers write and what a framework handles. But what, exactly, are these powerful frameworks automating away?</p>\n        <p class=\"mb-4\">This provocative talk, \"What candies are Agentic AI frameworks stealing from developers?\", explores how modern Agentic frameworks abstract key parts of the system flow. We will clarify and reproduce core agent responsibilities, such as tool orchestration and the Agent control loop, demonstrating exactly how these are being absorbed by the framework. This is not just a high-level discussion; it is a practical lesson on framework design and architectural knowledge essential before building agents. By analyzing which \"candies\" are being \"stolen,\" attendees will gain the clarity needed to focus their future skill development in where it's being expected that developers invest their craft.</p>\n      </div>\n    ",
+      "categories": [
+        ""
+      ]
+    },
+    "ai-in-real-engineering-work-how-to-build-fast-in-2025-without-creating-tomorrows-legacy": {
+      "sessionId": "ai-in-real-engineering-work-how-to-build-fast-in-2025-without-creating-tomorrows-legacy",
+      "title": "AI in Real Engineering Work: How to Build Fast in 2025 Without Creating Tomorrow’s Legacy",
+      "speaker": "Daniel Gonik - Senior Software Engineer",
+      "photo": "https://sessionize.com/image/a4c6-400o400o1-HJozpjEkFQ663xLnkkp4GJ.png",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/a4c6-400o400o1-HJozpjEkFQ663xLnkkp4GJ.png\" alt=\"Daniel Gonik\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Daniel Gonik - Senior Software Engineer</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">The talk explores how AI tools can dramatically speed up engineering work in 2025 while still avoiding the trap of creating “tomorrow’s legacy.” It focuses on where AI genuinely helps, boilerplate, testing, documentation, refactoring, and where human judgment is still essential for architecture, long-term decisions, and debugging. The goal is to give engineers a practical framework for building fast without sacrificing quality or maintainability.</p>\n      </div>\n    ",
+      "categories": [
+        ""
+      ]
+    },
     "build-products-and-services-powered-by-vertex-ai-adk-and-gemini": {
       "sessionId": "build-products-and-services-powered-by-vertex-ai-adk-and-gemini",
       "title": "Build products and services powered by Vertex AI, ADK, and Gemini",
@@ -90,6 +130,16 @@
         ""
       ]
     },
+    "building-software-like-buildings-processes-tests-structure": {
+      "sessionId": "building-software-like-buildings-processes-tests-structure",
+      "title": "Building Software Like Buildings: Processes, Tests & Structure",
+      "speaker": "Vardges Begoyan - IT Governance SDLC Manager, Ameriabank",
+      "photo": "https://sessionize.com/image/84d1-400o400o1-EmdTSdSmp9VsjvUjU3EN6n.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/84d1-400o400o1-EmdTSdSmp9VsjvUjU3EN6n.jpg\" alt=\"Vardges Begoyan\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Vardges Begoyan - IT Governance SDLC Manager, Ameriabank</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">Too often, teams postpone discipline — processes, testing, and architecture — until it’s too late. But just like buildings, software needs strong foundations from the start. In this talk, I’ll share why early processes (planning, code freeze, retrospectives), meaningful unit tests, and aligned architecture matter for both startups and large companies. Using real industry cases and a building analogy, we’ll explore how skipping these leads to unstable “floors,” technical debt, and lost users. Attendees will leave with practical insights on introducing discipline early without slowing down innovation.</p>\n        <p class=\"mb-4\">Takeaways</p>\n        <p class=\"mb-4\">Why early processes (planning, reviews, releases) prevent chaos later.</p>\n        <p class=\"mb-4\">How meaningful unit tests and quality gates protect core functionality.</p>\n        <p class=\"mb-4\">Why scalable architecture and standards are critical for growth - even in small teams.</p>\n        <p class=\"mb-4\">Language: EN</p>\n        <p class=\"mb-4\">Prerequisites:</p>\n        <p class=\"mb-4\">General knowledge of agile/scrum practices and software development life cycle.</p>\n      </div>\n    ",
+      "categories": [
+        ""
+      ]
+    },
     "engineering-leadership-for-distributed-teams-balancing-code-people-and-culture": {
       "sessionId": "engineering-leadership-for-distributed-teams-balancing-code-people-and-culture",
       "title": "Engineering Leadership for Distributed Teams: Balancing Code, People, and Culture",
@@ -152,6 +202,34 @@
     }
   },
   "speakers": {
+    "carlos-sanchez": {
+      "speakerId": "carlos-sanchez",
+      "name": "Carlos Sanchez",
+      "position": "Principal Scientist at Adobe",
+      "photo": "https://sessionize.com/image/f0b0-400o400o1-9tUWwiZVmgtRM6Wi1AF7mw.png",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/f0b0-400o400o1-9tUWwiZVmgtRM6Wi1AF7mw.png\" alt=\"Carlos Sanchez\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Carlos Sanchez</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Principal Scientist at Adobe</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>Carlos Sanchez is a Principal Scientist at Adobe Experience Manager, specializing in software automation, from build tools to Continuous Delivery and Progressive Delivery. Involved in Open Source for over 20 years, he is the author of the Jenkins Kubernetes plugin and a member of the Apache Software Foundation amongst other open source groups, contributing to several projects, such as Kubernetes, Jenkins or Apache Maven.</p>\n\n      </div>\n    "
+    },
+    "kevork-sulahian": {
+      "speakerId": "kevork-sulahian",
+      "name": "Kevork Sulahian",
+      "position": "Staff ML Engineer & AAAI author",
+      "photo": "https://sessionize.com/image/72df-400o400o1-BYDRKTYd36RySuy1Wi14rj.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/72df-400o400o1-BYDRKTYd36RySuy1Wi14rj.jpg\" alt=\"Kevork Sulahian\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Kevork Sulahian</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Staff ML Engineer & AAAI author</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>Staff ML Engineer working on Gen AI application, LLM Safety and Evals</p>\n\n      </div>\n    "
+    },
+    "luiz-carneiro": {
+      "speakerId": "luiz-carneiro",
+      "name": "Luiz Carneiro",
+      "position": "Phd, Solution Engineer @ smapiot",
+      "photo": "https://sessionize.com/image/d67a-400o400o1-aprDDPetxHDkvAPGcy8gGz.png",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/d67a-400o400o1-aprDDPetxHDkvAPGcy8gGz.png\" alt=\"Luiz Carneiro\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Luiz Carneiro</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Phd, Solution Engineer @ smapiot</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>Luiz is an accomplished Cloud Engineer with extensive experience in scalable solutions and software development. His technical depth is uniquely underpinned by a strong background in research, holding a Ph.D. in Physics, which fuels his analytical approach to complex engineering challenges. Luiz closely follows the AI Engineering revolution, with a special dedication to AI agent systems architecture. Beyond his professional roles, he is a dedicated community leader, actively organizing the GDG Cloud Munich, a thriving developer group that fosters knowledge-sharing and networking in cloud technologies.</p>\n\n      </div>\n    "
+    },
+    "daniel-gonik": {
+      "speakerId": "daniel-gonik",
+      "name": "Daniel Gonik",
+      "position": "Senior Software Engineer",
+      "photo": "https://sessionize.com/image/a4c6-400o400o1-HJozpjEkFQ663xLnkkp4GJ.png",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/a4c6-400o400o1-HJozpjEkFQ663xLnkkp4GJ.png\" alt=\"Daniel Gonik\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Daniel Gonik</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Senior Software Engineer</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>As a Senior Fullstack Engineer and experienced Team Lead, I bring a wealth of experience in building and maintaining high-performance, user-friendly web applications. My passion for building tomorrow's applications and services for the web, combined with my expertise in React, Node (Express, Nest, Koa), Angular, HTML/CSS, preprocessors, webpack, and Git, enables me to deliver cutting-edge solutions that meet the needs of my clients. I also have a strong interest in new technologies, security, writing, and general hacking about.</p>\n        <p>I have a proven track record of leading and mentoring teams to success, and I am dedicated to constantly learning and improving in many IT-related topics, particularly JavaScript, React, Angular, NodeJS and many other *.JS technologies. I am confident that my skills and experience will add value to any organization and I am excited to bring my expertise to your company and help drive your business forward.</p>\n\n      </div>\n    "
+    },
     "gabriel-preda": {
       "speakerId": "gabriel-preda",
       "name": "Gabriel Preda",
@@ -214,6 +292,13 @@
       "position": "Just a software engineer",
       "photo": "https://sessionize.com/image/0f4f-400o400o1-325zV56GBzG8KTAwZDjWyK.jpg",
       "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/0f4f-400o400o1-325zV56GBzG8KTAwZDjWyK.jpg\" alt=\"Kirill Cherniavski\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Kirill Cherniavski</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Just a software engineer</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>12 years of experience, moved from java to go 6 years ago. Ex principal engineer in Huawei (cloud department). Building high-load apps and distributed systems.</p>\n\n      </div>\n    "
+    },
+    "vardges-begoyan": {
+      "speakerId": "vardges-begoyan",
+      "name": "Vardges Begoyan",
+      "position": "IT Governance SDLC Manager, Ameriabank",
+      "photo": "https://sessionize.com/image/84d1-400o400o1-EmdTSdSmp9VsjvUjU3EN6n.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/84d1-400o400o1-EmdTSdSmp9VsjvUjU3EN6n.jpg\" alt=\"Vardges Begoyan\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Vardges Begoyan</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">IT Governance SDLC Manager, Ameriabank</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>I am SDLC Manager in IT Governance of Ameriabank with a strong background in leading engineering teams and defining best practices across the software development lifecycle. I am passionate about translating technical discipline into tangible business impact, supporting engineering excellence at both macro (governance and processes) and micro (code quality, team practices) levels. My mission is to help organizations build software foundations that are stable, scalable, and resilient.</p>\n\n      </div>\n    "
     },
     "davit-siradeghyan": {
       "speakerId": "davit-siradeghyan",
