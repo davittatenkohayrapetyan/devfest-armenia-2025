@@ -911,15 +911,17 @@ function renderSchedule(schedule: ScheduleData): void {
                 const colorClass = getSessionColor(session.room)
                 return `
                   <div 
-                    class="absolute left-1 right-1 ${colorClass} border-l-4 border-b-2 border-b-white dark:border-b-gray-800 rounded-r-lg p-2 overflow-hidden cursor-pointer hover:shadow-lg transition-shadow print:left-0 print:right-0 print:shadow-none session-card"
+                    class="absolute left-1 right-1 ${colorClass} border-l-4 border-b-2 border-b-white dark:border-b-gray-800 rounded-r-lg p-1.5 overflow-hidden cursor-pointer hover:shadow-lg transition-shadow print:left-0 print:right-0 print:shadow-none session-card"
                     style="top: ${top}px; height: ${minHeight}px;"
                     data-session-id="${session.id}"
                     title="${session.title}${session.speaker ? ' - ' + session.speaker : ''}"
                   >
                     <div class="h-full flex flex-col overflow-hidden">
-                      <p class="text-xs font-semibold text-gray-800 dark:text-gray-100 line-clamp-3 print:text-gray-900">${session.title}</p>
-                      ${session.speaker ? `<p class="text-xs text-gray-600 dark:text-gray-300 mt-0.5 truncate print:text-gray-700">${session.speaker}</p>` : ''}
-                      <p class="text-xs text-gray-500 dark:text-gray-400 mt-auto print:text-gray-600">${session.startTime} - ${session.endTime}</p>
+                      <div class="flex items-start gap-1">
+                        <p class="text-xs font-semibold text-gray-800 dark:text-gray-100 flex-1 truncate print:text-gray-900">${session.title}</p>
+                        <span class="text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap flex-shrink-0 print:text-gray-600">${session.startTime}</span>
+                      </div>
+                      ${session.speaker ? `<p class="text-xs text-gray-600 dark:text-gray-300 truncate print:text-gray-700">${session.speaker}</p>` : ''}
                     </div>
                   </div>
                 `
