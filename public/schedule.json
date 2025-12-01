@@ -39,7 +39,7 @@
   ],
   "sessions": [
     {
-      "id": "10-20am-hall-a",
+      "id": "10-20am-hall-a-opening",
       "title": "Opening",
       "speaker": "",
       "startTime": "10:20am",
@@ -51,7 +51,7 @@
       "duration": 20
     },
     {
-      "id": "10-40am-hall-a",
+      "id": "10-40am-hall-a-how-far-should-you-go-with-ai-",
       "title": "How Far Should You Go with AI? Automating Product Creation While Keeping the Balance",
       "speaker": "Seda Sahakyan",
       "startTime": "10:40am",
@@ -63,7 +63,7 @@
       "duration": 30
     },
     {
-      "id": "10-40am-hall-b",
+      "id": "10-40am-hall-b-webai-in-action-ai-powered-acc",
       "title": "WebAI in Action: AI-Powered Accessibility Testing in Chrome",
       "speaker": "Andrey Roshchupkin",
       "startTime": "10:40am",
@@ -75,7 +75,7 @@
       "duration": 30
     },
     {
-      "id": "11-10am-hall-a",
+      "id": "11-10am-hall-a-beyond-nextjs-tanstack-start-a",
       "title": "Beyond Next.js: TanStack Start and the Future of Full-Stack React Development",
       "speaker": "Viktoriia Akhmatova",
       "startTime": "11:10am",
@@ -87,7 +87,7 @@
       "duration": 30
     },
     {
-      "id": "11-10am-hall-b",
+      "id": "11-10am-hall-b-agent-development-kit-deep-div",
       "title": "Agent  Development Kit Deep Dive",
       "speaker": "Ankur Roy",
       "startTime": "11:10am",
@@ -99,7 +99,7 @@
       "duration": 90
     },
     {
-      "id": "11-40am-hall-a",
+      "id": "11-40am-hall-a-oauth-supply-chain-risks-how-t",
       "title": "OAuth supply-chain risks: How to mitigate them, and how not to become them",
       "speaker": "Narek Babajanyan",
       "startTime": "11:40am",
@@ -111,7 +111,7 @@
       "duration": 10
     },
     {
-      "id": "11-50am-hall-a",
+      "id": "11-50am-hall-a-programming-practices-for-deve",
       "title": "Programming Practices for Developing Quality Software",
       "speaker": "Rouben Meschian",
       "startTime": "11:50am",
@@ -123,7 +123,7 @@
       "duration": 30
     },
     {
-      "id": "12-20pm-hall-a",
+      "id": "12-20pm-hall-a-tba",
       "title": "TBA",
       "speaker": "",
       "startTime": "12:20pm",
@@ -135,7 +135,7 @@
       "duration": 30
     },
     {
-      "id": "12-40pm-hall-b",
+      "id": "12-40pm-hall-b-accelerate-ai-with-cloud-run-d",
       "title": "Accelerate AI with Cloud Run: deploy a MCP server on Cloud Run",
       "speaker": "Rohan Singh",
       "startTime": "12:40pm",
@@ -147,7 +147,7 @@
       "duration": 90
     },
     {
-      "id": "12-50pm-hall-a",
+      "id": "12-50pm-hall-a-tba",
       "title": "TBA",
       "speaker": "",
       "startTime": "12:50pm",
@@ -159,7 +159,7 @@
       "duration": 30
     },
     {
-      "id": "01-20pm-hall-a",
+      "id": "01-20pm-hall-a-ordering-coffee-with-firebase-",
       "title": "Ordering Coffee with Firebase AI",
       "speaker": "Max Kachinkin",
       "startTime": "01:20pm",
@@ -171,7 +171,7 @@
       "duration": 30
     },
     {
-      "id": "01-50pm-hall-a",
+      "id": "01-50pm-hall-a-operationalizing-evaluations-f",
       "title": "Operationalizing Evaluations: Framework for Automated CI/CD in the era of Generative Models for LLMs",
       "speaker": "Kevork Sulahian",
       "startTime": "01:50pm",
@@ -183,7 +183,7 @@
       "duration": 30
     },
     {
-      "id": "02-10pm-hall-b",
+      "id": "02-10pm-hall-b-go-beyond-models-why-ai-needs-",
       "title": "Go Beyond Models: Why AI Needs a Fast Backend",
       "speaker": "Kirill Cherniavski",
       "startTime": "02:10pm",
@@ -195,7 +195,7 @@
       "duration": 30
     },
     {
-      "id": "02-20pm-hall-a",
+      "id": "02-20pm-hall-a-agent-to-agent-a2a-protocol-a-",
       "title": "Agent-to-Agent (A2A) Protocol: A Deep Dive into Google’s Client-Server Model",
       "speaker": "Dr Roushanak Rahmat",
       "startTime": "02:20pm",
@@ -207,7 +207,7 @@
       "duration": 30
     },
     {
-      "id": "02-40pm-hall-b",
+      "id": "02-40pm-hall-b-ebpf-explained-architecture-re",
       "title": "eBPF Explained: Architecture, Real-World Problems, and Practical Solutions",
       "speaker": "Massoud Asadi",
       "startTime": "02:40pm",
@@ -219,7 +219,7 @@
       "duration": 30
     },
     {
-      "id": "02-50pm-hall-a",
+      "id": "02-50pm-hall-a-beyond-the-prompt-an-anatomy-o",
       "title": "Beyond the Prompt: An Anatomy of an AI-powered Game using Agent Development Kit",
       "speaker": "Yoyu Li",
       "startTime": "02:50pm",
@@ -231,7 +231,7 @@
       "duration": 30
     },
     {
-      "id": "03-10pm-hall-b",
+      "id": "03-10pm-hall-b-ai-in-real-engineering-work-ho",
       "title": "AI in Real Engineering Work: How to Build Fast in 2025 Without Creating Tomorrow’s Legacy",
       "speaker": "Daniel Gonik",
       "startTime": "03:10pm",
@@ -243,7 +243,7 @@
       "duration": 30
     },
     {
-      "id": "03-20pm-hall-a",
+      "id": "03-20pm-hall-a-tba",
       "title": "TBA",
       "speaker": "",
       "startTime": "03:20pm",
@@ -255,7 +255,7 @@
       "duration": 30
     },
     {
-      "id": "03-40pm-hall-b",
+      "id": "03-40pm-hall-b-what-candies-are-agentic-ai-fr",
       "title": "What candies are Agentic AI frameworks stealing from developers?",
       "speaker": "Luiz Carneiro",
       "startTime": "03:40pm",
@@ -267,7 +267,7 @@
       "duration": 30
     },
     {
-      "id": "03-50pm-hall-a",
+      "id": "03-50pm-hall-a-building-software-like-buildin",
       "title": "Building Software Like Buildings: Processes, Tests & Structure",
       "speaker": "Vardges Begoyan",
       "startTime": "03:50pm",
@@ -279,7 +279,7 @@
       "duration": 30
     },
     {
-      "id": "04-10pm-hall-b",
+      "id": "04-10pm-hall-b-actually-optimizing-your-rag-w",
       "title": "Actually optimizing your RAG with Gemini",
       "speaker": "Armen Vardanyan",
       "startTime": "04:10pm",
@@ -291,7 +291,7 @@
       "duration": 30
     },
     {
-      "id": "04-20pm-hall-a",
+      "id": "04-20pm-hall-a-engineering-leadership-for-dis",
       "title": "Engineering Leadership for Distributed Teams: Balancing Code, People, and Culture",
       "speaker": "Davit Siradeghyan",
       "startTime": "04:20pm",
@@ -303,7 +303,7 @@
       "duration": 30
     },
     {
-      "id": "04-40pm-hall-b",
+      "id": "04-40pm-hall-b-simple-emotional-intelligence-",
       "title": "Simple Emotional Intelligence Skills",
       "speaker": "Natasha Arefyeva",
       "startTime": "04:40pm",
@@ -315,7 +315,7 @@
       "duration": 90
     },
     {
-      "id": "04-50pm-hall-a",
+      "id": "04-50pm-hall-a-build-products-and-services-po",
       "title": "Build products and services powered by Vertex AI, ADK, and Gemini",
       "speaker": "Gabriel Preda",
       "startTime": "04:50pm",
@@ -327,7 +327,7 @@
       "duration": 30
     },
     {
-      "id": "05-20pm-hall-a",
+      "id": "05-20pm-hall-a-self-healing-rollouts-automati",
       "title": "Self-Healing Rollouts: Automating Production Fixes with Google Gemini and Google Jules",
       "speaker": "Carlos Sanchez",
       "startTime": "05:20pm",

@@ -763,6 +763,10 @@ let speakerData: Record<string, SpeakerData> = {}
 let workshopsData: WorkshopData[] = []
 let scheduleData: ScheduleData | null = null
 
+// Schedule configuration
+const SCHEDULE_PIXELS_PER_MINUTE = 2.5
+const SCHEDULE_TIME_INTERVAL_MINUTES = 30
+
 // Function to get session color based on room
 function getSessionColor(room: string): string {
   if (room === 'hall-a') {
@@ -785,22 +789,21 @@ function renderSchedule(schedule: ScheduleData): void {
   const minTime = Math.min(...allMinutes)
   const maxTime = Math.max(...allMinutes)
   const totalMinutes = maxTime - minTime
-  const pixelsPerMinute = 2.5 // Each minute = 2.5 pixels
 
-  // Generate time labels (every 30 minutes)
+  // Generate time labels at regular intervals
   const timeLabels: { time: string; position: number }[] = []
-  for (let m = minTime; m <= maxTime; m += 30) {
+  for (let m = minTime; m <= maxTime; m += SCHEDULE_TIME_INTERVAL_MINUTES) {
     const hours = Math.floor(m / 60)
     const mins = m % 60
     const period = hours >= 12 ? 'pm' : 'am'
     const displayHours = hours > 12 ? hours - 12 : (hours === 0 ? 12 : hours)
     timeLabels.push({
       time: `${String(displayHours).padStart(2, '0')}:${String(mins).padStart(2, '0')}${period}`,
-      position: (m - minTime) * pixelsPerMinute
+      position: (m - minTime) * SCHEDULE_PIXELS_PER_MINUTE
     })
   }
 
-  const scheduleHeight = totalMinutes * pixelsPerMinute
+  const scheduleHeight = totalMinutes * SCHEDULE_PIXELS_PER_MINUTE
 
   // Create schedule URL for sharing
   const basePath = window.location.pathname.replace(/\/$/, '')
@@ -901,8 +904,8 @@ function renderSchedule(schedule: ScheduleData): void {
 
               <!-- Sessions -->
               ${sessionsByRoom[room.id].map(session => {
-                const top = (session.startMinutes - minTime) * pixelsPerMinute + 24
-                const height = session.duration * pixelsPerMinute
+                const top = (session.startMinutes - minTime) * SCHEDULE_PIXELS_PER_MINUTE + 24
+                const height = session.duration * SCHEDULE_PIXELS_PER_MINUTE
                 const colorClass = getSessionColor(session.room)
                 return `
                   <div 

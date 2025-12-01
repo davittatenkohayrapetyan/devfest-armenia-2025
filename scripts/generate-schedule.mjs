@@ -106,8 +106,15 @@ async function generate() {
     timeSlots.add(start)
     rooms.add(roomId)
 
+    // Create a unique ID using start time, room, and a sanitized title fragment
+    const titleSlug = String(row['Title'] || 'session')
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .substring(0, 30)
+    
     sessions.push({
-      id: `${start}-${roomId}`.replace(/[^a-z0-9-]/gi, '-').toLowerCase(),
+      id: `${start}-${roomId}-${titleSlug}`.replace(/[^a-z0-9-]/gi, '-').toLowerCase(),
       title: String(row['Title'] || 'TBA').trim(),
       speaker: String(row['Speakers'] || '').trim(),
       startTime: start,
