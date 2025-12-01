@@ -34,7 +34,7 @@ function getRoomDisplayName(room) {
   if (!room) return 'Unknown'
   const roomLower = String(room).toLowerCase()
   if (roomLower.includes('hall a')) return 'Hall A'
-  if (roomLower.includes('hall b')) return 'Hall B (Workshops)'
+  if (roomLower.includes('hall b')) return 'Hall B'
   if (roomLower.includes('hall c')) return 'Hall C'
   return String(room)
 }
@@ -141,7 +141,7 @@ async function generate() {
     timeSlots: sortedTimeSlots,
     rooms: sortedRooms.map(id => ({
       id,
-      name: id === 'hall-a' ? 'Hall A' : id === 'hall-b' ? 'Hall B (Workshops)' : id === 'hall-c' ? 'Hall C' : id
+      name: id === 'hall-a' ? 'Hall A' : id === 'hall-b' ? 'Hall B' : id === 'hall-c' ? 'Hall C' : id
     })),
     sessions: sessions
   }

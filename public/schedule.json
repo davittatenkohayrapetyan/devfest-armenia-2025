@@ -3,6 +3,7 @@
   "eventName": "DevFest Armenia 2025",
   "disclaimer": "This schedule is not final and may be subject to change.",
   "timeSlots": [
+    "10:00am",
     "10:20am",
     "10:40am",
     "11:10am",
@@ -25,7 +26,8 @@
     "04:20pm",
     "04:40pm",
     "04:50pm",
-    "05:20pm"
+    "05:20pm",
+    "06:10pm"
   ],
   "rooms": [
     {
@@ -34,10 +36,22 @@
     },
     {
       "id": "hall-b",
-      "name": "Hall B (Workshops)"
+      "name": "Hall B"
     }
   ],
   "sessions": [
+    {
+      "id": "10-00am-hall-a-registration-start",
+      "title": "Registration Start",
+      "speaker": "",
+      "startTime": "10:00am",
+      "endTime": "10:20am",
+      "room": "hall-a",
+      "roomDisplay": "Hall A",
+      "startMinutes": 600,
+      "endMinutes": 620,
+      "duration": 20
+    },
     {
       "id": "10-20am-hall-a-opening",
       "title": "Opening",
@@ -69,7 +83,7 @@
       "startTime": "10:40am",
       "endTime": "11:10am",
       "room": "hall-b",
-      "roomDisplay": "Hall B (Workshops)",
+      "roomDisplay": "Hall B",
       "startMinutes": 640,
       "endMinutes": 670,
       "duration": 30
@@ -93,7 +107,7 @@
       "startTime": "11:10am",
       "endTime": "12:40pm",
       "room": "hall-b",
-      "roomDisplay": "Hall B (Workshops)",
+      "roomDisplay": "Hall B",
       "startMinutes": 670,
       "endMinutes": 760,
       "duration": 90
@@ -141,7 +155,7 @@
       "startTime": "12:40pm",
       "endTime": "02:10pm",
       "room": "hall-b",
-      "roomDisplay": "Hall B (Workshops)",
+      "roomDisplay": "Hall B",
       "startMinutes": 760,
       "endMinutes": 850,
       "duration": 90
@@ -189,7 +203,7 @@
       "startTime": "02:10pm",
       "endTime": "02:40pm",
       "room": "hall-b",
-      "roomDisplay": "Hall B (Workshops)",
+      "roomDisplay": "Hall B",
       "startMinutes": 850,
       "endMinutes": 880,
       "duration": 30
@@ -213,7 +227,7 @@
       "startTime": "02:40pm",
       "endTime": "03:10pm",
       "room": "hall-b",
-      "roomDisplay": "Hall B (Workshops)",
+      "roomDisplay": "Hall B",
       "startMinutes": 880,
       "endMinutes": 910,
       "duration": 30
@@ -237,7 +251,7 @@
       "startTime": "03:10pm",
       "endTime": "03:40pm",
       "room": "hall-b",
-      "roomDisplay": "Hall B (Workshops)",
+      "roomDisplay": "Hall B",
       "startMinutes": 910,
       "endMinutes": 940,
       "duration": 30
@@ -261,7 +275,7 @@
       "startTime": "03:40pm",
       "endTime": "04:10pm",
       "room": "hall-b",
-      "roomDisplay": "Hall B (Workshops)",
+      "roomDisplay": "Hall B",
       "startMinutes": 940,
       "endMinutes": 970,
       "duration": 30
@@ -285,7 +299,7 @@
       "startTime": "04:10pm",
       "endTime": "04:40pm",
       "room": "hall-b",
-      "roomDisplay": "Hall B (Workshops)",
+      "roomDisplay": "Hall B",
       "startMinutes": 970,
       "endMinutes": 1000,
       "duration": 30
@@ -309,7 +323,7 @@
       "startTime": "04:40pm",
       "endTime": "06:10pm",
       "room": "hall-b",
-      "roomDisplay": "Hall B (Workshops)",
+      "roomDisplay": "Hall B",
       "startMinutes": 1000,
       "endMinutes": 1090,
       "duration": 90
@@ -337,6 +351,18 @@
       "startMinutes": 1040,
       "endMinutes": 1070,
       "duration": 30
+    },
+    {
+      "id": "06-10pm-hall-a-closing",
+      "title": "Closing",
+      "speaker": "",
+      "startTime": "06:10pm",
+      "endTime": "06:30pm",
+      "room": "hall-a",
+      "roomDisplay": "Hall A",
+      "startMinutes": 1090,
+      "endMinutes": 1110,
+      "duration": 20
     }
   ]
 }
