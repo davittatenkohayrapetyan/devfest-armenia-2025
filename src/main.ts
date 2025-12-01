@@ -764,8 +764,9 @@ let workshopsData: WorkshopData[] = []
 let scheduleData: ScheduleData | null = null
 
 // Schedule configuration
-const SCHEDULE_PIXELS_PER_MINUTE = 2.5
+const SCHEDULE_PIXELS_PER_MINUTE = 4 // Increased for better visibility of short sessions
 const SCHEDULE_TIME_INTERVAL_MINUTES = 30
+const SCHEDULE_MAX_HEIGHT = 600 // Maximum height before scrolling
 
 // Function to get session color based on room
 function getSessionColor(room: string): string {
@@ -876,7 +877,7 @@ function renderSchedule(schedule: ScheduleData): void {
     </div>
 
     <!-- Schedule Grid -->
-    <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 overflow-x-auto print:bg-white print:p-0">
+    <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 overflow-auto print:bg-white print:p-0 print:overflow-visible" style="max-height: ${SCHEDULE_MAX_HEIGHT}px;">
       <div class="flex min-w-[700px]">
         <!-- Time Column -->
         <div class="w-20 flex-shrink-0 relative print:w-16" style="height: ${scheduleHeight + 40}px;">
@@ -905,12 +906,13 @@ function renderSchedule(schedule: ScheduleData): void {
               <!-- Sessions -->
               ${sessionsByRoom[room.id].map(session => {
                 const top = (session.startMinutes - minTime) * SCHEDULE_PIXELS_PER_MINUTE + 24
-                const height = session.duration * SCHEDULE_PIXELS_PER_MINUTE
+                const height = session.duration * SCHEDULE_PIXELS_PER_MINUTE - 4 // Subtract margin for visual separation
+                const minHeight = Math.max(height, 50) // Minimum height for short sessions
                 const colorClass = getSessionColor(session.room)
                 return `
                   <div 
-                    class="absolute left-1 right-1 ${colorClass} border-l-4 rounded-r-lg p-2 overflow-hidden cursor-pointer hover:shadow-lg transition-shadow print:left-0 print:right-0 print:shadow-none session-card"
-                    style="top: ${top}px; height: ${height}px; min-height: 40px;"
+                    class="absolute left-1 right-1 ${colorClass} border-l-4 border-b-2 border-b-white dark:border-b-gray-800 rounded-r-lg p-2 overflow-hidden cursor-pointer hover:shadow-lg transition-shadow print:left-0 print:right-0 print:shadow-none session-card"
+                    style="top: ${top}px; height: ${minHeight}px;"
                     data-session-id="${session.id}"
                     title="${session.title}${session.speaker ? ' - ' + session.speaker : ''}"
                   >
