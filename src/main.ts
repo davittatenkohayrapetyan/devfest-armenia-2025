@@ -894,7 +894,7 @@ function renderSchedule(schedule: ScheduleData): void {
           ${schedule.rooms.map(room => `
             <div class="flex-1 relative" style="height: ${scheduleHeight + 40}px;">
               <!-- Room Header -->
-              <div class="sticky top-0 bg-gray-50 dark:bg-gray-800 pb-2 z-10 print:bg-white">
+              <div class="pb-2 print:bg-white">
                 <h3 class="text-center font-bold text-gray-800 dark:text-gray-200 text-sm mb-2 print:text-gray-900">${room.name}</h3>
               </div>
               
@@ -917,7 +917,7 @@ function renderSchedule(schedule: ScheduleData): void {
                     title="${session.title}${session.speaker ? ' - ' + session.speaker : ''}"
                   >
                     <div class="h-full flex flex-col overflow-hidden">
-                      <p class="text-xs font-semibold text-gray-800 dark:text-gray-100 line-clamp-2 print:text-gray-900">${session.title}</p>
+                      <p class="text-xs font-semibold text-gray-800 dark:text-gray-100 line-clamp-3 print:text-gray-900">${session.title}</p>
                       ${session.speaker ? `<p class="text-xs text-gray-600 dark:text-gray-300 mt-0.5 truncate print:text-gray-700">${session.speaker}</p>` : ''}
                       <p class="text-xs text-gray-500 dark:text-gray-400 mt-auto print:text-gray-600">${session.startTime} - ${session.endTime}</p>
                     </div>
