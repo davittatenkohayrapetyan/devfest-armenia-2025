@@ -1,5 +1,15 @@
 {
   "sessions": {
+    "programming-practices-for-developing-quality-software": {
+      "sessionId": "programming-practices-for-developing-quality-software",
+      "title": "Programming Practices for Developing Quality Software",
+      "speaker": "Rouben Meschian - Software Engineer | Educator",
+      "photo": "https://sessionize.com/image/154d-400o400o1-UtPakgM8JvwMm99ALBmoBw.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/154d-400o400o1-UtPakgM8JvwMm99ALBmoBw.jpg\" alt=\"Rouben Meschian\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Rouben Meschian - Software Engineer | Educator</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">This is a brain dump of some lessons learned while developing software over the past 20 years.</p>\n      </div>\n    ",
+      "categories": [
+        ""
+      ]
+    },
     "self-healing-rollouts-automating-production-fixes-with-google-gemini-and-google-jules": {
       "sessionId": "self-healing-rollouts-automating-production-fixes-with-google-gemini-and-google-jules",
       "title": "Self-Healing Rollouts: Automating Production Fixes with Google Gemini and Google Jules",
@@ -202,6 +212,13 @@
     }
   },
   "speakers": {
+    "rouben-meschian": {
+      "speakerId": "rouben-meschian",
+      "name": "Rouben Meschian",
+      "position": "Software Engineer | Educator",
+      "photo": "https://sessionize.com/image/154d-400o400o1-UtPakgM8JvwMm99ALBmoBw.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/154d-400o400o1-UtPakgM8JvwMm99ALBmoBw.jpg\" alt=\"Rouben Meschian\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Rouben Meschian</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Software Engineer | Educator</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>Rouben has collaborated extensively with numerous companies, demonstrating a strong passion for developing solutions that address enterprise challenges. With a solid background in distributed systems, he has devoted much of his career to building scalable web applications.</p>\n\n      </div>\n    "
+    },
     "carlos-sanchez": {
       "speakerId": "carlos-sanchez",
       "name": "Carlos Sanchez",
