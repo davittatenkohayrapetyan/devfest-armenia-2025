@@ -1,14 +1,13 @@
 {
   "eventDate": "2025-12-20",
   "eventName": "DevFest Armenia 2025",
-  "disclaimer": "This schedule is not final and may be subject to change.",
   "timeSlots": [
-    "10:00am",
+    "09:30am",
     "10:20am",
     "10:40am",
     "11:10am",
     "11:40am",
-    "11:50am",
+    "12:10pm",
     "12:20pm",
     "12:40pm",
     "12:50pm",
@@ -24,10 +23,11 @@
     "03:50pm",
     "04:10pm",
     "04:20pm",
-    "04:40pm",
+    "04:45pm",
     "04:50pm",
     "05:20pm",
-    "06:10pm"
+    "05:50pm",
+    "06:30pm"
   ],
   "rooms": [
     {
@@ -41,16 +41,16 @@
   ],
   "sessions": [
     {
-      "id": "10-00am-hall-a-registration-start",
-      "title": "Registration Start",
+      "id": "09-30am-hall-a-registration-start-will-be-ava",
+      "title": "Registration Start [Will be available throughout the day]",
       "speaker": "",
-      "startTime": "10:00am",
+      "startTime": "09:30am",
       "endTime": "10:20am",
       "room": "hall-a",
       "roomDisplay": "Hall A",
-      "startMinutes": 600,
+      "startMinutes": 570,
       "endMinutes": 620,
-      "duration": 20
+      "duration": 50
     },
     {
       "id": "10-20am-hall-a-opening",
@@ -102,7 +102,7 @@
     },
     {
       "id": "11-10am-hall-b-agent-development-kit-deep-div",
-      "title": "Agent  Development Kit Deep Dive",
+      "title": "Agent Development Kit Deep Dive [WORKSHOP]",
       "speaker": "Ankur Roy",
       "startTime": "11:10am",
       "endTime": "12:40pm",
@@ -113,33 +113,33 @@
       "duration": 90
     },
     {
-      "id": "11-40am-hall-a-oauth-supply-chain-risks-how-t",
-      "title": "OAuth supply-chain risks: How to mitigate them, and how not to become them",
-      "speaker": "Narek Babajanyan",
+      "id": "11-40am-hall-a-engineering-leadership-for-dis",
+      "title": "Engineering Leadership for Distributed Teams: Balancing Code, People, and Culture",
+      "speaker": "Davit Siradeghyan",
       "startTime": "11:40am",
-      "endTime": "11:50am",
+      "endTime": "12:10pm",
       "room": "hall-a",
       "roomDisplay": "Hall A",
       "startMinutes": 700,
-      "endMinutes": 710,
-      "duration": 10
-    },
-    {
-      "id": "11-50am-hall-a-programming-practices-for-deve",
-      "title": "Programming Practices for Developing Quality Software",
-      "speaker": "Rouben Meschian",
-      "startTime": "11:50am",
-      "endTime": "12:20pm",
-      "room": "hall-a",
-      "roomDisplay": "Hall A",
-      "startMinutes": 710,
-      "endMinutes": 740,
+      "endMinutes": 730,
       "duration": 30
     },
     {
-      "id": "12-20pm-hall-a-tba",
-      "title": "TBA",
-      "speaker": "",
+      "id": "12-10pm-hall-a-oauth-supply-chain-risks-how-t",
+      "title": "OAuth supply-chain risks: How to mitigate them, and how not to become them",
+      "speaker": "Narek Babajanyan",
+      "startTime": "12:10pm",
+      "endTime": "12:20pm",
+      "room": "hall-a",
+      "roomDisplay": "Hall A",
+      "startMinutes": 730,
+      "endMinutes": 740,
+      "duration": 10
+    },
+    {
+      "id": "12-20pm-hall-a-from-manual-to-magical-ai-auto",
+      "title": "From Manual to Magical: AI, Automation, and the Future of Work",
+      "speaker": "Araks Sahinyan",
       "startTime": "12:20pm",
       "endTime": "12:50pm",
       "room": "hall-a",
@@ -150,7 +150,7 @@
     },
     {
       "id": "12-40pm-hall-b-accelerate-ai-with-cloud-run-d",
-      "title": "Accelerate AI with Cloud Run: deploy a MCP server on Cloud Run",
+      "title": "Accelerate AI with Cloud Run: deploy a MCP server on Cloud Run [WORKSHOP]",
       "speaker": "Rohan Singh",
       "startTime": "12:40pm",
       "endTime": "02:10pm",
@@ -161,9 +161,9 @@
       "duration": 90
     },
     {
-      "id": "12-50pm-hall-a-tba",
-      "title": "TBA",
-      "speaker": "",
+      "id": "12-50pm-hall-a-architecture-for-happiness-tur",
+      "title": "Architecture for Happiness: Turning Backend Chaos into Developer Flow",
+      "speaker": "David Yeghiazaryan",
       "startTime": "12:50pm",
       "endTime": "01:20pm",
       "room": "hall-a",
@@ -185,9 +185,9 @@
       "duration": 30
     },
     {
-      "id": "01-50pm-hall-a-operationalizing-evaluations-f",
-      "title": "Operationalizing Evaluations: Framework for Automated CI/CD in the era of Generative Models for LLMs",
-      "speaker": "Kevork Sulahian",
+      "id": "01-50pm-hall-a-building-software-like-buildin",
+      "title": "Building Software Like Buildings: Processes, Tests & Structure",
+      "speaker": "Vardges Begoyan",
       "startTime": "01:50pm",
       "endTime": "02:20pm",
       "room": "hall-a",
@@ -197,9 +197,9 @@
       "duration": 30
     },
     {
-      "id": "02-10pm-hall-b-go-beyond-models-why-ai-needs-",
-      "title": "Go Beyond Models: Why AI Needs a Fast Backend",
-      "speaker": "Kirill Cherniavski",
+      "id": "02-10pm-hall-b-what-candies-are-agentic-ai-fr",
+      "title": "What candies are Agentic AI frameworks stealing from developers?",
+      "speaker": "Luiz Carneiro",
       "startTime": "02:10pm",
       "endTime": "02:40pm",
       "room": "hall-b",
@@ -209,9 +209,9 @@
       "duration": 30
     },
     {
-      "id": "02-20pm-hall-a-agent-to-agent-a2a-protocol-a-",
-      "title": "Agent-to-Agent (A2A) Protocol: A Deep Dive into Google’s Client-Server Model",
-      "speaker": "Dr Roushanak Rahmat",
+      "id": "02-20pm-hall-a-actually-optimizing-your-rag-w",
+      "title": "Actually optimizing your RAG with Gemini",
+      "speaker": "Armen Vardanyan",
       "startTime": "02:20pm",
       "endTime": "02:50pm",
       "room": "hall-a",
@@ -221,9 +221,9 @@
       "duration": 30
     },
     {
-      "id": "02-40pm-hall-b-ebpf-explained-architecture-re",
-      "title": "eBPF Explained: Architecture, Real-World Problems, and Practical Solutions",
-      "speaker": "Massoud Asadi",
+      "id": "02-40pm-hall-b-go-beyond-models-why-ai-needs-",
+      "title": "Go Beyond Models: Why AI Needs a Fast Backend",
+      "speaker": "Kirill Cherniavski",
       "startTime": "02:40pm",
       "endTime": "03:10pm",
       "room": "hall-b",
@@ -245,9 +245,9 @@
       "duration": 30
     },
     {
-      "id": "03-10pm-hall-b-ai-in-real-engineering-work-ho",
-      "title": "AI in Real Engineering Work: How to Build Fast in 2025 Without Creating Tomorrow’s Legacy",
-      "speaker": "Daniel Gonik",
+      "id": "03-10pm-hall-b-ebpf-explained-architecture-re",
+      "title": "eBPF Explained: Architecture, Real-World Problems, and Practical Solutions",
+      "speaker": "Massoud Asadi",
       "startTime": "03:10pm",
       "endTime": "03:40pm",
       "room": "hall-b",
@@ -257,9 +257,9 @@
       "duration": 30
     },
     {
-      "id": "03-20pm-hall-a-tba",
-      "title": "TBA",
-      "speaker": "",
+      "id": "03-20pm-hall-a-operationalizing-evaluations-f",
+      "title": "Operationalizing Evaluations: Framework for Automated CI/CD in the era of Generative Models for LLMs",
+      "speaker": "Kevork Sulahian",
       "startTime": "03:20pm",
       "endTime": "03:50pm",
       "room": "hall-a",
@@ -269,9 +269,9 @@
       "duration": 30
     },
     {
-      "id": "03-40pm-hall-b-what-candies-are-agentic-ai-fr",
-      "title": "What candies are Agentic AI frameworks stealing from developers?",
-      "speaker": "Luiz Carneiro",
+      "id": "03-40pm-hall-b-ai-in-real-engineering-work-ho",
+      "title": "AI in Real Engineering Work: How to Build Fast in 2025 Without Creating Tomorrow’s Legacy",
+      "speaker": "Daniel Gonik",
       "startTime": "03:40pm",
       "endTime": "04:10pm",
       "room": "hall-b",
@@ -281,9 +281,9 @@
       "duration": 30
     },
     {
-      "id": "03-50pm-hall-a-building-software-like-buildin",
-      "title": "Building Software Like Buildings: Processes, Tests & Structure",
-      "speaker": "Vardges Begoyan",
+      "id": "03-50pm-hall-a-programming-practices-for-deve",
+      "title": "Programming Practices for Developing Quality Software",
+      "speaker": "Rouben Meschian",
       "startTime": "03:50pm",
       "endTime": "04:20pm",
       "room": "hall-a",
@@ -293,9 +293,9 @@
       "duration": 30
     },
     {
-      "id": "04-10pm-hall-b-actually-optimizing-your-rag-w",
-      "title": "Actually optimizing your RAG with Gemini",
-      "speaker": "Armen Vardanyan",
+      "id": "04-10pm-hall-b-flutter-in-action-how-we-creat",
+      "title": "Flutter in Action How we created a breakthrough business module for Yandex",
+      "speaker": "Aleksey Prikhodko",
       "startTime": "04:10pm",
       "endTime": "04:40pm",
       "room": "hall-b",
@@ -305,9 +305,9 @@
       "duration": 30
     },
     {
-      "id": "04-20pm-hall-a-engineering-leadership-for-dis",
-      "title": "Engineering Leadership for Distributed Teams: Balancing Code, People, and Culture",
-      "speaker": "Davit Siradeghyan",
+      "id": "04-20pm-hall-a-shrink-it-skip-it-compress-it-",
+      "title": "Shrink It, Skip It, Compress It — Speedrunning Fast LLM inference",
+      "speaker": "Dr. Erik Arakelyan",
       "startTime": "04:20pm",
       "endTime": "04:50pm",
       "room": "hall-a",
@@ -317,15 +317,15 @@
       "duration": 30
     },
     {
-      "id": "04-40pm-hall-b-simple-emotional-intelligence-",
-      "title": "Simple Emotional Intelligence Skills",
+      "id": "04-45pm-hall-b-simple-emotional-intelligence-",
+      "title": "Simple Emotional Intelligence Skills [WORKSHOP]",
       "speaker": "Natasha Arefyeva",
-      "startTime": "04:40pm",
-      "endTime": "06:10pm",
+      "startTime": "04:45pm",
+      "endTime": "06:15pm",
       "room": "hall-b",
       "roomDisplay": "Hall B",
-      "startMinutes": 1000,
-      "endMinutes": 1090,
+      "startMinutes": 1005,
+      "endMinutes": 1095,
       "duration": 90
     },
     {
@@ -353,15 +353,27 @@
       "duration": 30
     },
     {
-      "id": "06-10pm-hall-a-closing",
-      "title": "Closing",
-      "speaker": "",
-      "startTime": "06:10pm",
-      "endTime": "06:30pm",
+      "id": "05-50pm-hall-a-tdd-with-ai",
+      "title": "TDD with AI?",
+      "speaker": "Matthias Geisler",
+      "startTime": "05:50pm",
+      "endTime": "06:20pm",
       "room": "hall-a",
       "roomDisplay": "Hall A",
-      "startMinutes": 1090,
-      "endMinutes": 1110,
+      "startMinutes": 1070,
+      "endMinutes": 1100,
+      "duration": 30
+    },
+    {
+      "id": "06-30pm-hall-a-closing",
+      "title": "Closing",
+      "speaker": "",
+      "startTime": "06:30pm",
+      "endTime": "06:50pm",
+      "room": "hall-a",
+      "roomDisplay": "Hall A",
+      "startMinutes": 1110,
+      "endMinutes": 1130,
       "duration": 20
     }
   ]

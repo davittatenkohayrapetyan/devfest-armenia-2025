@@ -621,6 +621,9 @@ app.innerHTML = `
           <a href="https://griddynamics.com/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
             <img src="partners/grid-dynamics.png" alt="Grid Dynamics" class="h-12 md:h-16 w-auto object-contain" loading="lazy"/>
           </a>
+          <a href="https://www.linkedin.com/in/artakng/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
+            <img src="partners/artak-tech-blogger.png" alt="Artak Tech blogger" class="h-12 md:h-16 w-auto object-contain" loading="lazy"/>
+          </a>
         </div>
         <div class="text-center mt-12">
           <p class="text-lg mb-4 text-gray-600 dark:text-gray-400">
@@ -697,7 +700,7 @@ app.innerHTML = `
           <!-- Rohan Singh -->
           <a href="https://www.linkedin.com/in/rohankalhans/" target="_blank" rel="noopener noreferrer" class="card text-center hover:shadow-xl transition-shadow">
             <img src="organizers/Rohan.jpg" alt="Portrait of Rohan Singh" loading="lazy" width="128" height="128" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 shadow-md ring-4 ring-white dark:ring-gray-900" />
-            <h3 class="font-bold text-lg">Roland Egiazaryan</h3>
+            <h3 class="font-bold text-lg">Rohan Singh</h3>
             <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Co-Organizer, GDE Cloud</p>
             <div class="flex items-center justify-center text-google-blue">
               <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
@@ -780,6 +783,19 @@ function getSessionColor(room: string): string {
   return 'bg-gray-100 dark:bg-gray-700 border-gray-400'
 }
 
+// Function to show schedule error message
+function showScheduleError(message: string): void {
+  const container = document.getElementById('schedule-container')
+  if (!container) return
+
+  container.innerHTML = `
+    <div class="text-center p-12 bg-gray-50 dark:bg-gray-800 rounded-lg">
+      <p class="text-2xl font-semibold text-gray-600 dark:text-gray-400">TBA</p>
+      <p class="text-lg text-gray-500 dark:text-gray-500 mt-4">${message}</p>
+    </div>
+  `
+}
+
 // Function to render schedule
 function renderSchedule(schedule: ScheduleData): void {
   const container = document.getElementById('schedule-container')
@@ -820,16 +836,6 @@ function renderSchedule(schedule: ScheduleData): void {
   })
 
   container.innerHTML = `
-    <!-- Disclaimer Banner -->
-    <div class="bg-yellow-50 dark:bg-yellow-900/30 border border-yellow-200 dark:border-yellow-700 rounded-lg p-4 mb-6">
-      <div class="flex items-center gap-3">
-        <svg class="w-6 h-6 text-yellow-600 dark:text-yellow-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
-        </svg>
-        <p class="text-yellow-800 dark:text-yellow-200 font-medium">${schedule.disclaimer}</p>
-      </div>
-    </div>
-
     <!-- Action Buttons -->
     <div class="flex flex-wrap gap-3 mb-6 justify-center sm:justify-start print:hidden">
       <button 
@@ -933,7 +939,7 @@ function renderSchedule(schedule: ScheduleData): void {
     </div>
 
     <!-- Mobile List View (shown on small screens) -->
-    <div class="md:hidden mt-8 print:hidden">
+    <!-- <div class="md:hidden mt-8 print:hidden">
       <h3 class="text-xl font-bold mb-4 text-gray-800 dark:text-gray-200">Session List</h3>
       <div class="space-y-3">
         ${schedule.sessions
@@ -1074,9 +1080,16 @@ async function initializeData() {
     // Load schedule
     try {
       scheduleData = await loadSchedule('schedule.json')
-      renderSchedule(scheduleData)
+      console.log('Schedule data loaded:', scheduleData)
+      if (scheduleData && scheduleData.sessions && scheduleData.sessions.length > 0) {
+        renderSchedule(scheduleData)
+      } else {
+        console.warn('Schedule data is empty or invalid:', scheduleData)
+        showScheduleError('Schedule data is not available yet.')
+      }
     } catch (err) {
-      console.log('Schedule not available yet:', err)
+      console.error('Failed to load schedule:', err)
+      showScheduleError('Failed to load schedule. Please try refreshing the page.')
     }
     
     renderWorkshops()

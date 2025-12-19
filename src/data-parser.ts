@@ -58,7 +58,16 @@ export async function parseExcelData(filePath: string): Promise<{
   sessions: Record<string, SessionData>
   speakers: Record<string, SpeakerData>
 }> {
-  const response = await fetch(filePath)
+  // Add cache-busting parameter to force reload
+  const cacheBuster = `?v=${Date.now()}`
+  const response = await fetch(filePath + cacheBuster, {
+    cache: 'no-store',
+    headers: {
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+      'Pragma': 'no-cache',
+      'Expires': '0'
+    }
+  })
   if (!response.ok) throw new Error(`Failed to fetch data: ${response.status}`)
   const data = await response.json()
   return {
@@ -69,7 +78,16 @@ export async function parseExcelData(filePath: string): Promise<{
 
 // Load workshops data from JSON file
 export async function loadWorkshops(filePath: string): Promise<WorkshopData[]> {
-  const response = await fetch(filePath)
+  // Add cache-busting parameter to force reload
+  const cacheBuster = `?v=${Date.now()}`
+  const response = await fetch(filePath + cacheBuster, {
+    cache: 'no-store',
+    headers: {
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+      'Pragma': 'no-cache',
+      'Expires': '0'
+    }
+  })
   if (!response.ok) throw new Error(`Failed to fetch workshops: ${response.status}`)
   const data = await response.json()
   return data as WorkshopData[]
@@ -77,7 +95,16 @@ export async function loadWorkshops(filePath: string): Promise<WorkshopData[]> {
 
 // Load schedule data from JSON file
 export async function loadSchedule(filePath: string): Promise<ScheduleData> {
-  const response = await fetch(filePath)
+  // Add cache-busting parameter to force reload
+  const cacheBuster = `?v=${Date.now()}`
+  const response = await fetch(filePath + cacheBuster, {
+    cache: 'no-store',
+    headers: {
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+      'Pragma': 'no-cache',
+      'Expires': '0'
+    }
+  })
   if (!response.ok) throw new Error(`Failed to fetch schedule: ${response.status}`)
   const data = await response.json()
   return data as ScheduleData

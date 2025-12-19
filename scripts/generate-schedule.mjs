@@ -137,7 +137,6 @@ async function generate() {
   const schedule = {
     eventDate: '2025-12-20',
     eventName: 'DevFest Armenia 2025',
-    disclaimer: 'This schedule is not final and may be subject to change.',
     timeSlots: sortedTimeSlots,
     rooms: sortedRooms.map(id => ({
       id,
