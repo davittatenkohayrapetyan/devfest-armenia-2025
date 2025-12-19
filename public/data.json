@@ -1,5 +1,55 @@
 {
   "sessions": {
+    "tdd-with-ai": {
+      "sessionId": "tdd-with-ai",
+      "title": "TDD with AI?",
+      "speaker": "Matthias Geisler - Senior Software Engineer@Airalo",
+      "photo": "https://sessionize.com/image/7eb9-400o400o1-EFHw9K5hdfKBkGe6xBcruK.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/7eb9-400o400o1-EFHw9K5hdfKBkGe6xBcruK.jpg\" alt=\"Matthias Geisler\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Matthias Geisler - Senior Software Engineer@Airalo</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">One of the big premises of the \"AI Revolution\" is to make our lives easier as engineers. But can it deliver on this? How fruitful is it for TDD practitioners? Does it make you faster or slow you down? Can we even talk code into existence?</p>\n        <p class=\"mb-4\">Let's take a look together! Let's see if AI assistants like Claude and Cursor can boost development workflows. How Test-Driven Development practices contribute to it and what are learnings after one using actively tooling together with AI.</p>\n      </div>\n    ",
+      "categories": [
+        ""
+      ]
+    },
+    "shrink-it-skip-it-compress-it-speedrunning-fast-llm-inference": {
+      "sessionId": "shrink-it-skip-it-compress-it-speedrunning-fast-llm-inference",
+      "title": "Shrink It, Skip It, Compress It — Speedrunning Fast LLM inference",
+      "speaker": "Dr Erik Arakelyan - Senior Researcher in Nvidia, Creating LLM Reasoning one mistake at a time 😅",
+      "photo": "https://sessionize.com/image/bcb5-400o400o1-DZRJHSh4FwZ3GnyoGqea2F.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/bcb5-400o400o1-DZRJHSh4FwZ3GnyoGqea2F.jpg\" alt=\"Dr Erik Arakelyan\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Dr Erik Arakelyan - Senior Researcher in Nvidia, Creating LLM Reasoning one mistake at a time 😅</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">Large language models (LLMs) are transforming AI applications, but their growing size and compute demands make real-time inference a persistent bottleneck. In this talk, Shrink It, Skip It, Compress It reframes LLM acceleration as a speedrun: strategic, efficient, and performance-driven. We explore a toolkit of inference optimization techniques — from sparse attention that skips redundant computation, to quantization that shrinks numerical precision without sacrificing quality, and FlashAttention that rethinks memory access for maximum throughput. By combining theory with practical results, this session shows how to push modern models closer to real-time deployment, reduce cost, and unlock new applications on edge devices and production systems.</p>\n      </div>\n    ",
+      "categories": [
+        ""
+      ]
+    },
+    "from-manual-to-magical-ai-automation-and-the-future-of-work": {
+      "sessionId": "from-manual-to-magical-ai-automation-and-the-future-of-work",
+      "title": "From Manual to Magical: AI, Automation, and the Future of Work",
+      "speaker": "Araks Sahinyan - People Advisory Principal at EPAM Armenia",
+      "photo": "https://sessionize.com/image/e446-400o400o1-WE2ua2sZLYaPdmc1H3Xi6d.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/e446-400o400o1-WE2ua2sZLYaPdmc1H3Xi6d.jpg\" alt=\"Araks Sahinyan\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Araks Sahinyan - People Advisory Principal at EPAM Armenia</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">Araks will talk about how artificial intelligence and automation are revolutionizing the way we work, regardless of industry or role. This session will address common anxieties about technological change, showcase the tangible benefits of automation, and introduce practical tools for streamlining workflows. Through real-world stories and interactive moments, Araks aims to empower everyone to embrace AI-driven transformation and build the skills needed for future success.</p>\n      </div>\n    ",
+      "categories": [
+        ""
+      ]
+    },
+    "architecture-for-happiness-turning-backend-chaos-into-developer-flow": {
+      "sessionId": "architecture-for-happiness-turning-backend-chaos-into-developer-flow",
+      "title": "Architecture for Happiness: Turning Backend Chaos into Developer Flow",
+      "speaker": "David Yeghiazaryan - Don't Architect for the Whiteboard. Build for the World.",
+      "photo": "https://sessionize.com/image/cf3b-400o400o1-9tXPwcv4UnBgGUAp6bcRi4.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/cf3b-400o400o1-9tXPwcv4UnBgGUAp6bcRi4.jpg\" alt=\"David Yeghiazaryan\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: David Yeghiazaryan - Don't Architect for the Whiteboard. Build for the World.</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">We often talk about architecture in terms of performance or scalability, but rarely about how it makes us feel. Working in a tangled \"Distributed Monolith\" destroys Developer Experience (DX)—it creates constant context-switching, high cognitive load, and the anxiety of breaking things you don't understand.</p>\n        <p class=\"mb-4\">In this talk, I will share how we refactored a banking core not just to make the code better, but to make our team happier. By using Domain-Driven Design (DDD) and Hexagonal Architecture, we reduced the \"mental noise\" of the system. We created clear boundaries that allow developers to enter a \"Flow State,\" write logic without distractions, and ship code with genuine confidence.</p>\n      </div>\n    ",
+      "categories": [
+        ""
+      ]
+    },
+    "flutter-in-action-how-we-created-a-breakthrough-business-module-for-yandex": {
+      "sessionId": "flutter-in-action-how-we-created-a-breakthrough-business-module-for-yandex",
+      "title": "Flutter in Action How we created a breakthrough business module for Yandex",
+      "speaker": "Aleksey Prikhodko - Yandex, Team Lead",
+      "photo": "https://sessionize.com/image/069f-400o400o1-386Np6CooWnDSRjFfxvApY.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/069f-400o400o1-386Np6CooWnDSRjFfxvApY.jpg\" alt=\"Aleksey Prikhodko\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Aleksey Prikhodko - Yandex, Team Lead</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">Flutter in Yandex production: how we built modular architecture for 500K users, and learned to launch new features in days, not weeks. Real experience with Flutter packages, creating white-label apps, and scaling from 3 to 15 developers. All the pitfalls, anti-patterns, and working solutions</p>\n      </div>\n    ",
+      "categories": [
+        ""
+      ]
+    },
     "programming-practices-for-developing-quality-software": {
       "sessionId": "programming-practices-for-developing-quality-software",
       "title": "Programming Practices for Developing Quality Software",
@@ -205,13 +255,48 @@
       "title": "Ordering Coffee with Firebase AI",
       "speaker": "Max Kachinkin - Android Tech Lead, Dodo Brands",
       "photo": "https://sessionize.com/image/2b33-400o400o1-NAvjTdoBPX4kkGbQGnntqb.jpg",
-      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/2b33-400o400o1-NAvjTdoBPX4kkGbQGnntqb.jpg\" alt=\"Max Kachinkin\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Max Kachinkin - Android Tech Lead, Dodo Brands</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">Check out my video submission: https://youtu.be/aW17mTF45yc</p>\n        <p class=\"mb-4\">The presentation is not THE final yet, but it shows all the core idea, structure, and mood.</p>\n        <p class=\"mb-4\">\n          <a href=\"https://docs.google.com/presentation/d/1WRWVDhyplhf2odAEqYfv6whKdNIRipwwK-gf3Hn4sOo/edit?usp=sharing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-google-blue hover:underline\">https://docs.google.com/presentation/d/1WRWVDhyplhf2odAEqYfv6whKdNIRipwwK-gf3Hn4sOo/edit?usp=sharing</a>\n        </p>\n        <p class=\"mb-4\">I’m an Android Tech Lead at Dodo Brands, the fastest-growing QSR franchise company, operating internationally with Dodo Pizza and Drinkit coffee shops, including in the UAE.</p>\n        <p class=\"mb-4\">My talk is called “Ordering Coffee with Firebase AI”, and it’s about a real case of bootstrapping AI assistants with Firebase AI Logic.</p>\n        <p class=\"mb-4\">I’m working on a coffee shop chain app called Drinkit. Our menu is huge: you can customize drinks with or without milk, change ice, add syrups, literally millions of combinations. Too big for a static UI. So we thought: why not let AI guide the user? What if you could just say: “It’s hot today, give me something refreshing”. And boom, the app recommends the perfect drink for you. That’s exactly what we’re building in Drinkit.</p>\n        <p class=\"mb-4\">I believe this talk will be useful because it’s a real production case of applying Firebase AI, not just sandbox examples. Attendees will see how we combined speech-to-text, Firebase AI models, and function calls to handle a huge menu (2M+ token context!) and deliver an interactive, personalized ordering experience. Developers will walk away with inspiration, code examples, and practical lessons on how to quickly bootstrap AI features in their own apps.</p>\n      </div>\n    ",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/2b33-400o400o1-NAvjTdoBPX4kkGbQGnntqb.jpg\" alt=\"Max Kachinkin\" class=\"w-32 h-32 rounded-full object-cover\">\n        </div>\n        <div>\n          <p class=\"text-lg font-semibold mb-2\">Speaker: Max Kachinkin - Android Tech Lead, Dodo Brands</p>\n          <div class=\"flex flex-wrap gap-2\">\n            <span class=\"px-3 py-1 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium\"></span>\n          </div>\n        </div>\n      </div>\n      <div class=\"prose dark:prose-invert max-w-none\">\n        <p class=\"mb-4\">My talk is called “Ordering Coffee with Firebase AI”, and it’s about a real case of bootstrapping AI assistants with Firebase AI Logic.</p>\n        <p class=\"mb-4\">I’m working on a coffee shop chain app called Drinkit. Our menu is huge: you can customize drinks with or without milk, change ice, add syrups, literally millions of combinations. Too big for a static UI. So we thought: why not let AI guide the user? What if you could just say: “It’s hot today, give me something refreshing”. And boom, the app recommends the perfect drink for you. That’s exactly what we’re building in Drinkit.</p>\n        <p class=\"mb-4\">I believe this talk will be useful because it’s a real production case of applying Firebase AI, not just sandbox examples. Attendees will see how we combined speech-to-text, Firebase AI models, and function calls to handle a huge menu (2M+ token context!) and deliver an interactive, personalized ordering experience. Developers will walk away with inspiration, code examples, and practical lessons on how to quickly bootstrap AI features in their own apps.</p>\n      </div>\n    ",
       "categories": [
         ""
       ]
     }
   },
   "speakers": {
+    "matthias-geisler": {
+      "speakerId": "matthias-geisler",
+      "name": "Matthias Geisler",
+      "position": "Senior Software Engineer@Airalo",
+      "photo": "https://sessionize.com/image/7eb9-400o400o1-EFHw9K5hdfKBkGe6xBcruK.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/7eb9-400o400o1-EFHw9K5hdfKBkGe6xBcruK.jpg\" alt=\"Matthias Geisler\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Matthias Geisler</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Senior Software Engineer@Airalo</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>True believer in (Kotlin) Multiplatform and working with it since 2019. Builds solutions for Android.</p>\n        <p>Organizer of KUG Berlin, GDG Android Berlin, XTC Berlin and more.</p>\n\n      </div>\n    "
+    },
+    "drerik-arakelyan": {
+      "speakerId": "drerik-arakelyan",
+      "name": "Dr Erik Arakelyan",
+      "position": "Senior Researcher in Nvidia, Creating LLM Reasoning one mistake at a time 😅",
+      "photo": "https://sessionize.com/image/bcb5-400o400o1-DZRJHSh4FwZ3GnyoGqea2F.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/bcb5-400o400o1-DZRJHSh4FwZ3GnyoGqea2F.jpg\" alt=\"Dr Erik Arakelyan\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Dr Erik Arakelyan</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Senior Researcher in Nvidia, Creating LLM Reasoning one mistake at a time 😅</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n        \n      </div>\n    "
+    },
+    "araks-sahinyan": {
+      "speakerId": "araks-sahinyan",
+      "name": "Araks Sahinyan",
+      "position": "People Advisory Principal at EPAM Armenia",
+      "photo": "https://sessionize.com/image/e446-400o400o1-WE2ua2sZLYaPdmc1H3Xi6d.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/e446-400o400o1-WE2ua2sZLYaPdmc1H3Xi6d.jpg\" alt=\"Araks Sahinyan\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Araks Sahinyan</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">People Advisory Principal at EPAM Armenia</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>Araks Sahinyan is a Principal HR Business Partner and seasoned People Strategy leader with over a decade of experience shaping organizational growth across EMEA. She specializes in translating complex business ambitions into data-driven people strategies that strengthen leadership capability, accelerate scaling, and elevate employee experience.</p>\n        <p>Araks has held strategic roles at Amazon and within global technology organizations such as AWS, Alexa, FireTV, etc, where she led cross-regional transformation initiatives. Her work spans organizational design, strategic workforce planning, leadership development, and Inclusion, Diversity & Equity—with a strong focus on operational excellence and measurable business impact.</p>\n        <p>Known for her analytical rigor, program architecture skills, and ability to unify cross-functional teams, Araks leverages AI-enabled insights, Power BI dashboards, and structured frameworks to modernize HR practices and improve decision-making. She has designed high-impact hiring mechanisms, onboarding programs, and people-centric solutions used across multiple countries and business units.</p>\n        <p>As a mentor and recognized culture-builder, Araks is committed to creating environments where people thrive, leaders grow, and organizations scale responsibly. She speaks on topics including data-driven HR, AI-enabled people operations, inclusive leadership, and the future of work.</p>\n\n      </div>\n    "
+    },
+    "david-yeghiazaryan": {
+      "speakerId": "david-yeghiazaryan",
+      "name": "David Yeghiazaryan",
+      "position": "Don't Architect for the Whiteboard. Build for the World.",
+      "photo": "https://sessionize.com/image/cf3b-400o400o1-9tXPwcv4UnBgGUAp6bcRi4.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/cf3b-400o400o1-9tXPwcv4UnBgGUAp6bcRi4.jpg\" alt=\"David Yeghiazaryan\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">David Yeghiazaryan</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Don't Architect for the Whiteboard. Build for the World.</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>Java Engineer @ Fintech. Turning spaghetti code into clean architecture. 6 years of experience, on a mission to make backend engineering fun again.</p>\n\n      </div>\n    "
+    },
+    "aleksey-prikhodko": {
+      "speakerId": "aleksey-prikhodko",
+      "name": "Aleksey Prikhodko",
+      "position": "Yandex, Team Lead",
+      "photo": "https://sessionize.com/image/069f-400o400o1-386Np6CooWnDSRjFfxvApY.jpg",
+      "content": "\n      <div class=\"flex flex-col md:flex-row gap-6 mb-6\">\n        <div class=\"flex-shrink-0\">\n          <img src=\"https://sessionize.com/image/069f-400o400o1-386Np6CooWnDSRjFfxvApY.jpg\" alt=\"Aleksey Prikhodko\" class=\"w-48 h-48 rounded-full object-cover\">\n        </div>\n        <div>\n          <h3 class=\"text-2xl font-bold mb-2\">Aleksey Prikhodko</h3>\n          <p class=\"text-google-blue font-semibold text-lg mb-4\">Yandex, Team Lead</p>\n        </div>\n      </div>\n      <div class=\"text-gray-600 dark:text-gray-400 space-y-3\">\n                <p>I lead the mobile development team at Yandex. Sometimes I act as a developer on Flutter. I have experience in developing Android and iOS apps.</p>\n\n      </div>\n    "
+    },
     "rouben-meschian": {
       "speakerId": "rouben-meschian",
       "name": "Rouben Meschian",
