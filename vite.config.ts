@@ -39,6 +39,8 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff,woff2,jpg,jpeg,avif,xlsx}'],
+        // Exclude JSON files from precaching to prevent stale data
+        globIgnores: ['**/*.json'],
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
@@ -62,6 +64,22 @@ export default defineConfig({
               expiration: {
                 maxEntries: 50,
                 maxAgeSeconds: 60 * 60 * 24 // 24 hours
+              }
+            }
+          },
+          {
+            // Always fetch JSON files from network first to avoid stale data
+            urlPattern: /\.json$/i,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'json-data-cache',
+              networkTimeoutSeconds: 10,
+              expiration: {
+                maxEntries: 20,
+                maxAgeSeconds: 60 * 5 // 5 minutes cache
+              },
+              cacheableResponse: {
+                statuses: [0, 200]
               }
             }
           }

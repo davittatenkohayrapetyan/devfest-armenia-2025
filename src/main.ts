@@ -1,6 +1,6 @@
 import './style.css'
 import { registerSW } from './registerSW'
-import { parseExcelData, SessionData, SpeakerData, WorkshopData, loadWorkshops } from './data-parser'
+import { parseExcelData, SessionData, SpeakerData, WorkshopData, loadWorkshops, ScheduleData, ScheduleSession, loadSchedule } from './data-parser'
 
 // Register service worker
 registerSW()
@@ -416,10 +416,9 @@ app.innerHTML = `
   <section id="agenda" class="bg-white dark:bg-gray-900">
     <div class="section-container">
       <h2 class="section-title">Agenda</h2>
-      <div class="max-w-6xl mx-auto">
+      <div id="schedule-container" class="max-w-7xl mx-auto">
         <div class="text-center p-12 bg-gray-50 dark:bg-gray-800 rounded-lg">
-          <p class="text-2xl font-semibold text-gray-600 dark:text-gray-400">TBA</p>
-          <p class="text-lg text-gray-500 dark:text-gray-500 mt-4">The agenda will be announced soon. Stay tuned!</p>
+          <p class="text-2xl font-semibold text-gray-600 dark:text-gray-400">Loading schedule...</p>
         </div>
       </div>
     </div>
@@ -622,6 +621,9 @@ app.innerHTML = `
           <a href="https://griddynamics.com/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
             <img src="partners/grid-dynamics.png" alt="Grid Dynamics" class="h-12 md:h-16 w-auto object-contain" loading="lazy"/>
           </a>
+          <a href="https://www.linkedin.com/in/artakng/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
+            <img src="partners/artak-tech-blogger.png" alt="Artak Tech blogger" class="h-12 md:h-16 w-auto object-contain" loading="lazy"/>
+          </a>
         </div>
         <div class="text-center mt-12">
           <p class="text-lg mb-4 text-gray-600 dark:text-gray-400">
@@ -698,7 +700,7 @@ app.innerHTML = `
           <!-- Rohan Singh -->
           <a href="https://www.linkedin.com/in/rohankalhans/" target="_blank" rel="noopener noreferrer" class="card text-center hover:shadow-xl transition-shadow">
             <img src="organizers/Rohan.jpg" alt="Portrait of Rohan Singh" loading="lazy" width="128" height="128" class="w-32 h-32 rounded-full object-cover mx-auto mb-4 shadow-md ring-4 ring-white dark:ring-gray-900" />
-            <h3 class="font-bold text-lg">Roland Egiazaryan</h3>
+            <h3 class="font-bold text-lg">Rohan Singh</h3>
             <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Co-Organizer, GDE Cloud</p>
             <div class="flex items-center justify-center text-google-blue">
               <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
@@ -762,6 +764,251 @@ app.innerHTML = `
 let sessionData: Record<string, SessionData> = {}
 let speakerData: Record<string, SpeakerData> = {}
 let workshopsData: WorkshopData[] = []
+let scheduleData: ScheduleData | null = null
+
+// Schedule configuration
+const SCHEDULE_PIXELS_PER_MINUTE = 4 // Increased for better visibility of short sessions
+const SCHEDULE_TIME_INTERVAL_MINUTES = 30
+const SCHEDULE_MAX_HEIGHT = 600 // Maximum height before scrolling
+
+// Function to get session color based on room
+function getSessionColor(room: string): string {
+  if (room === 'hall-a') {
+    return 'bg-google-blue/10 dark:bg-google-blue/20 border-google-blue'
+  } else if (room === 'hall-b') {
+    return 'bg-google-green/10 dark:bg-google-green/20 border-google-green'
+  } else if (room === 'hall-c') {
+    return 'bg-google-yellow/10 dark:bg-google-yellow/20 border-google-yellow'
+  }
+  return 'bg-gray-100 dark:bg-gray-700 border-gray-400'
+}
+
+// Function to show schedule error message
+function showScheduleError(message: string): void {
+  const container = document.getElementById('schedule-container')
+  if (!container) return
+
+  container.innerHTML = `
+    <div class="text-center p-12 bg-gray-50 dark:bg-gray-800 rounded-lg">
+      <p class="text-2xl font-semibold text-gray-600 dark:text-gray-400">TBA</p>
+      <p class="text-lg text-gray-500 dark:text-gray-500 mt-4">${message}</p>
+    </div>
+  `
+}
+
+// Function to render schedule
+function renderSchedule(schedule: ScheduleData): void {
+  const container = document.getElementById('schedule-container')
+  if (!container) return
+
+  // Calculate time range
+  const allMinutes = schedule.sessions.map(s => [s.startMinutes, s.endMinutes]).flat()
+  const minTime = Math.min(...allMinutes)
+  const maxTime = Math.max(...allMinutes)
+  const totalMinutes = maxTime - minTime
+
+  // Generate time labels at regular intervals
+  const timeLabels: { time: string; position: number }[] = []
+  for (let m = minTime; m <= maxTime; m += SCHEDULE_TIME_INTERVAL_MINUTES) {
+    const hours = Math.floor(m / 60)
+    const mins = m % 60
+    const period = hours >= 12 ? 'pm' : 'am'
+    const displayHours = hours > 12 ? hours - 12 : (hours === 0 ? 12 : hours)
+    timeLabels.push({
+      time: `${String(displayHours).padStart(2, '0')}:${String(mins).padStart(2, '0')}${period}`,
+      position: (m - minTime) * SCHEDULE_PIXELS_PER_MINUTE
+    })
+  }
+
+  const scheduleHeight = totalMinutes * SCHEDULE_PIXELS_PER_MINUTE
+
+  // Create schedule URL for sharing
+  const basePath = window.location.pathname.replace(/\/$/, '')
+  const scheduleUrl = `${window.location.origin}${basePath}/#agenda`
+  const shareDescription = 'Check out the DevFest Armenia 2025 schedule!'
+  const encodedUrl = encodeURIComponent(scheduleUrl)
+  const encodedTitle = encodeURIComponent('DevFest Armenia 2025 Schedule')
+
+  // Group sessions by room
+  const sessionsByRoom: Record<string, ScheduleSession[]> = {}
+  schedule.rooms.forEach(room => {
+    sessionsByRoom[room.id] = schedule.sessions.filter(s => s.room === room.id)
+  })
+
+  container.innerHTML = `
+    <!-- Action Buttons -->
+    <div class="flex flex-wrap gap-3 mb-6 justify-center sm:justify-start print:hidden">
+      <button 
+        id="print-schedule-btn"
+        class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 rounded-lg transition-colors duration-200 font-medium"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+        </svg>
+        Print Schedule
+      </button>
+      <button 
+        class="share-button inline-flex items-center gap-2 px-4 py-2 bg-google-blue hover:bg-blue-600 text-white rounded-lg transition-colors duration-200 font-medium"
+        data-share-title="DevFest Armenia 2025 Schedule"
+        data-share-text="${shareDescription}"
+        data-share-url="${scheduleUrl}"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+        </svg>
+        Share Schedule
+      </button>
+      <a 
+        href="https://x.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-4 py-2 bg-black hover:bg-gray-800 text-white rounded-lg transition-colors duration-200 font-medium"
+        aria-label="Share on X"
+      >
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+        X
+      </a>
+    </div>
+
+    <!-- Room Legend -->
+    <div class="flex flex-wrap gap-4 mb-6 justify-center print:mb-4">
+      ${schedule.rooms.map(room => `
+        <div class="flex items-center gap-2">
+          <div class="w-4 h-4 rounded ${room.id === 'hall-a' ? 'bg-google-blue' : room.id === 'hall-b' ? 'bg-google-green' : 'bg-google-yellow'}"></div>
+          <span class="text-sm font-medium text-gray-700 dark:text-gray-300">${room.name}</span>
+        </div>
+      `).join('')}
+    </div>
+
+    <!-- Schedule Grid -->
+    <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-4 overflow-auto print:bg-white print:p-0 print:overflow-visible" style="max-height: ${SCHEDULE_MAX_HEIGHT}px;">
+      <div class="flex min-w-[700px]">
+        <!-- Time Column -->
+        <div class="w-20 flex-shrink-0 relative print:w-16" style="height: ${scheduleHeight + 40}px;">
+          ${timeLabels.map(label => `
+            <div class="absolute left-0 right-0 flex items-center" style="top: ${label.position}px;">
+              <span class="text-xs font-medium text-gray-500 dark:text-gray-400 print:text-gray-700">${label.time}</span>
+              <div class="flex-1 h-px bg-gray-200 dark:bg-gray-600 ml-2 print:bg-gray-300"></div>
+            </div>
+          `).join('')}
+        </div>
+
+        <!-- Rooms Columns -->
+        <div class="flex-1 flex gap-3 print:gap-2">
+          ${schedule.rooms.map(room => `
+            <div class="flex-1 relative" style="height: ${scheduleHeight + 40}px;">
+              <!-- Room Header -->
+              <div class="pb-2 print:bg-white">
+                <h3 class="text-center font-bold text-gray-800 dark:text-gray-200 text-sm mb-2 print:text-gray-900">${room.name}</h3>
+              </div>
+              
+              <!-- Time Grid Lines -->
+              ${timeLabels.map(label => `
+                <div class="absolute left-0 right-0 h-px bg-gray-200 dark:bg-gray-600 print:bg-gray-300" style="top: ${label.position + 24}px;"></div>
+              `).join('')}
+
+              <!-- Sessions -->
+              ${sessionsByRoom[room.id].map(session => {
+                const top = (session.startMinutes - minTime) * SCHEDULE_PIXELS_PER_MINUTE + 24
+                const height = session.duration * SCHEDULE_PIXELS_PER_MINUTE - 4 // Subtract margin for visual separation
+                const minHeight = Math.max(height, 50) // Minimum height for short sessions
+                const colorClass = getSessionColor(session.room)
+                return `
+                  <div 
+                    class="absolute left-1 right-1 ${colorClass} border-l-4 border-b-2 border-b-white dark:border-b-gray-800 rounded-r-lg p-1.5 overflow-hidden cursor-pointer hover:shadow-lg transition-shadow print:left-0 print:right-0 print:shadow-none session-card"
+                    style="top: ${top}px; height: ${minHeight}px;"
+                    data-session-id="${session.id}"
+                    title="${session.title}${session.speaker ? ' - ' + session.speaker : ''}"
+                  >
+                    <div class="h-full flex flex-col overflow-hidden">
+                      <div class="flex items-start gap-1">
+                        <p class="text-xs font-semibold text-gray-800 dark:text-gray-100 flex-1 truncate print:text-gray-900">${session.title}</p>
+                        <span class="text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap flex-shrink-0 print:text-gray-600">${session.startTime}</span>
+                      </div>
+                      ${session.speaker ? `<p class="text-xs text-gray-600 dark:text-gray-300 truncate print:text-gray-700">${session.speaker}</p>` : ''}
+                    </div>
+                  </div>
+                `
+              }).join('')}
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile List View (shown on small screens) -->
+    <!-- <div class="md:hidden mt-8 print:hidden">
+      <h3 class="text-xl font-bold mb-4 text-gray-800 dark:text-gray-200">Session List</h3>
+      <div class="space-y-3">
+        ${schedule.sessions
+          .sort((a, b) => a.startMinutes - b.startMinutes)
+          .map(session => {
+            const colorClass = getSessionColor(session.room)
+            return `
+              <div class="${colorClass} border-l-4 rounded-r-lg p-4">
+                <div class="flex justify-between items-start gap-2 mb-1">
+                  <span class="text-xs font-medium text-gray-500 dark:text-gray-400">${session.startTime} - ${session.endTime}</span>
+                  <span class="text-xs px-2 py-0.5 rounded-full ${session.room === 'hall-a' ? 'bg-google-blue/20 text-google-blue' : session.room === 'hall-b' ? 'bg-google-green/20 text-google-green' : 'bg-google-yellow/20 text-google-yellow'}">${session.roomDisplay}</span>
+                </div>
+                <h4 class="font-semibold text-gray-800 dark:text-gray-100">${session.title}</h4>
+                ${session.speaker ? `<p class="text-sm text-gray-600 dark:text-gray-300 mt-1">${session.speaker}</p>` : ''}
+              </div>
+            `
+          }).join('')}
+      </div>
+    </div>
+  `
+
+  // Add print button event listener
+  const printBtn = document.getElementById('print-schedule-btn')
+  if (printBtn) {
+    printBtn.addEventListener('click', () => {
+      window.print()
+    })
+  }
+
+  // Add session card click handlers for showing details
+  document.querySelectorAll('.session-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const sessionId = card.getAttribute('data-session-id')
+      const session = schedule.sessions.find(s => s.id === sessionId)
+      if (session) {
+        const sessionShareUrl = `${window.location.origin}${basePath}/#agenda`
+        const sessionShareDescription = `${session.title}${session.speaker ? ' by ' + session.speaker : ''} at DevFest Armenia 2025`
+        const shareButtons = createShareButtons(session.title, sessionShareDescription, sessionShareUrl)
+        
+        createDialog(session.title, `
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 rounded ${session.room === 'hall-a' ? 'bg-google-blue' : session.room === 'hall-b' ? 'bg-google-green' : 'bg-google-yellow'}"></div>
+              <span class="font-medium text-gray-600 dark:text-gray-300">${session.roomDisplay}</span>
+            </div>
+            <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              <span>${session.startTime} - ${session.endTime}</span>
+            </div>
+            ${session.speaker ? `
+              <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                </svg>
+                <span class="font-medium">${session.speaker}</span>
+              </div>
+            ` : ''}
+            <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+              <h3 class="text-lg font-semibold mb-4">Share this session</h3>
+              ${shareButtons}
+            </div>
+          </div>
+        `)
+      }
+    })
+  })
+}
 
 // Function to render workshops
 function renderWorkshops() {
@@ -829,6 +1076,22 @@ async function initializeData() {
     
     // Load workshops
     workshopsData = await loadWorkshops('workshops.json')
+    
+    // Load schedule
+    try {
+      scheduleData = await loadSchedule('schedule.json')
+      console.log('Schedule data loaded:', scheduleData)
+      if (scheduleData && scheduleData.sessions && scheduleData.sessions.length > 0) {
+        renderSchedule(scheduleData)
+      } else {
+        console.warn('Schedule data is empty or invalid:', scheduleData)
+        showScheduleError('Schedule data is not available yet.')
+      }
+    } catch (err) {
+      console.error('Failed to load schedule:', err)
+      showScheduleError('Failed to load schedule. Please try refreshing the page.')
+    }
+    
     renderWorkshops()
     renderSessions(sessionData)
     renderSpeakers(speakerData)
