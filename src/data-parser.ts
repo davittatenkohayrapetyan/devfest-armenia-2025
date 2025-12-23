@@ -53,6 +53,10 @@ export interface ScheduleData {
   sessions: ScheduleSession[]
 }
 
+export interface PresentationsData {
+  sessionPresentations: Record<string, string>
+}
+
 // Load pre-generated JSON (public/data.json) and return sessions and speakers data
 export async function parseExcelData(filePath: string): Promise<{
   sessions: Record<string, SessionData>
@@ -108,4 +112,29 @@ export async function loadSchedule(filePath: string): Promise<ScheduleData> {
   if (!response.ok) throw new Error(`Failed to fetch schedule: ${response.status}`)
   const data = await response.json()
   return data as ScheduleData
+}
+
+// Load presentations data from JSON file
+export async function loadPresentations(filePath: string): Promise<PresentationsData> {
+  // Add cache-busting parameter to force reload
+  const cacheBuster = `?v=${Date.now()}`
+  try {
+    const response = await fetch(filePath + cacheBuster, {
+      cache: 'no-store',
+      headers: {
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': '0'
+      }
+    })
+    if (!response.ok) {
+      console.warn(`Failed to fetch presentations: ${response.status}`)
+      return { sessionPresentations: {} }
+    }
+    const data = await response.json()
+    return data as PresentationsData
+  } catch (error) {
+    console.warn('Error loading presentations:', error)
+    return { sessionPresentations: {} }
+  }
 }

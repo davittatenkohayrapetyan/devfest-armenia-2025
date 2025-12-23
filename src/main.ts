@@ -1,6 +1,6 @@
 import './style.css'
 import { registerSW } from './registerSW'
-import { parseExcelData, SessionData, SpeakerData, WorkshopData, loadWorkshops, ScheduleData, ScheduleSession, loadSchedule } from './data-parser'
+import { parseExcelData, SessionData, SpeakerData, WorkshopData, loadWorkshops, ScheduleData, ScheduleSession, loadSchedule, PresentationsData, loadPresentations } from './data-parser'
 import { PhotoGallery } from './photo-gallery'
 
 // Register service worker
@@ -225,6 +225,23 @@ function renderSessions(sessions: Record<string, SessionData>): void {
       const basePath = window.location.pathname.replace(/\/$/, '')
       const sessionUrl = `${window.location.origin}${basePath}/share/session-${s.sessionId}.html`
       const shareDescription = `Check out this session at DevFest Armenia 2025: ${s.title} by ${speakerName}`
+      
+      // Check if presentation link exists for this session
+      const presentationLink = presentationsData.sessionPresentations[s.sessionId]
+      const presentationButtonHtml = presentationLink ? `
+        <a 
+          href="${presentationLink}" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-4 py-2 bg-google-green hover:bg-green-600 text-white rounded-lg transition-colors duration-200 text-sm font-medium"
+          onclick="event.stopPropagation()"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+          </svg>
+          View Presentation
+        </a>
+      ` : ''
 
       return `
         <div class="card" data-session="${s.sessionId}">
@@ -241,18 +258,21 @@ function renderSessions(sessions: Record<string, SessionData>): void {
                 <div class="flex flex-wrap gap-2 mb-4">${statusHtml}${catsHtml}</div>
               </div>
               <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
-                <button 
-                  class="share-button inline-flex items-center gap-2 px-4 py-2 bg-google-blue hover:bg-blue-600 text-white rounded-lg transition-colors duration-200 text-sm font-medium"
-                  data-share-title="${s.title.replace(/"/g, '&quot;')}"
-                  data-share-text="${shareDescription.replace(/"/g, '&quot;')}"
-                  data-share-url="${sessionUrl}"
-                  onclick="event.stopPropagation()"
-                >
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
-                  </svg>
-                  Share Session
-                </button>
+                <div class="flex flex-wrap gap-3">
+                  ${presentationButtonHtml}
+                  <button 
+                    class="share-button inline-flex items-center gap-2 px-4 py-2 bg-google-blue hover:bg-blue-600 text-white rounded-lg transition-colors duration-200 text-sm font-medium"
+                    data-share-title="${s.title.replace(/"/g, '&quot;')}"
+                    data-share-text="${shareDescription.replace(/"/g, '&quot;')}"
+                    data-share-url="${sessionUrl}"
+                    onclick="event.stopPropagation()"
+                  >
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+                    </svg>
+                    Share Session
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -328,6 +348,21 @@ app.innerHTML = `
           <a href="#agenda" class="hover:text-google-blue transition-colors">Agenda</a>
           <a href="#sessions" class="hover:text-google-blue transition-colors">Sessions</a>
           <a href="#workshops" class="hover:text-google-blue transition-colors">Workshops</a>
+          <div class="relative group">
+            <button class="hover:text-google-blue transition-colors flex items-center gap-1">
+              Archive
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="absolute top-full left-0 mt-2 bg-white dark:bg-gray-800 rounded-lg shadow-xl py-2 min-w-[150px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <a href="/2024" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">DevFest 2024</a>
+              <a href="/2023" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">DevFest 2023</a>
+              <a href="/2021" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">DevFest 2021</a>
+              <a href="/2019" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">DevFest 2019</a>
+              <a href="/2017" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">DevFest 2017</a>
+            </div>
+          </div>
           <a href="#location" class="hover:text-google-blue transition-colors">Location</a>
           <a href="#partners" class="hover:text-google-blue transition-colors">Partners</a>
           <a href="#volunteers" class="hover:text-google-blue transition-colors">Volunteers</a>
@@ -778,6 +813,7 @@ let sessionData: Record<string, SessionData> = {}
 let speakerData: Record<string, SpeakerData> = {}
 let workshopsData: WorkshopData[] = []
 let scheduleData: ScheduleData | null = null
+let presentationsData: PresentationsData = { sessionPresentations: {} }
 
 // Schedule configuration
 const SCHEDULE_PIXELS_PER_MINUTE = 4 // Increased for better visibility of short sessions
@@ -992,6 +1028,35 @@ function renderSchedule(schedule: ScheduleData): void {
         const sessionShareDescription = `${session.title}${session.speaker ? ' by ' + session.speaker : ''} at DevFest Armenia 2025`
         const shareButtons = createShareButtons(session.title, sessionShareDescription, sessionShareUrl)
         
+        // Try to find presentation link by matching session title or ID
+        // First try exact ID match, then try to find by session title from sessionData
+        let presentationLink = presentationsData.sessionPresentations[session.id]
+        if (!presentationLink) {
+          // Try to find matching session in sessionData by title
+          const matchingSession = Object.entries(sessionData).find(([_, s]) => 
+            s.title.toLowerCase() === session.title.toLowerCase()
+          )
+          if (matchingSession) {
+            presentationLink = presentationsData.sessionPresentations[matchingSession[0]]
+          }
+        }
+        
+        const presentationButtonHtml = presentationLink ? `
+          <div class="mb-6 pb-6 border-b border-gray-200 dark:border-gray-700">
+            <a 
+              href="${presentationLink}" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-6 py-3 bg-google-green hover:bg-green-600 text-white rounded-lg transition-colors duration-200 font-medium"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+              </svg>
+              View Presentation
+            </a>
+          </div>
+        ` : ''
+        
         createDialog(session.title, `
           <div class="space-y-4">
             <div class="flex items-center gap-3">
@@ -1013,6 +1078,7 @@ function renderSchedule(schedule: ScheduleData): void {
               </div>
             ` : ''}
             <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+              ${presentationButtonHtml}
               <h3 class="text-lg font-semibold mb-4">Share this session</h3>
               ${shareButtons}
             </div>
@@ -1084,6 +1150,10 @@ async function initializeData() {
     // Load workshops
     workshopsData = await loadWorkshops('workshops.json')
     
+    // Load presentations
+    presentationsData = await loadPresentations('presentations.json')
+    console.log('Presentations data loaded:', presentationsData)
+    
     // Load schedule
     try {
       scheduleData = await loadSchedule('schedule.json')
@@ -1131,10 +1201,29 @@ async function initializeData() {
           const speakerName = extractSpeakerName(session.speaker)
           const shareDescription = `Check out this session at DevFest Armenia 2025: ${session.title} by ${speakerName}`
           const shareButtons = createShareButtons(session.title, shareDescription, sessionUrl)
+          
+          // Check if presentation link exists
+          const presentationLink = presentationsData.sessionPresentations[sessionId]
+          const presentationButtonHtml = presentationLink ? `
+            <div class="mb-6 pb-6 border-b border-gray-200 dark:border-gray-700">
+              <a 
+                href="${presentationLink}" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-google-green hover:bg-green-600 text-white rounded-lg transition-colors duration-200 font-medium"
+              >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                </svg>
+                View Presentation
+              </a>
+            </div>
+          ` : ''
 
           createDialog(session.title, `
             ${session.content}
             <div class="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+              ${presentationButtonHtml}
               <h3 class="text-lg font-semibold mb-4">Share this session</h3>
               ${shareButtons}
             </div>
