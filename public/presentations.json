@@ -1,6 +1,17 @@
 {
   "sessionPresentations": {
-    "ordering-coffee-with-firebase-ai": "https://example.com/presentation1.pdf",
-    "example-session-id": "https://example.com/presentation2.pdf"
+    "ai-in-real-engineering-work-how-to-build-fast-in-2025-without-creating-tomorrows-legacy": "https://drive.google.com/file/d/1QDfXUcgWGJ32lbUVPA8waE78oXA4CHDv/view?usp=drive_link",
+    "go-beyond-models-why-ai-needs-a-fast-backend": "https://g4s8.github.io/gdf-am-2025/#/",
+    "building-software-like-buildings-processes-tests-structure": "https://drive.google.com/file/d/1YYbipkArWJZAqGJcRB1x2puuBA86-vA4/view?usp=drive_link",
+    "how-far-should-you-go-with-ai-automating-product-creation-while-keeping-the-balance": "https://drive.google.com/file/d/1OcU8xQISSDS76cbJTw9wMdx1R7TqOsB3/view?usp=drive_link",
+    "programming-practices-for-developing-quality-software": "https://docs.google.com/presentation/d/1RWpZX4VCnG6hCq0iIyK7iXffxVuUQk1l/edit?usp=drive_link&ouid=118205853256208852906&rtpof=true&sd=true",
+    "accelerate-ai-with-cloud-run-deploy-a-mcp-server-on-cloud-run-workshop": "https://drive.google.com/file/d/14oxqIZ_JXXvWSbepr8VVwPeP5Nov38cY/view?usp=drive_link",
+    "oauth-supply-chain-risks-how-to-mitigate-them-and-how-not-to-become-them": "https://drive.google.com/file/d/1e1LJ7Co-uoV4XXmeAYrsEtBh9jB1b9UJ/view?usp=drive_link",
+    "what-candies-are-agentic-ai-frameworks-stealing-from-developers": "https://drive.google.com/file/d/1_rqZuJdv4Q6iYmKNWJQgFNVEoHtG_Y3B/view?usp=drive_link",
+    "self-healing-rollouts-automating-production-fixes-with-google-gemini-and-google-jules": "https://drive.google.com/file/d/1dNpuf6NnEg2P7ahiUUWPe4ud1O98Yabn/view?usp=drive_link",
+    "architecture-for-happiness-turning-backend-chaos-into-developer-flow": "https://docs.google.com/presentation/d/1cInKDU5E6OWeKvGMVUdk3lxG_J54-cXp/edit?usp=drive_link&ouid=118205853256208852906&rtpof=true&sd=true",
+    "build-products-and-services-powered-by-vertex-ai-adk-and-gemini": "https://docs.google.com/presentation/d/10q5a8wJIL8n2uUn25NBnfFTnFih3D8X0/edit?usp=drive_link&ouid=118205853256208852906&rtpof=true&sd=true",
+    "ebpf-explained-architecture-real-world-problems-and-practical-solutions": "https://docs.google.com/presentation/d/1Jlq_mUHP0BHhRCqn4sZzybyLdTO-lzpr/edit?usp=drive_link&ouid=118205853256208852906&rtpof=true&sd=true",
+    "operationalizing-evaluations-framework-for-automated-cicd-in-the-era-of-generative-models-for-llms": "https://docs.google.com/presentation/d/1RXBZm2GCDTgRz51nE3q8xrKXZsIVZaJk/edit?usp=drive_link&ouid=118205853256208852906&rtpof=true&sd=true"
   }
 }

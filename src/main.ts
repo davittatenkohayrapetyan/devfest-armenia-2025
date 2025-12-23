@@ -356,11 +356,11 @@ app.innerHTML = `
               </svg>
             </button>
             <div class="absolute top-full left-0 mt-2 bg-white dark:bg-gray-800 rounded-lg shadow-xl py-2 min-w-[150px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-              <a href="/2024" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">DevFest 2024</a>
-              <a href="/2023" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">DevFest 2023</a>
-              <a href="/2021" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">DevFest 2021</a>
-              <a href="/2019" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">DevFest 2019</a>
-              <a href="/2017" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">DevFest 2017</a>
+              <a href="/2024" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">DevFest Armenia 2024</a>
+              <a href="/2023" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">DevFest Armenia 2023</a>
+              <a href="/2021" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">DevFest Armenia 2021</a>
+              <a href="/2019" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">DevFest Armenia 2019</a>
+              <a href="/2017" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">DevFest Armenia 2017</a>
             </div>
           </div>
           <a href="#location" class="hover:text-google-blue transition-colors">Location</a>
