@@ -2,6 +2,10 @@
 
 Single-page PWA for DevFest Armenia 2025 (December 20, Woods Center). Built with Vite, TypeScript, and Tailwind CSS.
 
+## Post-Event Update
+
+The site has been updated to reflect the post-event state with a thank-you message, event photos gallery, and opportunities to partner or volunteer with GDG Yerevan for future events.
+
 ## Features
 
 - ✅ Progressive Web App (PWA) with offline support
@@ -13,18 +17,21 @@ Single-page PWA for DevFest Armenia 2025 (December 20, Woods Center). Built with
 - ✅ Sitemap and robots.txt included
 - ✅ Docker deployment ready
 - ✅ GitHub Actions CI/CD pipeline
+- ✅ Photo gallery with Google Photos integration
+- ✅ Dependency-free image carousel with autoplay, keyboard navigation, and swipe support
 
 ## Sections
 
-1. **Hero** - Event title, date, location, and call-to-action
-2. **About** - Information about DevFest Armenia
-3. **Agenda** - Schedule with Sessionize GridSmart embed
-4. **Sessions** - Detailed sessions with Sessionize Sessions embed
-5. **Workshops** - Hands-on workshop sessions (JSON-configurable)
-6. **Speakers** - Speaker profiles with Sessionize Speakers embed
-7. **Speaker Wall** - Speaker wall with Sessionize SpeakerWall embed
-8. **Partners** - Partner logos grid (8 SVG placeholders)
-9. **Organizers** - GDG Yerevan team members
+1. **Hero** - Thank you message for attending DevFest Armenia 2025
+2. **Photo Gallery** - Event photos fetched from Google Photos album
+3. **About** - Information about DevFest Armenia
+4. **Agenda** - Schedule with Sessionize GridSmart embed
+5. **Sessions** - Detailed sessions with Sessionize Sessions embed
+6. **Workshops** - Hands-on workshop sessions (JSON-configurable)
+7. **Speakers** - Speaker profiles from session data
+8. **Partners** - Partner logos grid with partnership CTA
+9. **Volunteers** - Volunteer opportunities with GDG Yerevan
+10. **Organizers** - GDG Yerevan team members
 
 ## Development
 
@@ -135,6 +142,24 @@ Workshops are configured through `public/workshops.json`. Each workshop includes
 - Registration form URL (Google Forms)
 
 For detailed configuration instructions, see [WORKSHOPS.md](WORKSHOPS.md).
+
+### Google Photos Gallery
+
+The event photos are displayed in a custom carousel that fetches images from a Google Photos shared album. The integration requires a Google Apps Script proxy to enable CORS and transform the API response.
+
+For setup instructions, see [GOOGLE_PHOTOS_SETUP.md](GOOGLE_PHOTOS_SETUP.md).
+
+**Environment Variables:**
+
+- `VITE_GOOGLE_PHOTOS_FEED_URL`: URL of the Google Apps Script proxy endpoint
+- If not set, the gallery will fall back to an iframe embed of the album
+
+### Partnership and Volunteer Opportunities
+
+**Environment Variables:**
+
+- `VITE_PARTNER_FORM_URL`: URL for partnership inquiry form (fallback: `mailto:gdgyerevan@gmail.com`)
+- `VITE_VOLUNTEER_FORM_URL`: URL for volunteer sign-up form (fallback: `mailto:gdgyerevan@gmail.com`)
 
 ### Updating Event Details
 

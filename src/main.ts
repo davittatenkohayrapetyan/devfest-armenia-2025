@@ -1,9 +1,16 @@
 import './style.css'
 import { registerSW } from './registerSW'
 import { parseExcelData, SessionData, SpeakerData, WorkshopData, loadWorkshops, ScheduleData, ScheduleSession, loadSchedule } from './data-parser'
+import { PhotoGallery } from './photo-gallery'
 
 // Register service worker
 registerSW()
+
+// Environment variables
+const GOOGLE_PHOTOS_FEED_URL = 'https://script.google.com/macros/s/AKfycbxmexN_z_yYCPdxyhaBXEi3FTph2qe-UbK--hFUS4UGdDFEp-xRHjUZ-38gguPNzg7A/exec'
+const GOOGLE_PHOTOS_ALBUM_URL = 'https://drive.google.com/drive/folders/1ybO8ERUD9NRfs-XfAZFZx-51mfhXbOzA?usp=sharing'
+const PARTNER_FORM_URL = import.meta.env.VITE_PARTNER_FORM_URL || 'mailto:gdgyerevan@gmail.com'
+const VOLUNTEER_FORM_URL = import.meta.env.VITE_VOLUNTEER_FORM_URL || 'mailto:gdgyerevan@gmail.com'
 
 const app = document.querySelector<HTMLDivElement>('#app')!
 
@@ -317,13 +324,13 @@ app.innerHTML = `
         </div>
         <div class="hidden md:flex items-center space-x-6">
           <a href="#about" class="hover:text-google-blue transition-colors">About</a>
+          <a href="#photos" class="hover:text-google-blue transition-colors">Photos</a>
           <a href="#agenda" class="hover:text-google-blue transition-colors">Agenda</a>
           <a href="#sessions" class="hover:text-google-blue transition-colors">Sessions</a>
           <a href="#workshops" class="hover:text-google-blue transition-colors">Workshops</a>
-          <a href="#speakers" class="hover:text-google-blue transition-colors">Speakers</a>
-          <a href="#call-for-speakers" class="hover:text-google-blue transition-colors">Call for Speakers</a>
           <a href="#location" class="hover:text-google-blue transition-colors">Location</a>
           <a href="#partners" class="hover:text-google-blue transition-colors">Partners</a>
+          <a href="#volunteers" class="hover:text-google-blue transition-colors">Volunteers</a>
           <a href="#organizers" class="hover:text-google-blue transition-colors">Organizers</a>
           <div class="flex items-center space-x-3">
             <a href="https://www.instagram.com/gdg_yerevan" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="hover:text-google-blue transition-colors">
@@ -342,9 +349,6 @@ app.innerHTML = `
               </svg>
             </a>
           </div>
-          <a href="https://www.meetup.com/gdgyerevan/events/311547893/?eventOrigin=group_upcoming_events" target="_blank" rel="noopener noreferrer" class="bg-google-blue hover:bg-blue-600 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-200 whitespace-nowrap">
-            Register on Meetup
-          </a>
         </div>
       </div>
     </div>
@@ -353,25 +357,35 @@ app.innerHTML = `
   <!-- Hero Section -->
   <section id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-google-blue to-blue-600 text-white pt-16">
     <div class="section-container text-center">
-      <h1 class="text-3xl sm:text-5xl md:text-7xl font-bold mb-6 whitespace-nowrap">
-        DevFest Armenia 2025
+      <h1 class="text-3xl sm:text-5xl md:text-7xl font-bold mb-6">
+        Thank you for joining DevFest Armenia 2025!
       </h1>
       <p class="text-2xl md:text-3xl mb-8">
-        December 20, 2025 • Woods Center
+        Dec 20 · Woods Center · Organized by GDG Yerevan
       </p>
       <p class="text-xl md:text-2xl mb-12 max-w-3xl mx-auto">
-        Join us for a day of learning, networking, and celebrating technology with the Google Developer Group community.
+        Thank you to everyone who made DevFest Armenia 2025 an amazing success. We hope you enjoyed the talks, workshops, and networking opportunities!
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="https://www.meetup.com/gdgyerevan/events/311547893/?eventOrigin=group_upcoming_events" target="_blank" rel="noopener noreferrer" class="bg-white text-google-blue hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg text-lg whitespace-nowrap">
-          Register on Meetup
+        <a href="#photos" class="bg-white text-google-blue hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg text-lg whitespace-nowrap">
+          View Photos
         </a>
         <a href="#agenda" class="border-2 border-white hover:bg-white hover:text-google-blue font-medium py-3 px-8 rounded-lg transition-colors duration-200">
           View Agenda
         </a>
-        <a href="#speakers" class="border-2 border-white hover:bg-white hover:text-google-blue font-medium py-3 px-8 rounded-lg transition-colors duration-200">
-          Meet Speakers
+        <a href="#sessions" class="border-2 border-white hover:bg-white hover:text-google-blue font-medium py-3 px-8 rounded-lg transition-colors duration-200">
+          View Sessions
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo Gallery Section -->
+  <section id="photos" class="bg-white dark:bg-gray-900">
+    <div class="section-container">
+      <h2 class="section-title">Event Photos</h2>
+      <div class="max-w-6xl mx-auto">
+        <div id="photo-gallery-container"></div>
       </div>
     </div>
   </section>
@@ -446,7 +460,7 @@ app.innerHTML = `
             <p>✨ <strong>Duration:</strong> All workshops will be 1 to 1.5 hours long</p>
             <p>🛠️ <strong>Hands-on Learning:</strong> Participants will receive practical, hands-on skills they can apply immediately</p>
             <p>☁️ <strong>Google Cloud Credits:</strong> Google will provide free Google Cloud credits to all workshop participants</p>
-            <p>📋 <strong>What to Bring:</strong> Just your laptop and enthusiasm! Fill in the registration form by pressing "Enroll" button so the speaker can prepare the perfect session for you</p>
+            <p>📋 <strong>What to Bring:</strong> Just your laptop and enthusiasm!</p>
           </div>
         </div>
         
@@ -468,77 +482,14 @@ app.innerHTML = `
     </div>
   </section>
 
-  <!-- Call for Speakers Section -->
-  <section id="call-for-speakers" class="bg-gradient-to-br from-google-blue to-blue-600 text-white">
-    <div class="section-container">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="section-title text-white">Call for Speakers</h2>
-        <div class="mb-8">
-          <p class="text-xl md:text-2xl mb-6 leading-relaxed">
-            Are you passionate about Google technologies? Do you have knowledge and experience to share with the developer community?
-          </p>
-          <p class="text-lg md:text-xl mb-8 leading-relaxed">
-            We're looking for speakers to present talks and workshops at DevFest Armenia 2025. Whether you're an expert in Android, Web Development, Cloud, AI/ML, or any other Google technology, we'd love to hear from you!
-          </p>
-        </div>
-        
-        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8">
-          <h3 class="text-2xl font-bold mb-4">What We're Looking For</h3>
-          <div class="grid md:grid-cols-2 gap-6 text-left">
-            <div class="flex items-start gap-3">
-              <div class="text-3xl">🎯</div>
-              <div>
-                <h4 class="font-bold mb-2">Technical Topics</h4>
-                <p class="text-sm">Sessions on Firebase, Android, Web, Cloud, AI/ML, and other Google technologies</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="text-3xl">🛠️</div>
-              <div>
-                <h4 class="font-bold mb-2">Hands-on Workshops</h4>
-                <p class="text-sm">Interactive workshops where attendees can learn by doing</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="text-3xl">💡</div>
-              <div>
-                <h4 class="font-bold mb-2">Real-world Experience</h4>
-                <p class="text-sm">Case studies and practical applications from your projects</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="text-3xl">🌟</div>
-              <div>
-                <h4 class="font-bold mb-2">Community Insights</h4>
-                <p class="text-sm">Best practices and lessons learned from the field</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <a href="https://sessionize.com/devfest-armenia-2025" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-white text-google-blue hover:bg-gray-100 font-bold py-4 px-10 rounded-lg transition-colors duration-200 shadow-2xl text-xl">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
-          </svg>
-          Submit Your Proposal on Sessionize
-        </a>
-        
-        <p class="mt-6 text-sm opacity-90">
-          Deadline for submissions will be announced soon. Don't miss this opportunity to share your knowledge!
-        </p>
-      </div>
-    </div>
-  </section>
-
   <!-- Become a Partner Section -->
   <section id="become-partner" class="bg-gray-50 dark:bg-gray-800">
     <div class="section-container">
       <div class="max-w-4xl mx-auto">
-        <h2 class="section-title text-center">Become a Partner</h2>
+        <h2 class="section-title text-center">Partner with Us</h2>
         <div class="text-center mb-8">
           <p class="text-lg md:text-xl mb-6 leading-relaxed">
-            DevFest Armenia brings together hundreds of developers, tech enthusiasts, and industry professionals. 
-            Partner with us to connect with the vibrant Armenian tech community!
+            Partner with us for future events—support the local community and help us build even better developer experiences.
           </p>
         </div>
         
@@ -569,13 +520,13 @@ app.innerHTML = `
         <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-xl text-center">
           <h3 class="text-2xl font-bold mb-4">Interested in Partnering?</h3>
           <p class="text-lg mb-6">
-            Contact us to learn more about partnership opportunities and sponsorship packages.
+            Contact us to learn more about partnership opportunities and sponsorship packages for future events.
           </p>
-          <a href="mailto:gdgyerevan@gmail.com" class="inline-flex items-center gap-3 bg-google-blue hover:bg-blue-600 text-white font-bold py-4 px-10 rounded-lg transition-colors duration-200 shadow-lg text-xl">
+          <a href="${PARTNER_FORM_URL}" ${PARTNER_FORM_URL.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-3 bg-google-blue hover:bg-blue-600 text-white font-bold py-4 px-10 rounded-lg transition-colors duration-200 shadow-lg text-xl" aria-label="Become a Partner">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
             </svg>
-            Contact Us at gdgyerevan@gmail.com
+            Become a Partner
           </a>
         </div>
       </div>
@@ -600,11 +551,11 @@ app.innerHTML = `
       <h2 class="section-title">Partners</h2>
       <div class="max-w-5xl mx-auto">
         <p class="text-center text-lg mb-8">
-          Thank you to our amazing partners who make DevFest Armenia possible!
+          Thank you to our amazing partners who made DevFest Armenia 2025 possible!
         </p>
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-8">
           <a href="https://developers.google.com/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
-            <img src="partners/google-for-developers.svg" alt="Woods Center" class="h-12 md:h-16 w-auto object-contain" loading="lazy"/>
+            <img src="partners/google-for-developers.svg" alt="Google for Developers" class="h-12 md:h-16 w-auto object-contain" loading="lazy"/>
           </a>
           <a href="https://woodscenter.am/en" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-lg transition-shadow">
             <img src="partners/woods.svg" alt="Woods Center" class="h-12 md:h-16 w-auto object-contain" loading="lazy"/>
@@ -625,9 +576,9 @@ app.innerHTML = `
             <img src="partners/artak-tech-blogger.png" alt="Artak Tech blogger" class="h-12 md:h-16 w-auto object-contain" loading="lazy"/>
           </a>
         </div>
-        <div class="text-center mt-12">
-          <p class="text-lg mb-4 text-gray-600 dark:text-gray-400">
-            Want to become a partner?
+        <div class="bg-gradient-to-r from-google-blue/10 to-blue-600/10 dark:from-google-blue/20 dark:to-blue-600/20 rounded-xl p-6 text-center mb-8">
+          <p class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">
+            Partner with us for future events—support the local community
           </p>
           <a href="#become-partner" class="inline-flex items-center gap-2 text-google-blue hover:text-blue-600 font-semibold text-lg transition-colors">
             Learn more about partnership opportunities
@@ -636,6 +587,68 @@ app.innerHTML = `
             </svg>
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Volunteers Section -->
+  <section id="volunteers" class="bg-gradient-to-br from-google-blue to-blue-600 text-white">
+    <div class="section-container">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="section-title text-white">Volunteer with GDG Yerevan</h2>
+        <div class="mb-8">
+          <p class="text-xl md:text-2xl mb-6 leading-relaxed">
+            Help us build even better community events and make a difference in Armenia's tech ecosystem.
+          </p>
+          <p class="text-lg md:text-xl mb-8 leading-relaxed">
+            Join our volunteer team and contribute to organizing workshops, meetups, and conferences that inspire developers across Armenia.
+          </p>
+        </div>
+        
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-8">
+          <h3 class="text-2xl font-bold mb-6">Why Volunteer?</h3>
+          <div class="grid md:grid-cols-2 gap-6 text-left">
+            <div class="flex items-start gap-3">
+              <div class="text-3xl">🎯</div>
+              <div>
+                <h4 class="font-bold mb-2">Varied Roles</h4>
+                <p class="text-sm">Event coordination, social media, speaker support, registration desk, workshop assistance, and more</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="text-3xl">⏰</div>
+              <div>
+                <h4 class="font-bold mb-2">Flexible Time Commitment</h4>
+                <p class="text-sm">Choose tasks that fit your schedule—from a few hours per month to day-of-event support</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="text-3xl">🌟</div>
+              <div>
+                <h4 class="font-bold mb-2">Networking & Learning</h4>
+                <p class="text-sm">Connect with industry professionals, speakers, and fellow tech enthusiasts</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="text-3xl">🎁</div>
+              <div>
+                <h4 class="font-bold mb-2">Perks & Recognition</h4>
+                <p class="text-sm">Exclusive swag, event access, certificate of appreciation, and community recognition</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="${VOLUNTEER_FORM_URL}" ${VOLUNTEER_FORM_URL.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''} class="inline-flex items-center gap-3 bg-white text-google-blue hover:bg-gray-100 font-bold py-4 px-10 rounded-lg transition-colors duration-200 shadow-2xl text-xl" aria-label="Join as a Volunteer">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+          Join as a Volunteer
+        </a>
+        
+        <p class="mt-6 text-sm opacity-90">
+          Be part of building a stronger developer community in Armenia
+        </p>
       </div>
     </div>
   </section>
@@ -1042,23 +1055,17 @@ function renderWorkshops() {
               </svg>
               Max ${workshop.maxParticipants} participants
             </div>
-            <div class="flex gap-2">
-              <a href="${workshop.registrationUrl}" target="_blank" rel="noopener noreferrer" 
-                 class="flex-1 text-center bg-google-blue hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200">
-                Enroll
-              </a>
-              <button 
-                class="share-button inline-flex items-center gap-2 px-4 py-3 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 rounded-lg transition-colors duration-200 font-medium"
-                data-share-title="${workshop.title.replace(/"/g, '&quot;')}"
-                data-share-text="${shareDescription.replace(/"/g, '&quot;')}"
-                data-share-url="${workshopUrl}"
-              >
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
-                </svg>
-                Share
-              </button>
-            </div>
+            <button 
+              class="share-button inline-flex items-center justify-center gap-2 w-full px-4 py-3 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 rounded-lg transition-colors duration-200 font-medium"
+              data-share-title="${workshop.title.replace(/"/g, '&quot;')}"
+              data-share-text="${shareDescription.replace(/"/g, '&quot;')}"
+              data-share-url="${workshopUrl}"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+              </svg>
+              Share
+            </button>
           </div>
         </div>
       </div>
@@ -1176,16 +1183,12 @@ async function initializeData() {
               </div>
               <div>
                 <p class="text-lg font-semibold mb-2">Speaker: ${workshop.speakerName}</p>
-                <div class="flex items-center text-sm text-gray-600 dark:text-gray-400 mb-4">
+                <div class="flex items-center text-sm text-gray-600 dark:text-gray-400">
                   <svg class="w-5 h-5 mr-2 text-google-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                   </svg>
                   Max ${workshop.maxParticipants} participants
                 </div>
-                <a href="${workshop.registrationUrl}" target="_blank" rel="noopener noreferrer" 
-                   class="inline-block bg-google-blue hover:bg-blue-600 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-200">
-                  Enroll Now
-                </a>
               </div>
             </div>
             <div class="prose dark:prose-invert max-w-none">
@@ -1261,16 +1264,12 @@ async function initializeData() {
               </div>
               <div>
                 <p class="text-lg font-semibold mb-2">Speaker: ${workshop.speakerName}</p>
-                <div class="flex items-center text-sm text-gray-600 dark:text-gray-400 mb-4">
+                <div class="flex items-center text-sm text-gray-600 dark:text-gray-400">
                   <svg class="w-5 h-5 mr-2 text-google-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                   </svg>
                   Max ${workshop.maxParticipants} participants
                 </div>
-                <a href="${workshop.registrationUrl}" target="_blank" rel="noopener noreferrer" 
-                   class="inline-block bg-google-blue hover:bg-blue-600 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-200">
-                  Enroll Now
-                </a>
               </div>
             </div>
             <div class="prose dark:prose-invert max-w-none">
@@ -1290,6 +1289,10 @@ async function initializeData() {
 
     // Handle hash changes (for browser back/forward)
     window.addEventListener('hashchange', handleHashNavigation)
+
+    // Initialize photo gallery
+    const photoGallery = new PhotoGallery('photo-gallery-container', GOOGLE_PHOTOS_ALBUM_URL)
+    await photoGallery.initialize(GOOGLE_PHOTOS_FEED_URL)
   } catch (error) {
     console.error('Failed to load session data:', error)
   }
