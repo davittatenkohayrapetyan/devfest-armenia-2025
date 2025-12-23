@@ -7,8 +7,8 @@ import { PhotoGallery } from './photo-gallery'
 registerSW()
 
 // Environment variables
-const GOOGLE_PHOTOS_FEED_URL = import.meta.env.VITE_GOOGLE_PHOTOS_FEED_URL || ''
-const GOOGLE_PHOTOS_ALBUM_URL = 'https://photos.app.goo.gl/KbeAMmggDhFcuxCe7'
+const GOOGLE_PHOTOS_FEED_URL = 'https://script.google.com/macros/s/AKfycbxmexN_z_yYCPdxyhaBXEi3FTph2qe-UbK--hFUS4UGdDFEp-xRHjUZ-38gguPNzg7A/exec'
+const GOOGLE_PHOTOS_ALBUM_URL = 'https://drive.google.com/drive/folders/1ybO8ERUD9NRfs-XfAZFZx-51mfhXbOzA?usp=sharing'
 const PARTNER_FORM_URL = import.meta.env.VITE_PARTNER_FORM_URL || 'mailto:gdgyerevan@gmail.com'
 const VOLUNTEER_FORM_URL = import.meta.env.VITE_VOLUNTEER_FORM_URL || 'mailto:gdgyerevan@gmail.com'
 
@@ -460,7 +460,7 @@ app.innerHTML = `
             <p>✨ <strong>Duration:</strong> All workshops will be 1 to 1.5 hours long</p>
             <p>🛠️ <strong>Hands-on Learning:</strong> Participants will receive practical, hands-on skills they can apply immediately</p>
             <p>☁️ <strong>Google Cloud Credits:</strong> Google will provide free Google Cloud credits to all workshop participants</p>
-            <p>📋 <strong>What to Bring:</strong> Just your laptop and enthusiasm! Fill in the registration form by pressing "Enroll" button so the speaker can prepare the perfect session for you</p>
+            <p>📋 <strong>What to Bring:</strong> Just your laptop and enthusiasm!</p>
           </div>
         </div>
         
@@ -1055,23 +1055,17 @@ function renderWorkshops() {
               </svg>
               Max ${workshop.maxParticipants} participants
             </div>
-            <div class="flex gap-2">
-              <a href="${workshop.registrationUrl}" target="_blank" rel="noopener noreferrer" 
-                 class="flex-1 text-center bg-google-blue hover:bg-blue-600 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200">
-                Enroll
-              </a>
-              <button 
-                class="share-button inline-flex items-center gap-2 px-4 py-3 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 rounded-lg transition-colors duration-200 font-medium"
-                data-share-title="${workshop.title.replace(/"/g, '&quot;')}"
-                data-share-text="${shareDescription.replace(/"/g, '&quot;')}"
-                data-share-url="${workshopUrl}"
-              >
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
-                </svg>
-                Share
-              </button>
-            </div>
+            <button 
+              class="share-button inline-flex items-center justify-center gap-2 w-full px-4 py-3 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 rounded-lg transition-colors duration-200 font-medium"
+              data-share-title="${workshop.title.replace(/"/g, '&quot;')}"
+              data-share-text="${shareDescription.replace(/"/g, '&quot;')}"
+              data-share-url="${workshopUrl}"
+            >
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+              </svg>
+              Share
+            </button>
           </div>
         </div>
       </div>
@@ -1189,16 +1183,12 @@ async function initializeData() {
               </div>
               <div>
                 <p class="text-lg font-semibold mb-2">Speaker: ${workshop.speakerName}</p>
-                <div class="flex items-center text-sm text-gray-600 dark:text-gray-400 mb-4">
+                <div class="flex items-center text-sm text-gray-600 dark:text-gray-400">
                   <svg class="w-5 h-5 mr-2 text-google-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                   </svg>
                   Max ${workshop.maxParticipants} participants
                 </div>
-                <a href="${workshop.registrationUrl}" target="_blank" rel="noopener noreferrer" 
-                   class="inline-block bg-google-blue hover:bg-blue-600 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-200">
-                  Enroll Now
-                </a>
               </div>
             </div>
             <div class="prose dark:prose-invert max-w-none">
@@ -1274,16 +1264,12 @@ async function initializeData() {
               </div>
               <div>
                 <p class="text-lg font-semibold mb-2">Speaker: ${workshop.speakerName}</p>
-                <div class="flex items-center text-sm text-gray-600 dark:text-gray-400 mb-4">
+                <div class="flex items-center text-sm text-gray-600 dark:text-gray-400">
                   <svg class="w-5 h-5 mr-2 text-google-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                   </svg>
                   Max ${workshop.maxParticipants} participants
                 </div>
-                <a href="${workshop.registrationUrl}" target="_blank" rel="noopener noreferrer" 
-                   class="inline-block bg-google-blue hover:bg-blue-600 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-200">
-                  Enroll Now
-                </a>
               </div>
             </div>
             <div class="prose dark:prose-invert max-w-none">

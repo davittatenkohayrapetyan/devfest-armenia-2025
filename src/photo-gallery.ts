@@ -147,6 +147,9 @@ export class PhotoGallery {
                   class="w-full h-full object-contain"
                   loading="${index === 0 ? 'eager' : 'lazy'}"
                   decoding="async"
+                  referrerpolicy="no-referrer"
+                  crossorigin="anonymous"
+                  onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%23666%22%3E%3Cpath d=%22M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z%22/%3E%3C/svg%3E';this.style.opacity='0.3';"
                 />
               </div>
             `).join('')}
