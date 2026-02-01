@@ -2,6 +2,7 @@ import './style.css'
 import { registerSW } from './registerSW'
 import { parseExcelData, SessionData, SpeakerData, WorkshopData, loadWorkshops, ScheduleData, ScheduleSession, loadSchedule } from './data-parser'
 import { PhotoGallery } from './photo-gallery'
+import { VideoCarousel, VideoItem } from './video-carousel'
 
 // Register service worker
 registerSW()
@@ -325,13 +326,14 @@ app.innerHTML = `
         <div class="hidden md:flex items-center space-x-6">
           <a href="#about" class="hover:text-google-blue transition-colors">About</a>
           <a href="#photos" class="hover:text-google-blue transition-colors">Photos</a>
+          <a href="#gallery" class="hover:text-google-blue transition-colors">Gallery</a>
           <a href="#agenda" class="hover:text-google-blue transition-colors">Agenda</a>
           <a href="#sessions" class="hover:text-google-blue transition-colors">Sessions</a>
           <a href="#workshops" class="hover:text-google-blue transition-colors">Workshops</a>
           <a href="#location" class="hover:text-google-blue transition-colors">Location</a>
           <a href="#partners" class="hover:text-google-blue transition-colors">Partners</a>
           <a href="#volunteers" class="hover:text-google-blue transition-colors">Volunteers</a>
-          <a href="#organizers" class="hover:text-google-blue transition-colors">Organizers</a>
+          <a href="#booking" class="hover:text-google-blue transition-colors">Booking</a>
           <div class="flex items-center space-x-3">
             <a href="https://www.instagram.com/gdg_yerevan" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="hover:text-google-blue transition-colors">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -386,6 +388,31 @@ app.innerHTML = `
       <h2 class="section-title">Event Photos</h2>
       <div class="max-w-6xl mx-auto">
         <div id="photo-gallery-container"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section with Photo and Video Carousels -->
+  <section id="gallery" class="bg-gray-50 dark:bg-gray-800">
+    <div class="section-container">
+      <h2 class="section-title">Gallery</h2>
+      
+      <!-- Photos Carousel -->
+      <div class="max-w-6xl mx-auto mb-16">
+        <h3 class="text-2xl font-bold mb-6 text-center">Event Highlights</h3>
+        <p class="text-center text-gray-600 dark:text-gray-400 mb-8">
+          Browse through photos from our amazing DevFest Armenia 2025 event
+        </p>
+        <div id="gallery-photos-container"></div>
+      </div>
+
+      <!-- Videos Carousel -->
+      <div class="max-w-6xl mx-auto">
+        <h3 class="text-2xl font-bold mb-6 text-center">Concert Recordings</h3>
+        <p class="text-center text-gray-600 dark:text-gray-400 mb-8">
+          Watch highlights and recordings from the event
+        </p>
+        <div id="gallery-videos-container"></div>
       </div>
     </div>
   </section>
@@ -653,23 +680,26 @@ app.innerHTML = `
     </div>
   </section>
 
-  <!-- Organizers Section -->
-  <section id="organizers" class="bg-gray-50 dark:bg-gray-800">
+  <!-- Booking Section (Organizers, Rehearsal, Lessons) -->
+  <section id="booking" class="bg-gray-50 dark:bg-gray-800">
     <div class="section-container">
-      <h2 class="section-title">Organizers</h2>
-      <div class="max-w-5xl mx-auto">
+      <h2 class="section-title">Booking Information</h2>
+      
+      <!-- Organizers Subsection -->
+      <div class="max-w-5xl mx-auto mb-20">
+        <h3 class="text-3xl font-bold text-center mb-12">Organizers</h3>
         <div class="text-center mb-12">
           <div class="inline-flex items-center justify-center p-6 bg-white dark:bg-gray-900 rounded-lg shadow-lg mb-6">
             <img src="gdg-yerevan.avif" alt="GDG Yerevan logo" class="h-32 w-auto object-contain" loading="lazy"/>
           </div>
-          <h3 class="text-2xl font-bold mb-4">GDG Yerevan</h3>
+          <h4 class="text-2xl font-bold mb-4">GDG Yerevan</h4>
           <p class="text-lg max-w-2xl mx-auto text-gray-600 dark:text-gray-400">
             Google Developer Group Yerevan is a community of developers interested in Google technologies and open-source development. 
             We organize events, workshops, and meetups to share knowledge and connect developers in Armenia.
           </p>
         </div>
         
-        <h3 class="text-xl font-bold text-center mb-8">Core Team</h3>
+        <h4 class="text-xl font-bold text-center mb-8">Core Team</h4>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
           <!-- Davit Hayrapetyan -->
           <a href="https://www.linkedin.com/in/davit-hayrapetyan-04377561/" target="_blank" rel="noopener noreferrer" class="card text-center hover:shadow-xl transition-shadow">
@@ -737,6 +767,76 @@ app.innerHTML = `
           </a>
         </div>
       </div>
+
+      <!-- Rehearsal Subsection -->
+      <div class="max-w-4xl mx-auto mb-20">
+        <h3 class="text-3xl font-bold text-center mb-8">Rehearsal Booking</h3>
+        <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-xl">
+          <p class="text-lg mb-6 text-center text-gray-700 dark:text-gray-300">
+            Need a space for rehearsals? We offer professional rehearsal spaces for bands, performers, and artists.
+          </p>
+          <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <div class="text-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+              <div class="text-4xl mb-3">🎵</div>
+              <h4 class="font-bold mb-2">Professional Sound</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">High-quality audio equipment</p>
+            </div>
+            <div class="text-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+              <div class="text-4xl mb-3">📅</div>
+              <h4 class="font-bold mb-2">Flexible Hours</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Book by the hour or day</p>
+            </div>
+            <div class="text-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+              <div class="text-4xl mb-3">🎸</div>
+              <h4 class="font-bold mb-2">Full Equipment</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Instruments and gear available</p>
+            </div>
+          </div>
+          <div class="text-center">
+            <a href="https://show4me.com/dashboard/events" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-google-blue hover:bg-blue-600 text-white font-bold py-4 px-10 rounded-lg transition-colors duration-200 shadow-lg text-xl">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              Book Rehearsal Space
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lessons Subsection -->
+      <div class="max-w-4xl mx-auto">
+        <h3 class="text-3xl font-bold text-center mb-8">Music Lessons</h3>
+        <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-xl">
+          <p class="text-lg mb-6 text-center text-gray-700 dark:text-gray-300">
+            Learn from experienced instructors and take your musical skills to the next level with our professional lessons.
+          </p>
+          <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <div class="text-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+              <div class="text-4xl mb-3">👨‍🏫</div>
+              <h4 class="font-bold mb-2">Expert Instructors</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Learn from the best professionals</p>
+            </div>
+            <div class="text-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+              <div class="text-4xl mb-3">🎹</div>
+              <h4 class="font-bold mb-2">All Instruments</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Piano, guitar, drums, and more</p>
+            </div>
+            <div class="text-center p-6 bg-gray-50 dark:bg-gray-800 rounded-lg">
+              <div class="text-4xl mb-3">⏰</div>
+              <h4 class="font-bold mb-2">Flexible Schedule</h4>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Choose times that work for you</p>
+            </div>
+          </div>
+          <div class="text-center">
+            <a href="https://show4me.com/dashboard/events" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-google-blue hover:bg-blue-600 text-white font-bold py-4 px-10 rounded-lg transition-colors duration-200 shadow-lg text-xl">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              </svg>
+              Book Music Lessons
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -748,7 +848,14 @@ app.innerHTML = `
           <p class="text-lg font-bold">DevFest Armenia 2025</p>
           <p class="text-sm text-gray-400">Organized by GDG Yerevan</p>
         </div>
-        <div class="flex items-center space-x-6">
+        <div class="flex flex-col md:flex-row items-center gap-6">
+          <a href="https://show4me.com/dashboard/events" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-google-blue hover:text-blue-400 font-semibold transition-colors">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            Contact Us
+          </a>
+          <div class="flex items-center space-x-6">
           <a href="https://www.instagram.com/gdg_yerevan" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="hover:text-google-blue transition-colors">
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
@@ -1293,6 +1400,29 @@ async function initializeData() {
     // Initialize photo gallery
     const photoGallery = new PhotoGallery('photo-gallery-container', GOOGLE_PHOTOS_ALBUM_URL)
     await photoGallery.initialize(GOOGLE_PHOTOS_FEED_URL)
+
+    // Initialize gallery photos carousel (same as main photo gallery for now)
+    const galleryPhotos = new PhotoGallery('gallery-photos-container', GOOGLE_PHOTOS_ALBUM_URL)
+    await galleryPhotos.initialize(GOOGLE_PHOTOS_FEED_URL)
+
+    // Initialize gallery videos carousel with sample videos
+    // Admin can update these video IDs and descriptions
+    const sampleVideos: VideoItem[] = [
+      {
+        id: '1',
+        videoId: 'dQw4w9WgXcQ', // Placeholder - admin should replace with actual concert recording
+        title: 'DevFest Armenia 2025 - Opening',
+        description: 'Watch the opening ceremony of DevFest Armenia 2025'
+      },
+      {
+        id: '2',
+        videoId: 'dQw4w9WgXcQ', // Placeholder - admin should replace with actual concert recording
+        title: 'DevFest Armenia 2025 - Concert Highlights',
+        description: 'Highlights from the amazing concert performance'
+      }
+    ]
+    const videoCarousel = new VideoCarousel('gallery-videos-container', sampleVideos)
+    videoCarousel.initialize()
   } catch (error) {
     console.error('Failed to load session data:', error)
   }
