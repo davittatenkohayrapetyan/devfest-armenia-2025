@@ -17,6 +17,7 @@ export class VideoCarousel {
   private videos: VideoItem[] = []
   private currentIndex = 0
   private isTransitioning = false
+  private keyboardHandler: ((e: KeyboardEvent) => void) | null = null
 
   constructor(containerId: string, videos: VideoItem[]) {
     const element = document.getElementById(containerId)
@@ -227,7 +228,7 @@ export class VideoCarousel {
     })
 
     // Keyboard navigation (when carousel is in view)
-    const handleKeyboard = (e: KeyboardEvent) => {
+    this.keyboardHandler = (e: KeyboardEvent) => {
       // Only handle keyboard if the carousel is visible in viewport
       const rect = this.container.getBoundingClientRect()
       const isVisible = rect.top < window.innerHeight && rect.bottom > 0
@@ -241,13 +242,17 @@ export class VideoCarousel {
       }
     }
 
-    document.addEventListener('keydown', handleKeyboard)
+    document.addEventListener('keydown', this.keyboardHandler)
   }
 
   /**
    * Destroy the carousel and clean up
    */
   destroy(): void {
+    if (this.keyboardHandler) {
+      document.removeEventListener('keydown', this.keyboardHandler)
+      this.keyboardHandler = null
+    }
     this.container.innerHTML = ''
   }
 }
